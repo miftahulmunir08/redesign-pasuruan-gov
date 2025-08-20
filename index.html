@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kab. Pasuruan</title>
+
+    <link href="./src/output.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      /* === CSS UNTUK DOTS NAVIGASI === */
+      .dots {
+        display: flex;
+        padding: 10px 0;
+        justify-content: center;
+      }
+      .dot {
+        border: none;
+        width: 10px;
+        height: 10px;
+        background: #c5c5c5;
+        border-radius: 50%;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+      }
+      .dot:focus {
+        outline: none;
+      }
+      .dot.active {
+        background: #0b7642;
+      }
+    </style>
+  </head>
+  <body class="pb-16 sm:pb-0">
+    <header
+      class="flex flex-row items-center justify-between px-12 py-2 border-b border-gray-500">
+      <div class="flex flex-row items-center mx-auto space-x-2 md:mx-0">
+        <img src="./assets/lambang_kabupaten_pasuruan.png" class="w-10" />
+        <p class="flex flex-col leading-tight">
+          <span>Pemerintah</span
+          ><span class="font-semibold"
+            >Kabupaten Pasuruan<span class="text-[#0B7642]">.</span></span
+          >
+        </p>
+      </div>
+      <p class="items-center hidden space-x-1 sm:flex-row sm:flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-map-pin-icon lucide-map-pin">
+          <path
+            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span class="text-sm sm:text-md"
+          >Kompleks Perkantoran Pemerintah Kabupaten Pasuruan Jalan Raya Raci
+          Km.9, Bangil, Pasuruan, 67153</span
+        >
+      </p>
+    </header>
+
+    <nav>
+      <ul
+        class="hidden py-2 space-x-8 font-medium md:flex md:flex-row md:justify-center">
+        <li>
+          <a href="#" class="hover:text-[#0B7642] transition-all">Profil</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-[#0B7642] transition-all">Potensi</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-[#0B7642] transition-all">Fasilitas</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-[#0B7642] transition-all">Layanan</a>
+        </li>
+        <li>
+          <a href="#sumber-daya" class="hover:text-[#0B7642] transition-all"
+            >Sumber Daya</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-[#0B7642] transition-all">Kontak</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="hero-section">
+      <div class="relative w-full">
+        <img
+          src="./assets/kaliandra.jpg"
+          alt="Kaliandra resort"
+          class="w-full max-h-[720px] object-cover content-center" />
+        <div class="flex flex-row justify-center w-full">
+          <div
+            class="absolute flex flex-col w-11/12 mx-auto text-white md:flex-row md:justify-between bottom-8 md:bottom-16">
+            <div class="mb-4 md:mb-0">
+              <h1 class="text-2xl font-bold sm:text-4xl lg:text-6xl">
+                Kaliandra
+              </h1>
+              <h2 class="text-md sm:text-lg md:text-xl">
+                Kabupaten Pasuruan yang Maju, Sejahtera dan Berkeadilan.
+              </h2>
+            </div>
+            <button
+              class="relative flex flex-row items-center self-start px-3 py-2 space-x-2 overflow-hidden text-black transition-all duration-300 bg-white rounded-lg md:self-end md:px-4 md:py-2 group hover:text-white">
+              <span
+                class="absolute left-0 top-0 h-full w-0 bg-[#0B7642] group-hover:w-full transition-all duration-300 z-0"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="relative z-10 w-5 h-5 md:w-6 md:h-6 lucide lucide-youtube-icon lucide-youtub e">
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                <path d="m10 15 5-3-5-3z" />
+              </svg>
+              <span class="relative z-10 text-sm font-semibold md:text-base"
+                >Video</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="main-content" class="mx-auto w-11/12 relative pb-16">
+      <div
+        class="relative z-10 flex flex-row w-full p-4 space-x-4 bg-white border-b border-gray-300 md:border-0 md:rounded-lg md:shadow md:-mt-8">
+        <input
+          name="search"
+          type="search"
+          placeholder="Keyword pencarian"
+          class="w-full px-4 py-2 border border-gray-300 rounded-md" />
+        <button
+          class="bg-[#0B7642] px-2 flex flex-row items-center py-1 text-white rounded-md space-x-1 hover:bg-[#0B7642]/80 cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search-icon lucide-search">
+            <path d="m21 21-4.34-4.34" />
+            <circle cx="11" cy="11" r="8" />
+          </svg>
+          <span class="hidden sm:inline">Cari</span>
+        </button>
+      </div>
+
+      <div class="mt-8">
+        <p class="text-md sm:text-2xl font-medium">
+          Sumber daya<span class="text-[#0B7642]">.</span>
+        </p>
+        <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <li
+            class="bg-white rounded-lg shadow hover:scale-102 transition-all cursor-pointer">
+            <a href="#sumber-daya">
+              <img
+                src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                alt="rapat kerja pemda"
+                class="rounded-t-lg h-32 w-full object-cover" />
+              <p class="text-center mx-auto py-2">Transparansi</p>
+            </a>
+          </li>
+          <li
+            class="bg-white rounded-lg shadow hover:scale-102 transition-all cursor-pointer">
+            <a href="#sumber-daya">
+              <img
+                src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                alt="rapat kerja pemda"
+                class="rounded-t-lg h-32 w-full object-cover" />
+              <p class="text-center mx-auto py-2">Download</p>
+            </a>
+          </li>
+          <li
+            class="bg-white rounded-lg shadow hover:scale-102 transition-all cursor-pointer">
+            <img
+              src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+              alt="rapat kerja pemda"
+              class="rounded-t-lg h-32 w-full object-cover" />
+            <p class="text-center mx-auto py-2">Agenda</p>
+          </li>
+          <li
+            class="bg-white rounded-lg shadow hover:scale-102 transition-all cursor-pointer">
+            <img
+              src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+              alt="rapat kerja pemda"
+              class="rounded-t-lg h-32 w-full object-cover" />
+            <p class="text-center mx-auto py-2">Majalah</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-8">
+        <div class="flex flex-row justify-between items-center">
+          <p class="text-md sm:text-2xl font-medium">
+            Hanya di Kabupaten Pasuruan<span class="text-[#0B7642]">.</span>
+          </p>
+          <select
+            id="kategori-filter"
+            class="border rounded-lg border-gray-300 px-2 py-1 text-sm">
+            <option value="Semua">Semua</option>
+            <option value="Pemerintah">Pemerintah</option>
+            <option value="Publik">Publik</option>
+          </select>
+        </div>
+
+        <div class="mt-4 relative">
+          <div id="layanan-slider" class="keen-slider">
+            <!-- Dynamic content will be generated here -->
+          </div>
+
+          <div class="dots"></div>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <p class="text-md sm:text-2xl font-medium">
+          Layanan<span class="text-[#0B7642]">.</span>
+        </p>
+        <div id="layanan-section">
+          <!-- dynamic from js -->
+        </div>
+      </div>
+
+      <!-- Berita -->
+      <div class="mt-8">
+        <div
+          class="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between md:items-center">
+          <div>
+            <p class="text-md sm:text-2xl font-medium">
+              Berita Terbaru<span class="text-[#0B7642]">.</span>
+            </p>
+            <p class="text-gray-500">Berita terbaru dari Kabupaten Pasuruan</p>
+          </div>
+          <button
+            class="bg-[#0B7642] px-4 flex flex-row items-center py-2 text-white rounded-lg hover:bg-[#0B7642]/80 cursor-pointer w-fit md:text-base text-xs">
+            Semua Berita
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="group rounded-lg shadow-md">
+              <div class="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                  alt="news image"
+                  class="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
+                <p
+                  class="bg-[#03D26F] p-2 rounded-lg absolute bottom-4 right-4 text-xs text-white font-medium">
+                  Nasionalisme
+                </p>
+              </div>
+              <div class="px-4 py-2">
+                <h6 class="text-[#0B7242] font-medium">
+                  Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker Ikuti
+                  Pelatihan Berbasis Kompetensi
+                </h6>
+                <p class="text-[#ababab] text-sm">
+                  Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                  Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                  (12/8/2025).
+                </p>
+                <div
+                  class="flex flex-row justify-between mt-8 text-sm font-medium">
+                  <p>13 Agustus 2025</p>
+                  <p class="text-[#0B7242]">Author</p>
+                </div>
+              </div>
+            </div>
+            <div class="group rounded-lg shadow-md">
+              <div class="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                  alt="news image"
+                  class="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
+                <p
+                  class="bg-[#03D26F] p-2 rounded-lg absolute bottom-4 right-4 text-xs text-white font-medium">
+                  Nasionalisme
+                </p>
+              </div>
+              <div class="px-4 py-2">
+                <h6 class="text-[#0B7242] font-medium">
+                  Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker Ikuti
+                  Pelatihan Berbasis Kompetensi
+                </h6>
+                <p class="text-[#ababab] text-sm">
+                  Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                  Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                  (12/8/2025).
+                </p>
+                <div
+                  class="flex flex-row justify-between mt-8 text-sm font-medium">
+                  <p>13 Agustus 2025</p>
+                  <p class="text-[#0B7242]">Author</p>
+                </div>
+              </div>
+            </div>
+            <div class="group rounded-lg shadow-md">
+              <div class="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                  alt="news image"
+                  class="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
+                <p
+                  class="bg-[#03D26F] p-2 rounded-lg absolute bottom-4 right-4 text-xs text-white font-medium">
+                  Nasionalisme
+                </p>
+              </div>
+              <div class="px-4 py-2">
+                <h6 class="text-[#0B7242] font-medium">
+                  Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker Ikuti
+                  Pelatihan Berbasis Kompetensi
+                </h6>
+                <p class="text-[#ababab] text-sm">
+                  Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                  Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                  (12/8/2025).
+                </p>
+                <div
+                  class="flex flex-row justify-between mt-8 text-sm font-medium">
+                  <p>13 Agustus 2025</p>
+                  <p class="text-[#0B7242]">Author</p>
+                </div>
+              </div>
+            </div>
+            <div class="group rounded-lg shadow-md">
+              <div class="relative overflow-hidden rounded-t-lg">
+                <img
+                  src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                  alt="news image"
+                  class="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" />
+                <p
+                  class="bg-[#03D26F] p-2 rounded-lg absolute bottom-4 right-4 text-xs text-white font-medium">
+                  Nasionalisme
+                </p>
+              </div>
+              <div class="px-4 py-2">
+                <h6 class="text-[#0B7242] font-medium">
+                  Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker Ikuti
+                  Pelatihan Berbasis Kompetensi
+                </h6>
+                <p class="text-[#ababab] text-sm">
+                  Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                  Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                  (12/8/2025).
+                </p>
+                <div
+                  class="flex flex-row justify-between mt-8 text-sm font-medium">
+                  <p>13 Agustus 2025</p>
+                  <p class="text-[#0B7242]">Author</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-300 h-full min-h-96 text-center text-gray-50 flex items-center justify-center">
+            Widget
+          </div>
+        </div>
+      </div>
+
+      <!-- Sumber Daya -->
+      <div class="mt-8" id="sumber-daya">
+        <div>
+          <p class="text-base sm:text-2xl font-medium">
+            Sumber Daya<span class="text-[#0B7642]">.</span>
+          </p>
+          <p class="text-gray-500 text-xs sm:text-base">
+            Kami menyediakan beberapa sumber daya yang memudahkan masyarakat
+            dalam mengakses informasi terkait termasuk unduhan, agenda acara,
+            majalah digital, dan informasi terbaru dari pemerintah kabupaten
+            pasuruan
+          </p>
+        </div>
+        <div class="rounded-lg bg-white mt-4 shadow">
+          <div class="p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:gap-8">
+              <div class="md:w-1/4">
+                <nav
+                  class="flex flex-col space-y-3 pb-8 border-b md:border-b-0 md:pr-8 md:border-r border-gray-200">
+                  <button
+                    class="tab-button flex items-center gap-3 text-[#0B7642] pb-3 border-b-2 border-[#0B7642]"
+                    data-target="#transparansi">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-lock-icon lucide-lock">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <p class="text-black">Transparansi</p>
+                  </button>
+                  <button
+                    class="tab-button flex items-center gap-3 text-[#0B7642] pb-3 border-b-2 border-gray-200"
+                    data-target="#download">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-lock-icon lucide-lock">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <p class="text-black">Download</p>
+                  </button>
+                  <button
+                    class="tab-button flex items-center gap-3 text-[#0B7642] pb-3 border-b-2 border-gray-200"
+                    data-target="#agenda">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-lock-icon lucide-lock">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <p class="text-black">Agenda</p>
+                  </button>
+                  <button
+                    class="tab-button flex items-center gap-3 text-[#0B7642] pb-3 border-b-2 border-gray-200"
+                    data-target="#majalah">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-lock-icon lucide-lock">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <p class="text-black">Majalah</p>
+                  </button>
+                </nav>
+              </div>
+
+              <div class="flex-1 mt-4 md:mt-0">
+                <div id="transparansi" class="tab-pane active">
+                  <div class="flex flex-col h-full">
+                    <div class="flex-grow space-y-3 text-gray-800">
+                      <a
+                        href="#"
+                        class="block py-1 hover:text-gray-950 hover:font-medium transition-all">
+                        Ringkasan APBD Tahun 2025
+                      </a>
+                      <a
+                        href="#"
+                        class="block py-1 hover:text-gray-950 hover:font-medium transition-all">
+                        Ringkasan APBD Tahun 2024
+                      </a>
+                    </div>
+                    <div class="text-right mt-6">
+                      <a
+                        href="#"
+                        class="text-[#0B7642] font-semibold hover:underline">
+                        Lihat Semua...
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div id="download" class="tab-pane">
+                  <div class="flex flex-col h-full">
+                    <div class="flex-grow space-y-3 text-gray-800">
+                      <a
+                        href="#"
+                        class="block py-1 hover:text-gray-950 hover:font-medium transition-all">
+                        Formulir Izin Mendirikan Bangunan
+                      </a>
+                      <a
+                        href="#"
+                        class="block py-1 hover:text-gray-950 hover:font-medium transition-all">
+                        Dokumen Standar Pelayanan Minimal
+                      </a>
+                    </div>
+                    <div class="text-right mt-6">
+                      <a
+                        href="#"
+                        class="text-[#0B7642] font-semibold hover:underline">
+                        Lihat Semua...
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <style>
+            /* CSS ini tetap dibutuhkan */
+            .tab-pane {
+              display: none;
+            }
+            .tab-pane.active {
+              display: block;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="flex flex-col items-center gap-4 bg-[#0B7642] px-8 py-4 text-white sm:flex-row sm:justify-between">
+      <div class="flex items-center gap-3">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Instagram"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-[#03D26F]/70 transition-colors hover:bg-[#03D26F]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-5 w-5">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+          </svg>
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Facebook"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-[#03D26F]/70 transition-colors hover:bg-[#03D26F]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-5 w-5">
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-center gap-2 text-sm sm:flex-row sm:gap-4">
+        <a href="#" class="hover:underline">Kebijakan Privasi</a>
+        <p class="hidden sm:block">|</p>
+        <a href="#" class="hover:underline"
+          >© 2025 Website Kabupaten Pasuruan</a
+        >
+      </div>
+    </footer>
+
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.1)] sm:hidden">
+      <ul class="grid h-16 grid-cols-5 items-center justify-around">
+        <li class="h-full">
+          <a
+            href="#"
+            class="nav-item active flex h-full flex-col items-center justify-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span class="text-xs font-medium">Beranda</span>
+          </a>
+        </li>
+        <li class="h-full">
+          <a
+            href="#"
+            class="nav-item flex h-full flex-col items-center justify-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <rect width="7" height="7" x="3" y="3" rx="1" />
+              <rect width="7" height="7" x="14" y="3" rx="1" />
+              <rect width="7" height="7" x="14" y="14" rx="1" />
+              <rect width="7" height="7" x="3" y="14" rx="1" />
+            </svg>
+            <span class="text-xs font-medium">Layanan</span>
+          </a>
+        </li>
+        <li class="h-full">
+          <a
+            href="#sumber-daya"
+            class="nav-item flex h-full flex-col items-center justify-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span class="text-xs font-medium">Sumber Daya</span>
+          </a>
+        </li>
+        <li class="h-full">
+          <a
+            href="#"
+            class="nav-item flex h-full flex-col items-center justify-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span class="text-xs font-medium">Kontak</span>
+          </a>
+        </li>
+        <li class="h-full">
+          <button
+            id="open-menu-button"
+            class="nav-item flex h-full w-full flex-col items-center justify-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <span class="text-xs font-medium">Menu</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 z-[60] bg-[#0B7642] text-white p-6 transition-opacity duration-300 ease-in-out">
+      <button
+        id="close-menu-button"
+        class="absolute top-6 right-6 rounded-full bg-white/20 p-2 text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6">
+          <line x1="18" x2="6" y1="6" y2="18" />
+          <line x1="6" x2="18" y1="6" y2="18" />
+        </svg>
+      </button>
+
+      <ul class="flex flex-col gap-2 mt-16 font-medium">
+        <li>
+          <a
+            href="#"
+            class="flex items-center justify-between gap-4 p-4 rounded-lg hover:bg-white/10">
+            <span>Profil</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center justify-between gap-4 p-4 rounded-lg hover:bg-white/10">
+            <span>Potensi</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="flex items-center justify-between gap-4 p-4 rounded-lg hover:bg-white/10">
+            <div class="flex items-center gap-4">
+              <span>Fasilitas</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      .nav-item {
+        color: #6b7280; /* Warna abu-abu untuk item non-aktif (text-gray-500) */
+        background-color: transparent;
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      }
+
+      /* Efek hover untuk item yang tidak aktif */
+      .nav-item:hover {
+        color: #0b7642; /* Warna hijau tema saat di-hover */
+      }
+
+      /* Style untuk item yang aktif */
+      .nav-item.active {
+        background-color: #0b7642; /* Warna hijau tema utama */
+        color: white;
+      }
+
+      /* Pastikan warna tidak berubah saat item aktif di-hover */
+      .nav-item.active:hover {
+        color: white;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
