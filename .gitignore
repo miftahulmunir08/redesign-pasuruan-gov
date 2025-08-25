@@ -1,0 +1,40 @@
+# Laravel & PHP
+/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+/.phpunit.cache
+/.php_cs.cache
+/.DS_Store
+Thumbs.db
+
+# Laravel specific
+/storage/app/public
+/storage/framework/*
+/storage/logs/*
+/bootstrap/cache/*
+
+# Ignore Composer lock in libraries
+composer.lock
+
+# Ignore npm/yarn lock if needed (optional)
+package-lock.json
+yarn.lock
+
+# IDE / OS
+*.swp
+*.swo
+*.bak
+*.tmp
