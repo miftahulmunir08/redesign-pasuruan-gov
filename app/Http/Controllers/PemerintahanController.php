@@ -65,9 +65,9 @@ class PemerintahanController extends Controller
         }
 
         $data = [
-            'namePage' => 'Pemerintahan Bupati & Wakil Bupati',
-            'devTitle' => 'Pemerintahan Bupati & Wakil Bupati',
-            'devIndex' => 'Pemerintahan Bupati & Wakil Bupati',
+            'namePage' => 'Pemimpin Daerah Kabupaten Pasuruan',
+            'devTitle' => 'Pemimpin Daerah Kabupaten Pasuruan',
+            'devIndex' => 'Pemimpin Daerah Kabupaten Pasuruan',
             'devBupati' => $devBupati,
             'devWabup' => $devWabub,
             'breadcrumbs' => $breadcrumbs

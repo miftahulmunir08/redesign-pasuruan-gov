@@ -2,20 +2,92 @@
 
 @push('styles')
     <style>
-        .info-box hr {
+        .profile-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border: 2px solid;
+            border-color: #0B7642;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        @media (max-width: 767.98px) {
+            .profile-img {
+                height: 350px;
+            }
+        }
+
+        .profile-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 767.98px) {
+            .profile-body {
+                text-align: center;
+            }
+        }
+
+        .profile-subtitle {
+            font-weight: 600;
+            color: #0B7642;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .profile-divider {
+            color: #03D26F;
+            border-width: 2px;
+            opacity: 1;
+            margin: 1.5rem 0;
+            width: 150px;
             transition: width 0.3s ease-in-out;
         }
 
-        .info-box:hover hr {
-            width: 100% !important;
+        .profile-card:hover .profile-divider {
+            width: 100%;
         }
 
-        .image-container img {
-            transition: transform 0.3s ease;
+        @media (max-width: 768px) {
+            .profile-divider {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
-        .image-container:hover img {
-            transform: scale(1.05);
+        .profile-action {
+            margin-top: auto;
+        }
+
+        .profile-action .btn {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease;
+        }
+
+        .profile-action .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-action .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 @endpush
@@ -39,28 +111,56 @@
 
     {{-- @dd($devBupati) --}}
     {{-- Main --}}
-    <section class="container-fluid my-4">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="rounded border d-flex flex-column p-3 info-box">
-                    <p class="p-0 m-0">{{ $devBupati->jabatan }} ({{ $devBupati->pemerintahan_periode->periode }})</p>
-                    <hr style="color: #03D26F; width: 200px" class="my-2 border-2 opacity-100">
-                    <h4>{{ $devBupati->nama }}</h4>
-                </div>
-                <div class="mt-3 rounded border overflow-hidden image-container" style="height: 900px;">
-                    <img src="{{ $devBupati->gambar_pemerintahan }}" alt="Gambar {{ $devBupati->jabatan }}"
-                        class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    <section class="container-fluid my-5" style="padding: 0 128px">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Bupati dan Wakil Bupati Kabupaten Pasuruan</h1>
+            <p class="lead text-muted">Masa Jabatan {{ $devBupati->pemerintahan_periode->periode }}</p>
+        </div>
+        <div class="d-flex flex-column gap-4">
+            <div class="card profile-card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ $devBupati->gambar_pemerintahan }}" class="profile-img"
+                            alt="Foto {{ $devBupati->nama }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body profile-body">
+                            <div class="text-content">
+                                <h5 class="profile-subtitle">{{ $devBupati->jabatan }}</h5>
+                                <h2 class="profile-title">{{ $devBupati->nama }}</h2>
+                                <hr class="profile-divider">
+                            </div>
+                            <div class="profile-action">
+                                <a href="https://id.wikipedia.org/wiki/Mochamad_Rusdi_Sutejo" target="_blank"
+                                    class="btn btn-primary btn-lg px-4">
+                                    Lihat Profil Lengkap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="rounded border d-flex flex-column p-3 info-box">
-                    <p class="p-0 m-0">{{ $devWabup->jabatan }} ({{ $devWabup->pemerintahan_periode->periode }})</p>
-                    <hr style="color: #03D26F; width: 200px" class="my-2 border-2 opacity-100">
-                    <h4>{{ $devWabup->nama }}</h4>
-                </div>
-                <div class="mt-3 rounded border overflow-hidden image-container" style="height: 900px;">
-                    <img src={{ $devWabup->gambar_pemerintahan }} alt="Gambar {{ $devWabup->jabatan }}" class="img-fluid"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="card profile-card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ $devWabup->gambar_pemerintahan }}" class="profile-img"
+                            alt="Foto {{ $devWabup->nama }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body profile-body">
+                            <div class="text-content">
+                                <h5 class="profile-subtitle">{{ $devWabup->jabatan }}</h5>
+                                <h2 class="profile-title">{{ $devWabup->nama }}</h2>
+                                <hr class="profile-divider">
+                            </div>
+                            <div class="profile-action">
+                                <a href="https://id.wikipedia.org/wiki/Shobih_Asrori" target="_blank"
+                                    class="btn btn-primary btn-lg px-4">
+                                    Lihat Profil Lengkap
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
