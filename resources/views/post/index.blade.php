@@ -25,7 +25,7 @@
 
         {{-- Hero --}}
         <section
-            style="background-image: url('https://www.wartabromo.com/wp-content/uploads/2023/03/IMG-20230308-WA0043.jpg'); height: 480px; background-position: center; position: relative;">
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://www.wartabromo.com/wp-content/uploads/2023/03/IMG-20230308-WA0043.jpg'); height: clamp(240px, 50vh, 480px); background-position: center; position: relative; background-size: cover;">
 
             <div style="width: 94%; position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);"
                 class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
@@ -33,9 +33,10 @@
                     <x-breadcrumb :items="$breadcrumbs" />
                     <div>
                         <div>
-                            <h1 style="color:white; font-weight: normal; margin-bottom: 0; padding: 0" class="fs-2">
+                            <h1 style="color:white; font-weight: normal; margin-bottom: 0; padding: 0"
+                                class="fs-2 text-capitalize">
                                 <span style="font-weight: bold" class="fs-1">{{ $devTitle }}</span> -
-                                <span class="text-capitalize">{{ str_replace('-', ' ', $devIndex) }}</span>
+                                <span>{{ str_replace('-', ' ', $devIndex) }}</span>
                             </h1>
                         </div>
                     </div>
@@ -55,7 +56,7 @@
 
         {{-- List post --}}
         <section style="width: 96%" class="mx-auto my-4 container-fluid">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
                 @foreach ($devData as $post)
                     {{-- Setiap item sekarang dibungkus oleh <div> kolom --}}
                     <div class="col">

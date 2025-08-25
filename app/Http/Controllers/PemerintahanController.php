@@ -10,7 +10,7 @@ class PemerintahanController extends Controller
     {
         $periode = (object)[
             'id_pemerintahan_periode' => 1,
-            'periode' => '2021 - 2026'
+            'periode' => '2025 - 2030'
         ];
 
         $devLembagaBupati = (object)[
@@ -69,10 +69,39 @@ class PemerintahanController extends Controller
             'devTitle' => 'Pemerintahan Bupati & Wakil Bupati',
             'devIndex' => 'Pemerintahan Bupati & Wakil Bupati',
             'devBupati' => $devBupati,
-            'devWabub' => $devWabub,
+            'devWabup' => $devWabub,
             'breadcrumbs' => $breadcrumbs
         ];
 
         return view('pemerintahan.bupati', $data);
+    }
+
+    public function legislatif(Request $request)
+    {
+        $segments = $request->segments();
+        $breadcrumbs = [];
+        $url = '';
+
+        foreach ($segments as $segment) {
+            $url .= '/' . $segment;
+            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
+
+            $breadcrumbs[] = [
+                'text' => $text,
+                'url'  => $url
+            ];
+        }
+
+        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
+
+        if (count($breadcrumbs) > 1) {
+            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
+        }
+
+        $data = [
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('pemerintahan.legislatif', $data);
     }
 }

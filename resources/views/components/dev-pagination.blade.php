@@ -4,46 +4,33 @@
             border-radius: var(--bs-border-radius) !important;
         }
 
-        /*
-                             * Modifikasi warna pagination
-                            */
-
-        /* Gaya dasar untuk semua tombol (abu-abu) */
         .pagination .page-link {
             background-color: #e2e2e2;
             color: #ffffff;
-            /* Teks dan ikon menjadi putih */
             border: none;
-            /* Menghilangkan garis tepi */
             font-weight: bold;
         }
 
-        /* Gaya saat mouse menyentuh tombol (hover), kecuali tombol yg non-aktif */
         .pagination .page-link:hover {
             background-color: #03D26F;
         }
 
-        /* Gaya untuk tombol yang sedang aktif (hijau) */
         .pagination .page-item.active .page-link {
             background-color: #03D26F;
             color: #ffffff;
         }
 
-        /* Gaya untuk tombol non-aktif (disabled) agar sedikit lebih transparan */
         .pagination .page-item.disabled .page-link {
             background-color: #e2e2e2;
             opacity: 0.7;
         }
 
-        /* Mengatur sudut tumpul yang sama untuk semua tombol */
         .pagination.gap-2 .page-link {
             border-radius: var(--bs-border-radius) !important;
         }
     </style>
 @endonce
 
-{{-- @if ($paginator->hasPages())
-@endif --}}
 <nav>
     <ul class="pagination justify-content-center gap-2">
         @if ($paginator->onFirstPage())
@@ -69,15 +56,12 @@
             </li>
         @endif
 
-        {{-- Elemen Nomor Halaman --}}
         @foreach ($elements as $element)
-            {{-- Pemisah "Three Dots" (...) --}}
             @if (is_string($element))
                 <li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span>
                 </li>
             @endif
 
-            {{-- Array Link Halaman --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())

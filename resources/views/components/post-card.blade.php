@@ -46,8 +46,8 @@
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.175) !important;
+            transform: translateY(-4px);
+            box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.175) !important;
         }
 
         .post-card__title {
@@ -92,7 +92,7 @@
     </div>
 
     {{-- Konten Teks --}}
-    <div class="m-2 d-flex flex-column flex-grow-1">
+    <div class="p-3 d-flex flex-column flex-grow-1">
         <p class="post-card__title fw-semibold fs-6 mb-1">
             {{ $post->judul_posts }}
         </p>
@@ -101,7 +101,7 @@
             <p class="post-card__summary flex-grow-1">
                 {!! substr(strip_tags($post->konten_posts), 0, 150) !!}...
             </p>
-            <p class="post-card__meta d-flex flex-row justify-content-between mb-0 fw-bold">
+            <p class="post-card__meta d-flex flex-row justify-content-between mb-0 fw-medium">
                 <span>{{ Carbon\Carbon::parse($post->waktu_publish)->isoFormat('DD MMMM YYYY') }}</span>
                 <span class="post-card__author">{{ $post->user_creator->nama_lengkap }}</span>
             </p>
