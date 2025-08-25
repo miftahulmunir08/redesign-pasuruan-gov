@@ -12,11 +12,7 @@ class PostController extends Controller
     //
     function postsList(Request $request)
     {
-<<<<<<< HEAD
-        $tipe_kategori = 'Potensi';
-=======
         $tipe_kategori = 'potensi';
->>>>>>> da5bdc0 (slicing bupati)
         $slug_kategori = 'pariwisata';
 
         $devLis = collect([

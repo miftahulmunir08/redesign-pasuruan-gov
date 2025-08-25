@@ -993,7 +993,7 @@
                     <img src="assets/icon/company.png" width="40px" />
                   </div>
                   <h5
-                    class="card-title mt-3 fw-bold title-icon text-center text-center"
+                    class="card-title mt-3 fw-bold title-icon text-center"
                     style="color: rgb(172, 172, 172); font-size: 13pt"
                   >
                     Arti&nbsp;Lambang
@@ -1164,7 +1164,7 @@
                     <img src="assets/medsos/icon-112.png" width="40px" />
                   </div>
                   <h5
-                    class="card-title mt-3 fw-bold title-icon text-center text-center"
+                    class="card-title mt-3 fw-bold title-icon text-center"
                     style="color: rgb(172, 172, 172); font-size: 13pt"
                   >
                     Panggilan&nbsp;Darurat
@@ -1356,7 +1356,7 @@
                     <img src="assets/medsos/icon-112.png" width="40px" />
                   </div>
                   <h5
-                    class="card-title mt-3 fw-bold title-icon text-center text-center"
+                    class="card-title mt-3 fw-bold title-icon text-center"
                     style="color: rgb(172, 172, 172); font-size: 13pt"
                   >
                     Indeks Kepuasan Masyarakat
@@ -1408,7 +1408,7 @@
                   </h5>
                 </div>
               </div>
-              
+
               <div class="col-4 col-lg-6 mt-4 pointer" style="">
                 <div class="d-flex flex-column align-items-center">
                   <div
