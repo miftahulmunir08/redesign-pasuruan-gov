@@ -36,4 +36,9 @@ class LandingController extends Controller
         // Mengirim data ke view 'landing.index'
         return view('index', compact('visi', 'devBannerUtama'));
     }
+
+    public function index_landing()
+    {
+        return view('landing/index');
+    }
 }
