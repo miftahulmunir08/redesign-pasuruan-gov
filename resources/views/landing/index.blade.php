@@ -669,7 +669,7 @@
                   style="border-radius: 50px; width: 75px"
                 >
                   <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                  <img src="{{ asset('storage/uploads/logo/company.png') }}" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -687,7 +687,7 @@
                   style="border-radius: 50px; width: 75px"
                 >
                   <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                  <img src="{{ asset('storage/uploads/logo/policeman.png') }}" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/policeman.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -708,7 +708,7 @@
                     class="las la-database text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="{{ asset('storage/uploads/logo/file.png') }}" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/file.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -735,7 +735,7 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="assets/icon/passport.png" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/passport.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -758,7 +758,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="assets/icon/news.png" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/news.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -780,7 +780,7 @@
                     class="las la-video text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="assets/icon/board.png" width="40px" />
+                  <img src="{{ asset('storage/uploads/icon_app/board.png') }}" width="40px" />
                 </div>
                 <h5
                   class="card-title mt-3 fw-bold title-icon"
@@ -861,7 +861,7 @@
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
-                    src="assets/hero_section/202409_205-66d55924c94eb.jpg"
+                    src="{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}"
                     class="img-fluid rounded-start"
                     alt="..."
                   />
@@ -896,7 +896,7 @@
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
-                    src="assets/hero_section/202402_206-65bc616742301.jpg"
+                    src="{{ asset('storage/uploads/hero/202402_206-65bc616742301.jpg') }}"
                     class="img-fluid rounded-start"
                     alt="..."
                   />
@@ -1161,7 +1161,7 @@
                     style="border-radius: 50px; width: 75px"
                   >
                     <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                    <img src="assets/medsos/icon-112.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center text-center"
@@ -1181,7 +1181,7 @@
                     style="border-radius: 50px; width: 75px"
                   >
                     <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                    <img src="assets/medsos/icon-wa.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/icon-wa.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
@@ -1204,7 +1204,7 @@
                     class="las la-database text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                    <img src="assets/medsos/icon-fb.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/facebook.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
@@ -1230,7 +1230,7 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                    <img src="assets/medsos/icon-ig.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/instagram.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
@@ -1251,7 +1251,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                    <img src="assets/medsos/icon-xt.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/icon-xt.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
@@ -1272,7 +1272,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                    <img src="assets/medsos/icon-ttk.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/icon-ttk.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
@@ -1293,7 +1293,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                    <img src="assets/medsos/icon-yt.png" width="40px" />
+                    <img src="{{ asset('storage/uploads/medsos/youtube.png') }}" width="40px" />
                   </div>
                   <h5
                     class="card-title mt-3 fw-bold title-icon text-center"
