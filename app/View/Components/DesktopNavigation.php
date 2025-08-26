@@ -15,29 +15,30 @@ class DesktopNavigation extends Component
      */
     public function __construct()
     {
+        $baseUrl = config('app.url');
         $this->menuItems = [
             [
                 'text' => 'Profil',
                 'url' => '#',
                 'children' => [
-                    ['text' => 'Arti Lambang', 'url' => 'https://www.pasuruankab.go.id/halaman/arti-lambang', 'children' => []],
-                    ['text' => 'Peta Pasuruan', 'url' => 'https://www.pasuruankab.go.id/halaman/peta-pasuruan', 'children' => []],
-                    ['text' => 'Visi dan Misi', 'url' => 'https://www.pasuruankab.go.id/halaman/visi-dan-misi', 'children' => []],
+                    ['text' => 'Arti Lambang', 'url' => '#', 'children' => []],
+                    ['text' => 'Peta Pasuruan', 'url' => '#', 'children' => []],
+                    ['text' => 'Visi dan Misi', 'url' => '#', 'children' => []],
                     [
                         'text' => 'Pemerintahan',
                         'url' => '#',
                         'children' => [
-                            ['text' => 'Bupati & Wakil Bupati', 'url' => 'https://www.pasuruankab.go.id/pemerintahan/bupati-wakil-bupati', 'children' => []],
-                            ['text' => 'Lembaga Legislatif', 'url' => 'https://www.pasuruankab.go.id/pemerintahan/lembaga-legislatif', 'children' => []],
-                            ['text' => 'Lembaga Eksekutif', 'url' => 'https://www.pasuruankab.go.id/pemerintahan/lembaga-eksekutif', 'children' => []],
+                            ['text' => 'Bupati & Wakil Bupati', 'url' => "$baseUrl/profil/pemerintahan/bupati-wakil-bupati", 'children' => []],
+                            ['text' => 'Lembaga Legislatif', 'url' => "$baseUrl/profil/pemerintahan/lembaga-legislatif", 'children' => []],
+                            ['text' => 'Lembaga Eksekutif', 'url' => "$baseUrl/profil/pemerintahan/lembaga-eksekutif", 'children' => []],
                         ],
                     ],
-                    ['text' => 'Sejarah Kabupaten Pasuruan', 'url' => 'https://www.pasuruankab.go.id/halaman/sejarah-singkat-kab-pasuruan', 'children' => []],
+                    ['text' => 'Sejarah Kabupaten Pasuruan', 'url' => "$baseUrl/halaman/sejarah-singkat-kab-pasuruan", 'children' => []],
                     [
                         'text' => 'Gambaran Umum',
-                        'url' => 'https://www.pasuruankab.go.id/halaman/gambaran-umum-kabupaten-pasuruan-2023',
+                        'url' => "$baseUrl/halaman/gambaran-umum-kabupaten-pasuruan-2023",
                         'children' => [
-                            ['text' => 'Gambaran Umum Kabupaten Pasuruan', 'url' => 'https://www.pasuruankab.go.id/halaman/gambaran-umum-kabupaten-pasuruan-2025', 'children' => []],
+                            ['text' => 'Gambaran Umum Kabupaten Pasuruan', 'url' => "$baseUrl/halaman/gambaran-umum-kabupaten-pasuruan-2025", 'children' => []],
                         ],
                     ],
                 ],
@@ -46,27 +47,27 @@ class DesktopNavigation extends Component
                 'text' => 'Potensi',
                 'url' => '#',
                 'children' => [
-                    ['text' => 'Prestasi', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/prestasi', 'children' => []],
-                    ['text' => 'Industri', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/industri', 'children' => []],
-                    ['text' => 'Koperasi', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/koperasi', 'children' => []],
-                    ['text' => 'Pariwisata', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/pariwisata', 'children' => []],
-                    ['text' => 'Perikanan', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/perikanan', 'children' => []],
-                    ['text' => 'Pertanian dan Ketahanan Pangan', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/pertanian-dan-ketahanan-pangan', 'children' => []],
-                    ['text' => 'Peternakan', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/peternakan', 'children' => []],
-                    ['text' => 'Perkebunan dan Kehutanan', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/bunhut', 'children' => []],
-                    ['text' => 'Ekonomi Kreatif', 'url' => 'https://www.pasuruankab.go.id/postingan/potensi/ekonomi-kreatif', 'children' => []],
+                    ['text' => 'Prestasi', 'url' => "$baseUrl/postingan/potensi/prestasi", 'children' => []],
+                    ['text' => 'Industri', 'url' => "$baseUrl/postingan/potensi/industri", 'children' => []],
+                    ['text' => 'Koperasi', 'url' => "$baseUrl/postingan/potensi/koperasi", 'children' => []],
+                    ['text' => 'Pariwisata', 'url' => "$baseUrl/postingan/potensi/pariwisata", 'children' => []],
+                    // ['text' => 'Perikanan', 'url' => "$baseUrl/postingan/potensi/perikanan", 'children' => []],
+                    // ['text' => 'Pertanian dan Ketahanan Pangan', 'url' => "$baseUrl/postingan/potensi/pertanian-dan-ketahanan-pangan", 'children' => []],
+                    // ['text' => 'Peternakan', 'url' => "$baseUrl/postingan/potensi/peternakan", 'children' => []],
+                    // ['text' => 'Perkebunan dan Kehutanan', 'url' => "$baseUrl/postingan/potensi/bunhut", 'children' => []],
+                    // ['text' => 'Ekonomi Kreatif', 'url' => "$baseUrl/postingan/potensi/ekonomi-kreatif", 'children' => []],
                 ],
             ],
             [
                 'text' => 'Fasilitas',
                 'url' => '#',
                 'children' => [
-                    ['text' => 'Kesehatan', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/kesehatan', 'children' => []],
-                    ['text' => 'Pendidikan', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/pendidikan', 'children' => []],
-                    ['text' => 'Pasar Daerah', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/pasar-daerah', 'children' => []],
-                    ['text' => 'PDAM', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/pdam', 'children' => []],
-                    ['text' => 'Perhubungan', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/perhubungan', 'children' => []],
-                    ['text' => 'Perpustakaan', 'url' => 'https://www.pasuruankab.go.id/postingan/fasilitas/perpustakaan', 'children' => []],
+                    ['text' => 'Kesehatan', 'url' => "$baseUrl/postingan/fasilitas/kesehatan", 'children' => []],
+                    ['text' => 'Pendidikan', 'url' => "$baseUrl/postingan/fasilitas/pendidikan", 'children' => []],
+                    ['text' => 'Pasar Daerah', 'url' => "$baseUrl/postingan/fasilitas/pasar-daerah", 'children' => []],
+                    ['text' => 'PDAM', 'url' => "$baseUrl/postingan/fasilitas/pdam", 'children' => []],
+                    ['text' => 'Perhubungan', 'url' => "$baseUrl/postingan/fasilitas/perhubungan", 'children' => []],
+                    ['text' => 'Perpustakaan', 'url' => "$baseUrl/postingan/fasilitas/perpustakaan", 'children' => []],
                 ],
             ],
             [
@@ -132,8 +133,8 @@ class DesktopNavigation extends Component
                     ],
                 ],
             ],
-            ['text' => 'Sumber Daya', 'url' => 'https://www.pasuruankab.go.id/home#sumberdaya', 'children' => []],
-            ['text' => 'Kontak', 'url' => 'https://www.pasuruankab.go.id/kontak', 'children' => []],
+            ['text' => 'Sumber Daya', 'url' => "$baseUrl/home#sumber-daya", 'children' => []],
+            ['text' => 'Kontak', 'url' => "$baseUrl/kontak", 'children' => []],
         ];
     }
 

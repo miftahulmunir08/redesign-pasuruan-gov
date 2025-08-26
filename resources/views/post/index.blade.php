@@ -8,16 +8,21 @@
         <title>Document</title>
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+        {{-- Poppins --}}
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
         <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         {{-- Slick CSS --}}
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     </head>
 
-    <body>
+    <body class="d-flex flex-column" style="min-height: 100vh">
         <header>
             <x-web-info />
             <x-desktop-navigation />
@@ -54,19 +59,27 @@
             </div>
         </section>
 
-        {{-- List post --}}
-        <section style="width: 96%" class="mx-auto my-4 container-fluid">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
-                @foreach ($devData as $post)
-                    {{-- Setiap item sekarang dibungkus oleh <div> kolom --}}
-                    <div class="col">
-                        <x-post-card :post="$post" :categoryTitle="$devTitle" />
+        {{-- Content Section --}}
+        <main class="flex-grow-1 d-flex flex-column">
+            {{-- List post --}}
+            <section style="width: 96%" class="mx-auto my-4 container-fluid">
+                @if ($devData->isNotEmpty())
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
+                        @foreach ($devData as $post)
+                            {{-- Setiap item sekarang dibungkus oleh <div> kolom --}}
+                            <div class="col">
+                                <x-post-card :post="$post" :categoryTitle="$devTitle" :typeCategory="$typeCategory" :slugCategory="$slugCategory" />
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
-            </div>
-            {{-- Pagination --}}
-            {{ $devData->links('components.dev-pagination') }}
-        </section>
+                    {{-- Pagination --}}
+                    {{ $devData->links('components.dev-pagination') }}
+                @endif
+                @if ($devData->isEmpty())
+                    <p>Belum Ada Data yang Ditambahkan</p>
+                @endif
+            </section>
+        </main>
 
         {{-- Footer --}}
         <x-footer />
@@ -74,6 +87,18 @@
         {{-- Javascript --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#kategori_id').on('change', function() {
+                    var slugKategori = $(this).val();
+                    var typeCategory = "{{ $typeCategory }}";
+                    if (slugKategori && slugKategori !== 'null') {
+                        window.location.href = `/postingan/${typeCategory}/${slugKategori}`;
+                    }
+                });
+            });
+        </script>
         @stack('scripts')
     </body>
 

@@ -13,11 +13,24 @@ Route::get('/layanan', [LandingController::class, 'index_landing']);
 Route::get('/layanan/profile', [LandingController::class, 'profile']);
 Route::get('/layanan/kontak', [LandingController::class, 'kontak']);
 Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
+Route::get('/home', [HomepageController::class, 'index']);
 
-Route::get('/potensi/pariwisata', [PostController::class, 'postsList']);
-Route::get('/pemerintahan/bupati', [PemerintahanController::class, 'bupati']);
-Route::get('/pemerintahan/lembaga-legislatif', [PemerintahanController::class, 'legislatif']);
+Route::prefix('postingan')->group(function () {
+    // Route::get('/postingan', "LandingPostinganController@postingan");
+    // Route::get('/postingan/{slug_kategori?}', "LandingPostinganController@postingan");
+    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'post_list']);
+    Route::get('/postingan/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', "LandingPostinganController@detail");
+});
 
-Route::get('/halaman/arti-lambang', [ProfileController::class, 'arti_lambang']);
-Route::get('/halaman/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
-Route::get('/halaman/visi-misi', [ProfileController::class, 'visi_misi']);
+// Profil pakai group profil
+Route::prefix('profil')->group(function () {
+    Route::redirect('/pemerintahan', '/pemerintahan/bupati-wakil-bupati');
+    Route::redirect('/gambaran-umum', '/gambaran-umum/gambaran-umum-kabupaten-pasuruan-2025');
+    Route::get("/{slug_posts}", [PostController::class], 'post-detail');
+    Route::prefix('pemerintahan')->group(function () {
+        Route::get('/bupati-wakil-bupati', [PemerintahanController::class, 'bupati']);
+        Route::get('/lembaga-eksekutif', [PemerintahanController::class, 'lembaga']);
+        Route::get('/lembaga-legislatif', [PemerintahanController::class, 'lembaga']);
+    });
+});
+// Redirect for no page routes
