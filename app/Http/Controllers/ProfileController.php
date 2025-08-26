@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class ProfileController extends Controller
 {
-
-    public function index(Request $request)
+    public function index()
     {
-         $periode = (object)[
+    }
+
+    public function arti_lambang(Request $request)
+    {
+        $periode = (object)[
             'id_pemerintahan_periode' => 1,
             'periode' => '2025 - 2030'
         ];
@@ -74,6 +77,16 @@ class HomepageController extends Controller
             'breadcrumbs' => $breadcrumbs
         ];
 
-        return view('homepage/index', $data);
+
+        return view('profile.arti-lambang', $data);
+    }
+
+    public function visi_misi()
+    {
+        dd("sudah disini");
+    }
+
+    public function peta_pasuruan()
+    {
     }
 }
