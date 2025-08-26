@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center justify-content-md-between align-items-center px-5 py-3 border-bottom">
-    <div class="d-flex align-items-center gap-2">
+    <a href="/home" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lambang_Kabupaten_Pasuruan.png/250px-Lambang_Kabupaten_Pasuruan.png"
             alt="Logo Kabupaten Pasuruan" style="height: 48px;">
 
@@ -7,7 +7,7 @@
             <span>Pemerintah</span>
             <span class="fw-medium">Kabupaten Pasuruan</span>
         </div>
-    </div>
+    </a>
 
     {{-- I want this one to disappear in smaller screen --}}
     <div class="small d-none d-md-flex align-items-start gap-2">

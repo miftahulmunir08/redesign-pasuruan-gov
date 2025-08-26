@@ -1,4 +1,4 @@
-@extends('pemerintahan.layout')
+@extends('profil.layout')
 
 @push('styles')
     <style>
@@ -25,19 +25,10 @@
 
         .profile-subtitle {
             color: #0B7642;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-title {
-            font-weight: 700;
-            margin-bottom: 0;
         }
 
         .profile-divider {
             color: #03D26F;
-            border-width: 2px;
-            opacity: 1;
-            margin: 1.5rem 0;
             width: 150px;
             transition: width 0.3s ease-in-out;
         }
@@ -82,11 +73,7 @@
         style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://www.wartabromo.com/wp-content/uploads/2023/03/IMG-20230308-WA0043.jpg'); height: clamp(240px, 50vh, 480px); background-position: center; position: relative; background-size: cover;"
         class="d-flex align-items-center justify-content-center">
         <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 style="color: white;
-                   font-weight: bold;
-                   margin-bottom: 8px;
-                   padding: 0"
-                class="fs-1 text-center">
+            <h1 class="fs-1 text-center text-white mb-3 p-0 fw-bold">
                 {{ $devTitle }}
             </h1>
             <x-breadcrumb :items="$breadcrumbs" />
@@ -95,7 +82,7 @@
 
     {{-- @dd($devBupati) --}}
     {{-- Main --}}
-    <section class="container-fluid my-5 px-4 px-md-5" style="">
+    <section class="container-fluid my-5 px-4 px-md-5">
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold">Bupati dan Wakil Bupati Kabupaten Pasuruan</h1>
             <p class="lead text-muted">Masa Jabatan {{ $devBupati->pemerintahan_periode->periode }}</p>
@@ -110,13 +97,13 @@
                     <div class="col-md-8">
                         <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
                             <div class="d-flex flex-column justify-content-start">
-                                <h5 class="profile-subtitle fw-semibold">{{ $devBupati->jabatan }}</h5>
-                                <h2 class="profile-title">{{ $devBupati->nama }}</h2>
-                                <hr class="profile-divider">
+                                <h5 class="profile-subtitle fw-semibold mb-2">{{ $devBupati->jabatan }}</h5>
+                                <h2 class="fw-bold mb-0">{{ $devBupati->nama }}</h2>
+                                <hr class="profile-divider border-2 opacity-100 my-4">
                             </div>
                             <div class="profile-action">
                                 <a href="https://id.wikipedia.org/wiki/Mochamad_Rusdi_Sutejo" target="_blank"
-                                    class="btn btn-primary btn-lg px-4">
+                                    class="btn btn-primary btn-lg px-4 fs-6">
                                     Lihat Profil Lengkap
                                 </a>
                             </div>
@@ -133,13 +120,13 @@
                     <div class="col-md-8">
                         <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
                             <div class="d-flex flex-column justify-content-start">
-                                <h5 class="profile-subtitle fw-semibold">{{ $devWabup->jabatan }}</h5>
-                                <h2 class="profile-title">{{ $devWabup->nama }}</h2>
-                                <hr class="profile-divider">
+                                <h5 class="profile-subtitle fw-semibold mb-2">{{ $devWabup->jabatan }}</h5>
+                                <h2 class="fw-bold mb-0">{{ $devWabup->nama }}</h2>
+                                <hr class="profile-divider border-2 opacity-100 my-4">
                             </div>
                             <div class="profile-action">
                                 <a href="https://id.wikipedia.org/wiki/Shobih_Asrori" target="_blank"
-                                    class="btn btn-primary btn-lg px-4">
+                                    class="btn btn-primary btn-lg px-4 fs-6">
                                     Lihat Profil Lengkap
                                 </a>
                             </div>

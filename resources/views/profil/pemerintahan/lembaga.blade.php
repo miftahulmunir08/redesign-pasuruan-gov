@@ -1,4 +1,4 @@
-@extends('pemerintahan.layout')
+@extends('profil.layout')
 @push('styles')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
@@ -151,7 +151,7 @@
 
     <script>
         // Data Dummy
-        const dummyData = [{
+        const dummyDataLegislatif = [{
                 "id": 233,
                 "nama": "Samsul Hidayat",
                 "jabatan": "Ketua DPRD",
@@ -287,6 +287,100 @@
                 "riwayat_pendidikan": "Mendorong digitalisasi layanan publik untuk mempermudah akses bagi masyarakat."
             }
         ];
+
+        const dummyDataEksekutif = [{
+                "id": 301,
+                "nama": "Dr. Andriyanto, S.H., M.Kes.",
+                "jabatan": "Pj. Bupati Pasuruan",
+                "nama_lembaga": "Pemerintah Kabupaten Pasuruan",
+                "periode": "2024-2025",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Menjabat sebagai Penjabat Bupati untuk menjalankan roda pemerintahan hingga terpilihnya bupati definitif hasil Pilkada."
+            },
+            {
+                "id": 302,
+                "nama": "Yudha Triwidya Sasongko, S.Sos., M.Si",
+                "jabatan": "Sekretaris Daerah",
+                "nama_lembaga": "Sekretariat Daerah",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Memimpin dan mengoordinasikan seluruh Perangkat Daerah serta memberikan pelayanan administratif kepada pimpinan daerah."
+            },
+            {
+                "id": 303,
+                "nama": "Ikhwan, S.STP, M.Si",
+                "jabatan": "Kepala Bappeda",
+                "nama_lembaga": "Badan Perencanaan Pembangunan Daerah",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Bertanggung jawab atas perencanaan strategis pembangunan jangka panjang dan menengah Kabupaten Pasuruan."
+            },
+            {
+                "id": 304,
+                "nama": "Hasbullah",
+                "jabatan": "Kepala Dinas Pendidikan dan Kebudayaan",
+                "nama_lembaga": "Dinas Pendidikan dan Kebudayaan",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Mengelola dan mengembangkan sektor pendidikan mulai dari tingkat PAUD, SD, hingga SMP serta pelestarian kebudayaan."
+            },
+            {
+                "id": 305,
+                "nama": "dr. Ani Latifah",
+                "jabatan": "Kepala Dinas Kesehatan",
+                "nama_lembaga": "Dinas Kesehatan",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Merumuskan kebijakan dan melaksanakan program-program kesehatan masyarakat untuk meningkatkan derajat kesehatan warga."
+            },
+            {
+                "id": 306,
+                "nama": "Hananungga, ST",
+                "jabatan": "Kepala Dinas PU Bina Marga dan Bina Konstruksi",
+                "nama_lembaga": "Dinas Pekerjaan Umum",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Fokus pada pembangunan dan pemeliharaan infrastruktur jalan, jembatan, dan konstruksi di seluruh wilayah kabupaten."
+            },
+            {
+                "id": 307,
+                "nama": "Tectona Jati",
+                "jabatan": "Kepala Satuan Polisi Pamong Praja",
+                "nama_lembaga": "Satpol PP",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Menegakkan Peraturan Daerah (Perda) dan menjaga ketertiban umum serta ketentraman masyarakat."
+            },
+            {
+                "id": 308,
+                "nama": "Eka Wara Brehaspati, S.STP., M.Si.",
+                "jabatan": "Kepala Dinas Penanaman Modal & PTSP",
+                "nama_lembaga": "DPMPTSP",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Mendorong iklim investasi yang kondusif dan memberikan pelayanan perizinan terpadu satu pintu bagi masyarakat dan pelaku usaha."
+            },
+            {
+                "id": 309,
+                "nama": "Tri Krisni Astuti, S.Sos, M.Si",
+                "jabatan": "Kepala Dinas Kependudukan dan Pencatatan Sipil",
+                "nama_lembaga": "Dispendukcapil",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Melayani administrasi kependudukan seperti KTP, Kartu Keluarga, Akta Kelahiran, dan dokumen kependudukan lainnya."
+            },
+            {
+                "id": 310,
+                "nama": "Sugeng Hariyadi, S.Sos, MM",
+                "jabatan": "Camat Bangil",
+                "nama_lembaga": "Kecamatan Bangil",
+                "periode": "2024-2029",
+                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
+                "riwayat_pendidikan": "Memimpin penyelenggaraan pemerintahan, pembangunan, dan kemasyarakatan di wilayah Kecamatan Bangil."
+            }
+        ];
+
+        const dummyData = window.location.href.includes('legislatif') ? dummyDataLegislatif : dummyDataEksekutif;
 
         $(document).ready(function() {
             var datatable = $('#datatable-dummy').DataTable({

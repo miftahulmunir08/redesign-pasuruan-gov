@@ -48,13 +48,13 @@ class PemerintahanController extends Controller
         $breadcrumbs = [];
         $url = '';
 
-        foreach ($segments as $segment) {
-            $url .= '/' . $segment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
-
+        if (count($segments) > 0) {
+            $lastSegment = end($segments);
+            $url = '/' . $lastSegment;
+            $text = ucwords(str_replace(['-', '_'], ' ', $lastSegment));
             $breadcrumbs[] = [
                 'text' => $text,
-                'url'  => $url
+                'url'  => null
             ];
         }
 
@@ -73,35 +73,31 @@ class PemerintahanController extends Controller
             'breadcrumbs' => $breadcrumbs
         ];
 
-        return view('pemerintahan.bupati', $data);
+        return view('profil.pemerintahan.bupati', $data);
     }
 
-    public function legislatif(Request $request)
+    public function lembaga(Request $request)
     {
         $segments = $request->segments();
         $breadcrumbs = [];
         $url = '';
 
-        foreach ($segments as $segment) {
-            $url .= '/' . $segment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
-
+        if (count($segments) > 0) {
+            $lastSegment = end($segments);
+            $url = '/' . $lastSegment;
+            $text = ucwords(str_replace(['-', '_'], ' ', $lastSegment));
             $breadcrumbs[] = [
                 'text' => $text,
-                'url'  => $url
+                'url'  => null
             ];
         }
 
         array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
 
-        if (count($breadcrumbs) > 1) {
-            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
-        }
-
         $data = [
             'breadcrumbs' => $breadcrumbs
         ];
 
-        return view('pemerintahan.legislatif', $data);
+        return view('profil.pemerintahan.lembaga', $data);
     }
 }

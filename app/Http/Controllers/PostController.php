@@ -10,369 +10,167 @@ use Illuminate\Support\Collection;
 class PostController extends Controller
 {
     //
-    function postsList(Request $request)
+    function post_list(Request $request, $tipe_kategori = 'potensi', $slug_kategori = 'prestasi')
     {
-        $tipe_kategori = 'potensi';
-        $slug_kategori = 'pariwisata';
-
         $devLis = collect([
+            (object)['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
             (object)['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
             (object)['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'],
-            (object)['slug_kategori' => 'pertanian', 'nama_kategori' => 'Pertanian'],
-            (object)['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
         ]);
 
         $dummyPosts = [
             (object) [
                 'id_posts' => 101,
                 'slug_posts' => 'pesona-matahari-terbit-di-gunung-bromo',
-                'judul_posts' => 'Menyaksikan Pesona Matahari Terbit di Puncak Penanjakan Bromo 1',
-                'waktu_publish' => '2025-08-21 09:15:00',
-                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan domestik dan mancanegara. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disparbud',
-                ],
-            ],
-            (object) [
-                'id_posts' => 102,
-                'slug_posts' => 'petualangan-seru-di-taman-safari-prigen',
-                'judul_posts' => 'Petualangan Seru dan Edukatif di Taman Safari Prigen 2',
-                'waktu_publish' => '2025-08-20 14:30:00',
-                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia di habitat aslinya...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Rina Setyawati',
-                ],
-            ],
-            (object) [
-                'id_posts' => 103,
-                'slug_posts' => 'aroma-khas-kopi-lereng-arjuno',
-                'judul_posts' => 'Mengenal Aroma Khas Kopi Robusta dari Lereng Arjuno 3',
-                'waktu_publish' => '2025-08-19 11:00:00',
-                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas. Potensi perkebunan kopi di wilayah ini terus berkembang...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pertanian',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pertanian',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Budi Hartono',
-                ],
-            ],
-            (object) [
-                'id_posts' => 104,
-                'slug_posts' => 'pusat-industri-mebel-bukir-pasuruan',
-                'judul_posts' => 'Bukir, Jantung Industri Mebel dan Kerajinan Kayu Pasuruan 4',
-                'waktu_publish' => '2025-08-18 16:45:00',
-                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produk kayu dari para pengrajin lokal telah diakui hingga menembus pasar ekspor...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'industri',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Industri',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disperindag',
-                ],
-            ],
-            (object) [
-                'id_posts' => 101,
-                'slug_posts' => 'pesona-matahari-terbit-di-gunung-bromo',
-                'judul_posts' => 'Menyaksikan Pesona Matahari Terbit di Puncak Penanjakan Bromo 5 ',
-                'waktu_publish' => '2025-08-21 09:15:00',
-                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan domestik dan mancanegara. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disparbud',
-                ],
-            ],
-            (object) [
-                'id_posts' => 102,
-                'slug_posts' => 'petualangan-seru-di-taman-safari-prigen',
-                'judul_posts' => 'Petualangan Seru dan Edukatif di Taman Safari Prigen 6',
-                'waktu_publish' => '2025-08-20 14:30:00',
-                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia di habitat aslinya...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Rina Setyawati',
-                ],
-            ],
-            (object) [
-                'id_posts' => 103,
-                'slug_posts' => 'aroma-khas-kopi-lereng-arjuno',
-                'judul_posts' => 'Mengenal Aroma Khas Kopi Robusta dari Lereng Arjuno 7',
-                'waktu_publish' => '2025-08-19 11:00:00',
-                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas. Potensi perkebunan kopi di wilayah ini terus berkembang...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pertanian',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pertanian',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Budi Hartono',
-                ],
-            ],
-            (object) [
-                'id_posts' => 104,
-                'slug_posts' => 'pusat-industri-mebel-bukir-pasuruan',
-                'judul_posts' => 'Bukir, Jantung Industri Mebel dan Kerajinan Kayu Pasuruan',
-                'waktu_publish' => '2025-08-18 16:45:00',
-                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produk kayu dari para pengrajin lokal telah diakui hingga menembus pasar ekspor...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'industri',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Industri',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disperindag',
-                ],
-            ],
-            (object) [
-                'id_posts' => 101,
-                'slug_posts' => 'pesona-matahari-terbit-di-gunung-bromo',
                 'judul_posts' => 'Menyaksikan Pesona Matahari Terbit di Puncak Penanjakan Bromo',
                 'waktu_publish' => '2025-08-21 09:15:00',
-                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan domestik dan mancanegara. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disparbud',
-                ],
+                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1596637012832-ac4354f7a293?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
+                'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud'],
             ],
             (object) [
                 'id_posts' => 102,
                 'slug_posts' => 'petualangan-seru-di-taman-safari-prigen',
                 'judul_posts' => 'Petualangan Seru dan Edukatif di Taman Safari Prigen',
                 'waktu_publish' => '2025-08-20 14:30:00',
-                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia di habitat aslinya...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Rina Setyawati',
-                ],
+                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1579899139083-3403058a5940?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
+                'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati'],
             ],
             (object) [
                 'id_posts' => 103,
-                'slug_posts' => 'aroma-khas-kopi-lereng-arjuno',
-                'judul_posts' => 'Mengenal Aroma Khas Kopi Robusta dari Lereng Arjuno',
+                'slug_posts' => 'kesegaran-air-terjun-putuk-truno',
+                'judul_posts' => 'Menikmati Kesegaran Alami di Air Terjun Putuk Truno',
                 'waktu_publish' => '2025-08-19 11:00:00',
-                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas. Potensi perkebunan kopi di wilayah ini terus berkembang...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pertanian',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pertanian',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Budi Hartono',
-                ],
+                'konten_posts' => 'Air Terjun Putuk Truno menjadi destinasi favorit untuk melepaskan penat. Suasana yang sejuk dan pemandangan asri menjadi daya tarik utamanya...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
+                'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud'],
             ],
             (object) [
                 'id_posts' => 104,
-                'slug_posts' => 'pusat-industri-mebel-bukir-pasuruan',
-                'judul_posts' => 'Bukir, Jantung Industri Mebel dan Kerajinan Kayu Pasuruan',
+                'slug_posts' => 'menjelajahi-sejarah-candi-jawi',
+                'judul_posts' => 'Menjelajahi Jejak Sejarah di Candi Jawi',
                 'waktu_publish' => '2025-08-18 16:45:00',
-                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produk kayu dari para pengrajin lokal telah diakui hingga menembus pasar ekspor...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'industri',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Industri',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disperindag',
-                ],
+                'konten_posts' => 'Candi Jawi adalah peninggalan Kerajaan Singhasari yang megah. Arsitekturnya yang unik menggabungkan unsur Hindu dan Buddha...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1611099233629-0358a32a67a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
+                'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono'],
+            ],
+            (object) ['id_posts' => 105, 'slug_posts' => 'keindahan-tersembunyi-coban-baung', 'judul_posts' => 'Keindahan Tersembunyi di Air Terjun Coban Baung', 'waktu_publish' => '2025-08-17 09:00:00', 'konten_posts' => 'Jelajahi keindahan alam yang masih alami di Coban Baung...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1673292293027-2bc4d1222e2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 106, 'slug_posts' => 'wisata-edukasi-kebun-raya-purwodadi', 'judul_posts' => 'Belajar dan Bermain di Kebun Raya Purwodadi', 'waktu_publish' => '2025-08-16 13:20:00', 'konten_posts' => 'Koleksi tanaman langka dari seluruh Indonesia ada di sini...', 'gambar_posts' => 'https://images.unsplash.com/photo-1589252044539-4402d24a9f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati']],
+            (object) ['id_posts' => 107, 'slug_posts' => 'nikmatnya-kupang-lontong-khas-pasuruan', 'judul_posts' => 'Wajib Coba: Nikmatnya Kuliner Kupang Lontong Pasuruan', 'waktu_publish' => '2025-08-15 18:00:00', 'konten_posts' => 'Kuliner legendaris yang selalu dirindukan para pelancong...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1664478239649-3a3d582af138?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 108, 'slug_posts' => 'ritual-yadnya-kasada-suku-tengger', 'judul_posts' => 'Melihat dari Dekat Ritual Sakral Yadnya Kasada', 'waktu_publish' => '2025-08-14 10:00:00', 'konten_posts' => 'Upacara adat Suku Tengger yang penuh makna dan menarik ribuan wisatawan...', 'gambar_posts' => 'https://images.unsplash.com/photo-1618682570731-2357a75af144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 109, 'slug_posts' => 'pemandian-alam-banyu-biru', 'judul_posts' => 'Relaksasi di Pemandian Alam Banyu Biru yang Legendaris', 'waktu_publish' => '2025-08-13 15:10:00', 'konten_posts' => 'Sumber mata air alami yang jernih dan dipercaya memiliki khasiat...', 'gambar_posts' => 'https://images.unsplash.com/photo-1579402242828-54335c9b7407?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati']],
+            (object) ['id_posts' => 110, 'slug_posts' => 'pesona-pantai-lekok-dan-ski-lumpur', 'judul_posts' => 'Unik! Mencoba Ski di Atas Lumpur di Pantai Lekok', 'waktu_publish' => '2025-08-12 12:00:00', 'konten_posts' => 'Tradisi balap ski lumpur yang hanya ada di Pasuruan...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1673306852231-3e14f8495a12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 111, 'slug_posts' => 'agrowisata-bhakti-alam', 'judul_posts' => 'Memetik Buah Segar Langsung dari Pohon di Bhakti Alam', 'waktu_publish' => '2025-08-11 14:00:00', 'konten_posts' => 'Wisata edukatif yang menyenangkan untuk seluruh keluarga...', 'gambar_posts' => 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 112, 'slug_posts' => 'spot-foto-instagramable-pintu-langit', 'judul_posts' => 'Berburu Foto Keren di Pintu Langit Prigen', 'waktu_publish' => '2025-08-10 16:30:00', 'konten_posts' => 'Pemandangan alam dari ketinggian yang memukau...', 'gambar_posts' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati']],
+            (object) ['id_posts' => 113, 'slug_posts' => 'menikmati-durian-khas-nongkojajar', 'judul_posts' => 'Musim Durian Tiba! Menikmati Raja Buah di Nongkojajar', 'waktu_publish' => '2025-08-09 11:45:00', 'konten_posts' => 'Berbagai jenis durian lokal dengan rasa yang khas menanti Anda...', 'gambar_posts' => 'https://images.unsplash.com/photo-1603538421251-0a4731d273fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 114, 'slug_posts' => 'jelajah-hutan-mangrove-nguling', 'judul_posts' => 'Wisata Ekologi Menjelajahi Hutan Mangrove Nguling', 'waktu_publish' => '2025-08-08 09:30:00', 'konten_posts' => 'Menyusuri jembatan kayu di tengah rimbunnya hutan bakau...', 'gambar_posts' => 'https://images.unsplash.com/photo-1590602847833-2244a1773537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 115, 'slug_posts' => 'wisata-religi-makam-kyai-hamid', 'judul_posts' => 'Wisata Religi dan Sejarah di Makam Kyai Hamid Pasuruan', 'waktu_publish' => '2025-08-07 19:00:00', 'konten_posts' => 'Mengenal lebih dekat ulama besar yang dihormati...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1678292026839-a87f176b6b47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 116, 'slug_posts' => 'the-pines-taman-dayu', 'judul_posts' => 'Bersantai di Tengah Hutan Pinus The Pines Taman Dayu', 'waktu_publish' => '2025-08-06 15:00:00', 'konten_posts' => 'Tempat yang cocok untuk camping dan kegiatan outdoor...', 'gambar_posts' => 'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati']],
+            (object) ['id_posts' => 117, 'slug_posts' => 'saygon-waterpark', 'judul_posts' => 'Segarkan Hari dengan Bermain Air di Saygon Waterpark', 'waktu_publish' => '2025-08-05 13:00:00', 'konten_posts' => 'Berbagai wahana air seru untuk semua usia...', 'gambar_posts' => 'https://images.unsplash.com/photo-1571104528391-a18451a37c46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 118, 'slug_posts' => 'danau-ranu-grati', 'judul_posts' => 'Menikmati Senja di Tepi Danau Ranu Grati', 'waktu_publish' => '2025-08-04 17:30:00', 'konten_posts' => 'Pemandangan danau vulkanik yang menenangkan jiwa...', 'gambar_posts' => 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 119, 'slug_posts' => 'sentra-batik-pasuruan', 'judul_posts' => 'Belajar Membatik di Sentra Batik Khas Pasuruan', 'waktu_publish' => '2025-08-03 10:45:00', 'konten_posts' => 'Melihat proses pembuatan batik tulis dengan motif yang unik...', 'gambar_posts' => 'https://images.unsplash.com/photo-1569943485662-1b606541f2a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Rina Setyawati']],
+            (object) ['id_posts' => 120, 'slug_posts' => 'pasar-bunga-tutur', 'judul_posts' => 'Pasar Bunga dan Sayur di Kawasan Agropolitan Tutur', 'waktu_publish' => '2025-08-02 08:00:00', 'konten_posts' => 'Surga bagi para pencinta tanaman hias dan produk pertanian segar...', 'gambar_posts' => 'https://images.unsplash.com/photo-1594780762632-49931a535805?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) [
+                'id_posts' => 201,
+                'slug_posts' => 'mebel-bukir-kualitas-ekspor',
+                'judul_posts' => 'Mebel Bukir: Kualitas Ekspor dari Pengrajin Lokal',
+                'waktu_publish' => '2025-08-25 09:00:00',
+                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produknya telah diakui hingga pasar ekspor...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1567016376408-0226e4d0c1e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'],
+                'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag'],
             ],
             (object) [
-                'id_posts' => 101,
-                'slug_posts' => 'pesona-matahari-terbit-di-gunung-bromo',
-                'judul_posts' => 'Menyaksikan Pesona Matahari Terbit di Puncak Penanjakan Bromo',
-                'waktu_publish' => '2025-08-21 09:15:00',
-                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan domestik dan mancanegara. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disparbud',
-                ],
+                'id_posts' => 202,
+                'slug_posts' => 'kopi-kapiten-pasuruan',
+                'judul_posts' => 'Kopi Kapiten Pasuruan: Aroma Khas dari Lereng Arjuno',
+                'waktu_publish' => '2025-08-24 14:00:00',
+                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas dan kuat...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1511920183276-5941b5a5b314?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'],
+                'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono'],
+            ],
+            (object) ['id_posts' => 203, 'slug_posts' => 'potensi-industri-pengolahan-hasil-laut', 'judul_posts' => 'Menggali Potensi Industri Pengolahan Hasil Laut di Pesisir Pasuruan', 'waktu_publish' => '2025-08-23 11:30:00', 'konten_posts' => 'Dari ikan asap hingga terasi, industri hasil laut terus berkembang...', 'gambar_posts' => 'https://images.unsplash.com/photo-1596198189443-013141154366?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 204, 'slug_posts' => 'inovasi-pabrik-sepatu-lokal', 'judul_posts' => 'Inovasi dan Daya Saing Pabrik Sepatu Lokal di Pasuruan', 'waktu_publish' => '2025-08-22 16:00:00', 'konten_posts' => 'Menembus pasar nasional dengan kualitas yang tidak kalah saing...', 'gambar_posts' => 'https://images.unsplash.com/photo-1557564437-0946a468825a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) ['id_posts' => 205, 'slug_posts' => 'kisah-sukses-umkm-keripik-buah', 'judul_posts' => 'Kisah Sukses UMKM Keripik Buah dari Lekok', 'waktu_publish' => '2025-08-21 10:15:00', 'konten_posts' => 'Mengolah hasil panen lokal menjadi produk bernilai tinggi...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1661763103774-706013a113a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 206, 'slug_posts' => 'industri-logam-warungdowo', 'judul_posts' => 'Industri Logam Warungdowo: Pusat Pengecoran dan Permesinan', 'waktu_publish' => '2025-08-20 13:45:00', 'konten_posts' => 'Denyut nadi industri logam yang memasok berbagai kebutuhan manufaktur...', 'gambar_posts' => 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 207, 'slug_posts' => 'perkembangan-industri-tekstil-gempol', 'judul_posts' => 'Melihat Perkembangan Industri Tekstil di Kawasan Gempol', 'waktu_publish' => '2025-08-19 09:30:00', 'konten_posts' => 'Menjadi salah satu pilar penyerapan tenaga kerja di Pasuruan...', 'gambar_posts' => 'https://images.unsplash.com/photo-1605170429437-63ad5258e7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) ['id_posts' => 208, 'slug_posts' => 'sentra-bordir-bangil', 'judul_posts' => 'Keindahan Bordir dari Sentra Kerajinan Bangil', 'waktu_publish' => '2025-08-18 15:00:00', 'konten_posts' => 'Karya seni tangan yang menghiasi busana hingga perlengkapan rumah...', 'gambar_posts' => 'https://images.unsplash.com/photo-1620649197170-2353c07a4a2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 209, 'slug_posts' => 'pabrik-susu-nestle-kejayan', 'judul_posts' => 'Kontribusi Pabrik Susu Nestle Kejayan bagi Peternak Lokal', 'waktu_publish' => '2025-08-17 12:15:00', 'konten_posts' => 'Kemitraan yang mensejahterakan ribuan peternak sapi perah...', 'gambar_posts' => 'https://images.unsplash.com/photo-1628038531393-d25a66a19f93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 210, 'slug_posts' => 'industri-pengolahan-mangga-gedong-gincu', 'judul_posts' => 'Dari Kebun ke Meja Makan: Industri Pengolahan Mangga Gedong Gincu', 'waktu_publish' => '2025-08-16 11:00:00', 'konten_posts' => 'Sirup, selai, dan manisan mangga Pasuruan yang mendunia...', 'gambar_posts' => 'https://images.unsplash.com/photo-1553356687-7a53f3718985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 211, 'slug_posts' => 'pabrik-elektronik-pasuruan', 'judul_posts' => 'Peran Vital Pabrik Elektronik di Pasuruan dalam Rantai Pasok Global', 'waktu_publish' => '2025-08-15 14:30:00', 'konten_posts' => 'Menyerap ribuan tenaga kerja dan mendorong pertumbuhan ekonomi...', 'gambar_posts' => 'https://images.unsplash.com/photo-1596723363327-0473a644c32b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) ['id_posts' => 212, 'slug_posts' => 'potensi-ekspor-bunga-krisan', 'judul_posts' => 'Bunga Krisan Pasuruan Siap Memenuhi Pasar Ekspor', 'waktu_publish' => '2025-08-14 10:00:00', 'konten_posts' => 'Kualitas bunga potong dari dataran tinggi Pasuruan diminati pasar internasional...', 'gambar_posts' => 'https://images.unsplash.com/photo-1566873972236-418a032f2220?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 213, 'slug_posts' => 'inovasi-produk-daur-ulang-plastik', 'judul_posts' => 'Mengubah Sampah Menjadi Berkah: Inovasi Produk Daur Ulang Plastik', 'waktu_publish' => '2025-08-13 16:20:00', 'konten_posts' => 'Industri kreatif yang memberikan solusi bagi masalah lingkungan...', 'gambar_posts' => 'https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 214, 'slug_posts' => 'sentra-kerajinan-kuningan', 'judul_posts' => 'Kilau Kerajinan Kuningan dari Pengrajin Lokal', 'waktu_publish' => '2025-08-12 11:45:00', 'konten_posts' => 'Produk kerajinan tangan yang artistik dan bernilai jual tinggi...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1678235249673-c6c72a8187ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) ['id_posts' => 215, 'slug_posts' => 'pengembangan-biogas-dari-limbah-ternak', 'judul_posts' => 'Energi Terbarukan: Pengembangan Biogas dari Limbah Ternak', 'waktu_publish' => '2025-08-11 09:00:00', 'konten_posts' => 'Solusi energi alternatif sekaligus mengatasi masalah lingkungan...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1661963297349-f5383a8863f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 216, 'slug_posts' => 'industri-pakan-ternak', 'judul_posts' => 'Menopang Sektor Peternakan: Industri Pakan Ternak di Pasuruan', 'waktu_publish' => '2025-08-10 13:15:00', 'konten_posts' => 'Memproduksi pakan berkualitas untuk meningkatkan produktivitas ternak...', 'gambar_posts' => 'https://images.unsplash.com/photo-1599422473854-47738c1171a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 217, 'slug_posts' => 'pabrik-air-minum-cheers', 'judul_posts' => 'Menjaga Kesegaran: Proses Produksi di Pabrik Air Minum Cheers', 'waktu_publish' => '2025-08-09 15:30:00', 'konten_posts' => 'Standar higienis tinggi untuk menghasilkan air minum yang sehat...', 'gambar_posts' => 'https://images.unsplash.com/photo-1556742044-1c34f762ce7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) ['id_posts' => 218, 'slug_posts' => 'industri-minuman-pocari-sweat', 'judul_posts' => 'Di Balik Layar Industri Minuman Isotonik Pocari Sweat', 'waktu_publish' => '2025-08-08 10:45:00', 'konten_posts' => 'Pabrik modern yang menjadi salah satu investasi besar di Pasuruan...', 'gambar_posts' => 'https://images.unsplash.com/photo-1621516264901-b33a7f827178?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Budi Hartono']],
+            (object) ['id_posts' => 219, 'slug_posts' => 'hm-sampoerna-sejarah-industri-rokok', 'judul_posts' => 'HM Sampoerna, Sejarah dan Kontribusi Industri Rokok', 'waktu_publish' => '2025-08-07 14:00:00', 'konten_posts' => 'Salah satu industri tertua yang terus beradaptasi dengan zaman...', 'gambar_posts' => 'https://images.unsplash.com/photo-1620912189836-15b947c14a2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 220, 'slug_posts' => 'industri-otomotif-yamaha', 'judul_posts' => 'Perakitan Komponen Otomotif di Pabrik Yamaha Pasuruan', 'waktu_publish' => '2025-08-06 11:30:00', 'konten_posts' => 'Presisi dan teknologi tinggi dalam industri otomotif...', 'gambar_posts' => 'https://images.unsplash.com/photo-1593349315923-99d983a152d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'], 'user_creator' => (object) ['nama_lengkap' => 'Joko Susilo']],
+            (object) [
+                'id_posts' => 301,
+                'slug_posts' => 'siswa-juara-olimpiade-sains',
+                'judul_posts' => 'Siswa SMAN 1 Pasuruan Raih Medali Emas Olimpiade Sains Nasional',
+                'waktu_publish' => '2025-08-25 10:00:00',
+                'konten_posts' => 'Seorang siswa dari SMAN 1 Pasuruan berhasil mengharumkan nama daerah dengan meraih medali emas dalam ajang Olimpiade Sains Nasional (OSN)...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
+                'user_creator' => (object) ['nama_lengkap' => 'Admin Dispendik'],
             ],
             (object) [
-                'id_posts' => 102,
-                'slug_posts' => 'petualangan-seru-di-taman-safari-prigen',
-                'judul_posts' => 'Petualangan Seru dan Edukatif di Taman Safari Prigen',
-                'waktu_publish' => '2025-08-20 14:30:00',
-                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia di habitat aslinya...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Rina Setyawati',
-                ],
+                'id_posts' => 302,
+                'slug_posts' => 'pasuruan-raih-adipura',
+                'judul_posts' => 'Pasuruan Kembali Raih Penghargaan Adipura Kategori Kota Kecil',
+                'waktu_publish' => '2025-08-24 15:30:00',
+                'konten_posts' => 'Pemerintah Kabupaten Pasuruan menerima penghargaan Adipura sebagai pengakuan atas komitmen dalam menjaga kebersihan dan pengelolaan lingkungan...',
+                'gambar_posts' => 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                'gambar_posts_2' => null,
+                'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
+                'user_creator' => (object) ['nama_lengkap' => 'Admin DLH'],
             ],
-            (object) [
-                'id_posts' => 103,
-                'slug_posts' => 'aroma-khas-kopi-lereng-arjuno',
-                'judul_posts' => 'Mengenal Aroma Khas Kopi Robusta dari Lereng Arjuno',
-                'waktu_publish' => '2025-08-19 11:00:00',
-                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas. Potensi perkebunan kopi di wilayah ini terus berkembang...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pertanian',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pertanian',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Budi Hartono',
-                ],
-            ],
-            (object) [
-                'id_posts' => 104,
-                'slug_posts' => 'pusat-industri-mebel-bukir-pasuruan',
-                'judul_posts' => 'Bukir, Jantung Industri Mebel dan Kerajinan Kayu Pasuruan',
-                'waktu_publish' => '2025-08-18 16:45:00',
-                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produk kayu dari para pengrajin lokal telah diakui hingga menembus pasar ekspor...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'industri',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Industri',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disperindag',
-                ],
-            ],
-            (object) [
-                'id_posts' => 101,
-                'slug_posts' => 'pesona-matahari-terbit-di-gunung-bromo',
-                'judul_posts' => 'Menyaksikan Pesona Matahari Terbit di Puncak Penanjakan Bromo',
-                'waktu_publish' => '2025-08-21 09:15:00',
-                'konten_posts' => '<b>Gunung Bromo</b> tetap menjadi magnet bagi wisatawan domestik dan mancanegara. Pemandangan matahari terbit dari Puncak Penanjakan adalah pengalaman magis yang tidak akan terlupakan...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disparbud',
-                ],
-            ],
-            (object) [
-                'id_posts' => 102,
-                'slug_posts' => 'petualangan-seru-di-taman-safari-prigen',
-                'judul_posts' => 'Petualangan Seru dan Edukatif di Taman Safari Prigen',
-                'waktu_publish' => '2025-08-20 14:30:00',
-                'konten_posts' => '<b>Taman Safari Indonesia II</b> di Prigen, Pasuruan, menawarkan pengalaman unik berinteraksi langsung dengan satwa liar dari berbagai belahan dunia di habitat aslinya...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pariwisata',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pariwisata',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Rina Setyawati',
-                ],
-            ],
-            (object) [
-                'id_posts' => 103,
-                'slug_posts' => 'aroma-khas-kopi-lereng-arjuno',
-                'judul_posts' => 'Mengenal Aroma Khas Kopi Robusta dari Lereng Arjuno',
-                'waktu_publish' => '2025-08-19 11:00:00',
-                'konten_posts' => 'Kopi Kapiten dari Pasuruan, khususnya yang berasal dari lereng Gunung Arjuno, memiliki cita rasa dan aroma yang khas. Potensi perkebunan kopi di wilayah ini terus berkembang...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => 'https://apimice.kemenparekraf.go.id/event-daerah/public/676/3cd/917/6763cd9174641985422603.webp', // Ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'pertanian',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Pertanian',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Budi Hartono',
-                ],
-            ],
-            (object) [
-                'id_posts' => 104,
-                'slug_posts' => 'pusat-industri-mebel-bukir-pasuruan',
-                'judul_posts' => 'Bukir, Jantung Industri Mebel dan Kerajinan Kayu Pasuruan',
-                'waktu_publish' => '2025-08-18 16:45:00',
-                'konten_posts' => 'Kawasan Bukir di Kota Pasuruan telah lama dikenal sebagai sentra industri mebel. Kualitas produk kayu dari para pengrajin lokal telah diakui hingga menembus pasar ekspor...',
-                'gambar_posts' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg/1200px-Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg',
-                'gambar_posts_2' => null, // Tidak ada gambar kedua
-                'kategori' => (object) [
-                    'slug_kategori' => 'industri',
-                    'tipe_kategori' => 'potensi',
-                    'nama_kategori' => 'Industri',
-                ],
-                'user_creator' => (object) [
-                    'nama_lengkap' => 'Admin Disperindag',
-                ],
-            ],
+            (object) ['id_posts' => 303, 'slug_posts' => 'atlet-silat-medali-emas', 'judul_posts' => 'Atlet Silat Asal Pasuruan Bawa Pulang Medali Emas dari Kejurprov', 'waktu_publish' => '2025-08-23 12:00:00', 'konten_posts' => 'Prestasi membanggakan diukir oleh pesilat muda di tingkat provinsi...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1678310348214-5264b92c41d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Dispora']],
+            (object) ['id_posts' => 304, 'slug_posts' => 'desa-wisata-terbaik-provinsi', 'judul_posts' => 'Desa Kertosari Dinobatkan Sebagai Desa Wisata Terbaik Tingkat Provinsi', 'waktu_publish' => '2025-08-22 17:00:00', 'konten_posts' => 'Inovasi dan pengelolaan pariwisata berbasis masyarakat membuahkan hasil...', 'gambar_posts' => 'https://images.unsplash.com/photo-1516652362426-b375171a1795?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 305, 'slug_posts' => 'puskesmas-akreditasi-paripurna', 'judul_posts' => 'Puskesmas Gadingrejo Sukses Raih Akreditasi Paripurna', 'waktu_publish' => '2025-08-21 11:30:00', 'konten_posts' => 'Komitmen memberikan pelayanan kesehatan terbaik bagi masyarakat...', 'gambar_posts' => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Dinkes']],
+            (object) ['id_posts' => 306, 'slug_posts' => 'pemkab-pasuruan-opini-wtp', 'judul_posts' => 'Untuk Kedelapan Kalinya, Pemkab Pasuruan Dapatkan Opini WTP dari BPK', 'waktu_publish' => '2025-08-20 10:00:00', 'konten_posts' => 'Bukti pengelolaan keuangan daerah yang transparan dan akuntabel...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1683140513988-12b23a7f832e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin BPKAD']],
+            (object) ['id_posts' => 307, 'slug_posts' => 'tim-robotik-menang-internasional', 'judul_posts' => 'Tim Robotik MTsN 1 Pasuruan Juarai Kontes Robot Internasional di Malaysia', 'waktu_publish' => '2025-08-19 14:45:00', 'konten_posts' => 'Inovasi teknologi dari para pelajar madrasah yang membanggakan Indonesia...', 'gambar_posts' => 'https://images.unsplash.com/photo-1681232371911-37f941f7d54b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Dispendik']],
+            (object) ['id_posts' => 308, 'slug_posts' => 'sanggar-tari-juara-nasional', 'judul_posts' => 'Sanggar Tari Tradisional Juarai Festival Nasional di Jakarta', 'waktu_publish' => '2025-08-18 18:00:00', 'konten_posts' => 'Melestarikan budaya lokal dan mengukir prestasi di kancah nasional...', 'gambar_posts' => 'https://images.unsplash.com/photo-1596205219446-f2868114f24f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
+            (object) ['id_posts' => 309, 'slug_posts' => 'umkm-inovatif-penghargaan-presiden', 'judul_posts' => 'UMKM Inovatif Pasuruan Menerima Penghargaan Langsung dari Presiden', 'waktu_publish' => '2025-08-17 11:00:00', 'konten_posts' => 'Produk olahan pangan lokal berhasil menarik perhatian tingkat nasional...', 'gambar_posts' => 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disperindag']],
+            (object) ['id_posts' => 310, 'slug_posts' => 'petani-kopi-sertifikasi-internasional', 'judul_posts' => 'Petani Kopi Lereng Arjuno Sukses Mendapat Sertifikasi Internasional', 'waktu_publish' => '2025-08-16 09:45:00', 'konten_posts' => 'Pengakuan kualitas yang membuka pintu pasar ekspor lebih lebar...', 'gambar_posts' => 'https://images.unsplash.com/photo-1610612458693-8b776a0845cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Pertanian']],
+            (object) ['id_posts' => 311, 'slug_posts' => 'penghargaan-sekolah-adiwiyata-mandiri', 'judul_posts' => 'SMPN 2 Pasuruan Raih Penghargaan Sekolah Adiwiyata Mandiri', 'waktu_publish' => '2025-08-15 13:00:00', 'konten_posts' => 'Komitmen tinggi dalam menciptakan lingkungan sekolah yang hijau dan sehat...', 'gambar_posts' => 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin DLH']],
+            (object) ['id_posts' => 312, 'slug_posts' => 'persekap-pasuruan-naik-kasta', 'judul_posts' => 'Klub Sepakbola Persekap Pasuruan Berhasil Promosi ke Liga 2', 'waktu_publish' => '2025-08-14 20:00:00', 'konten_posts' => 'Perjuangan panjang yang berbuah manis bagi Laskar Sakera...', 'gambar_posts' => 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Dispora']],
+            (object) ['id_posts' => 313, 'slug_posts' => 'juara-lomba-cipta-menu-b2sa', 'judul_posts' => 'Tim PKK Pasuruan Juara 1 Lomba Cipta Menu B2SA Tingkat Jatim', 'waktu_publish' => '2025-08-13 15:15:00', 'konten_posts' => 'Kreasi menu beragam, bergizi, seimbang, dan aman berbasis pangan lokal...', 'gambar_posts' => 'https://images.unsplash.com/photo-1606787366850-de6330128214?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Ketahanan Pangan']],
+            (object) ['id_posts' => 314, 'slug_posts' => 'polisi-teladan-penghargaan-kapolri', 'judul_posts' => 'Bhabinkamtibmas Teladan Menerima Penghargaan dari Kapolri', 'waktu_publish' => '2025-08-12 10:30:00', 'konten_posts' => 'Dedikasi tinggi dalam melayani dan mengayomi masyarakat...', 'gambar_posts' => 'https://plus.unsplash.com/premium_photo-1661898748369-a1789c675a89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Humas Polres']],
+            (object) ['id_posts' => 315, 'slug_posts' => 'koperasi-wanita-berprestasi-nasional', 'judul_posts' => 'Koperasi Wanita "Sejahtera" Raih Gelar Koperasi Berprestasi Nasional', 'waktu_publish' => '2025-08-11 11:00:00', 'konten_posts' => 'Pemberdayaan ekonomi perempuan melalui koperasi yang sehat dan mandiri...', 'gambar_posts' => 'https://images.unsplash.com/photo-1620336237223-281b8319f357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Diskoperindag']],
+            (object) ['id_posts' => 316, 'slug_posts' => 'anugerah-paralegal-justice-award', 'judul_posts' => 'Kepala Desa Gempol Raih Anugerah Paralegal Justice Award', 'waktu_publish' => '2025-08-10 14:00:00', 'konten_posts' => 'Berperan sebagai juru damai dalam menyelesaikan masalah warga...', 'gambar_posts' => 'https://images.unsplash.com/photo-1589216532372-1c2a36790039?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Hukum']],
+            (object) ['id_posts' => 317, 'slug_posts' => 'medali-perak-pekan-olahraga-provinsi', 'judul_posts' => 'Kontingen Pasuruan Bawa Pulang 15 Medali dari Pekan Olahraga Provinsi', 'waktu_publish' => '2025-08-09 19:30:00', 'konten_posts' => 'Perjuangan para atlet daerah yang patut diapresiasi...', 'gambar_posts' => 'https://images.unsplash.com/photo-1599551322154-20a2a5146197?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Dispora']],
+            (object) ['id_posts' => 318, 'slug_posts' => 'penghargaan-kabupaten-layak-anak', 'judul_posts' => 'Pasuruan Dianugerahi Penghargaan Kabupaten Layak Anak Peringkat Madya', 'waktu_publish' => '2025-08-08 13:00:00', 'konten_posts' => 'Komitmen pemerintah dalam pemenuhan hak dan perlindungan anak...', 'gambar_posts' => 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin DP3AKB']],
+            (object) ['id_posts' => 319, 'slug_posts' => 'inovasi-pelayanan-publik-terbaik', 'judul_posts' => 'Aplikasi "Lapor Pak" Menjadi Inovasi Pelayanan Publik Terbaik', 'waktu_publish' => '2025-08-07 10:00:00', 'konten_posts' => 'Mempermudah masyarakat dalam menyampaikan aspirasi dan pengaduan...', 'gambar_posts' => 'https://images.unsplash.com/photo-1556740738-b6a63e2775d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Kominfo']],
+            (object) ['id_posts' => 320, 'slug_posts' => 'maestro-lukis-pameran-nasional', 'judul_posts' => 'Maestro Lukis Lokal Gelar Pameran Tunggal di Galeri Nasional', 'waktu_publish' => '2025-08-06 16:45:00', 'konten_posts' => 'Karya-karya yang terinspirasi dari keindahan alam Pasuruan memukau ibukota...', 'gambar_posts' => 'https://images.unsplash.com/photo-1547891654-e66ed711b999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', 'gambar_posts_2' => null, 'kategori' => (object) ['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'], 'user_creator' => (object) ['nama_lengkap' => 'Admin Disparbud']],
         ];
 
-        // Dummy pagination
+        $filteredData = array_filter($dummyPosts, function ($post) use ($slug_kategori) {
+            return $post->kategori->slug_kategori === $slug_kategori;
+        });
+
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
         $perPage = 12;
-        $currentPageItems = array_slice($dummyPosts, ($currentPage - 1) * $perPage, $perPage);
-        $devData = new LengthAwarePaginator($currentPageItems, count($dummyPosts), $perPage);
+        $currentPageItems = array_slice($filteredData, ($currentPage - 1) * $perPage, $perPage);
+        $devData = new LengthAwarePaginator($currentPageItems, count($filteredData), $perPage);
         $devData->setPath(request()->url());
 
-        // Breadcrumb construction
         $segments = $request->segments();
         $breadcrumbs = [];
         $url = '';
@@ -400,7 +198,9 @@ class PostController extends Controller
             'devNavigasi' => [],
             'devLis' => $devLis,
             'devData' => $devData,
-            'breadcrumbs' => $breadcrumbs
+            'breadcrumbs' => $breadcrumbs,
+            'typeCategory' => $tipe_kategori,
+            'slugCategory' => $slug_kategori
         ];
 
         return view('post.index', $data);
