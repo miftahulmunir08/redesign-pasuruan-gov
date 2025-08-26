@@ -628,13 +628,13 @@
         <div class="container text-center">
           <!-- Tambah g-4 untuk jarak antar col -->
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/profile')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#profileModal">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Profile
+                Peta Pasuruan
               </h5>
             </div>
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://ppid.pasuruankab.go.id/`)">
@@ -643,7 +643,7 @@
                 <img src="{{ asset('storage/uploads/icon_app/policeman.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                PPID
+                Visi & Misi
               </h5>
             </div>
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
@@ -655,10 +655,10 @@
                 <img src="{{ asset('storage/uploads/icon_app/file.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Satu Data
+                Pemerintahan
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/kontak')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" style="" data-bs-toggle="modal" data-bs-target="#contactModal">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="
                     border-radius: 50px;
                     background-color: #02ab5a;
@@ -671,7 +671,7 @@
                 <img src="{{ asset('storage/uploads/icon_app/passport.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Kontak
+                Sejarah Kabupaten Pasuruan
               </h5>
             </div>
 
@@ -684,19 +684,7 @@
                 <img src="{{ asset('storage/uploads/icon_app/news.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Aplikasi
-              </h5>
-            </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#youtubeModal">
-              <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                <!-- <i
-                    class="las la-video text-white"
-                    style="font-size: 30pt"
-                  ></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/board.png') }}" width="40px" />
-              </div>
-              <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Video Compro
+                Gambaran Umum
               </h5>
             </div>
           </div>
