@@ -628,7 +628,7 @@
         <div class="container text-center">
           <!-- Tambah g-4 untuk jarak antar col -->
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#profileModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/profile')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
@@ -658,7 +658,7 @@
                 Satu Data
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" style="" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/kontak')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="
                     border-radius: 50px;
                     background-color: #02ab5a;
@@ -675,7 +675,7 @@
               </h5>
             </div>
 
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#aplikasiModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/aplikasi')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-mobile-alt text-white"

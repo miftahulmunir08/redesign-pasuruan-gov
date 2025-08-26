@@ -41,4 +41,19 @@ class LandingController extends Controller
     {
         return view('landing/index');
     }
+
+    public function profile()
+    {
+        return view('landing/profile');
+    }
+
+    public function kontak()
+    {
+        return view('landing/kontak');
+    }
+
+    public function aplikasi()
+    {
+        return view('landing/aplikasi');
+    }
 }

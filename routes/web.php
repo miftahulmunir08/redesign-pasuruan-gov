@@ -6,7 +6,10 @@ use App\Http\Controllers\PemerintahanController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [LandingController::class, 'index_landing']);
+Route::get('/layanan', [LandingController::class, 'index_landing']);
+Route::get('/layanan/profile', [LandingController::class, 'profile']);
+Route::get('/layanan/kontak', [LandingController::class, 'kontak']);
+Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
 Route::get('/home', [HomepageController::class, 'index']);
 
 Route::prefix('postingan')->group(function () {

@@ -53,7 +53,7 @@
       background: linear-gradient(135deg,
         rgba(2, 171, 90, 0.8),
         rgba(70, 192, 87, 0.8)),
-      url("<?php echo e(asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg')); ?>");
+      url("{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}");
       /* path gambar */
 
       background-size: cover;
@@ -583,7 +583,7 @@
 
   <div class="col-12">
     <div class="background-div-2 text-center">
-      <img class="mt-5" src="<?php echo e(asset('storage/uploads/logo/pasuruan.png')); ?>" width="75" alt="PASURUANKAB.GO.ID" />
+      <img class="mt-5" src="{{ asset('storage/uploads/logo/pasuruan.png') }}" width="75" alt="PASURUANKAB.GO.ID" />
       <h1 class="mt-4 title-head" style="color: #fcfcfd">
         PASURUANKAB.GO.ID
       </h1>
@@ -628,22 +628,22 @@
         <div class="container text-center">
           <!-- Tambah g-4 untuk jarak antar col -->
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`<?php echo e(url('/layanan/profile')); ?>`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#profileModal">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/company.png')); ?>" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Profile
+                Peta Pasuruan
               </h5>
             </div>
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://ppid.pasuruankab.go.id/`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/policeman.png')); ?>" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/policeman.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                PPID
+                Visi & Misi
               </h5>
             </div>
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
@@ -652,13 +652,13 @@
                     class="las la-database text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/file.png')); ?>" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/file.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Satu Data
+                Pemerintahan
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`<?php echo e(url('/layanan/kontak')); ?>`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" style="" data-bs-toggle="modal" data-bs-target="#contactModal">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="
                     border-radius: 50px;
                     background-color: #02ab5a;
@@ -668,35 +668,23 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/passport.png')); ?>" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/passport.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Kontak
+                Sejarah Kabupaten Pasuruan
               </h5>
             </div>
 
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`<?php echo e(url('/layanan/aplikasi')); ?>`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#aplikasiModal">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/news.png')); ?>" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/news.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Aplikasi
-              </h5>
-            </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#youtubeModal">
-              <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                <!-- <i
-                    class="las la-video text-white"
-                    style="font-size: 30pt"
-                  ></i> -->
-                <img src="<?php echo e(asset('storage/uploads/icon_app/board.png')); ?>" width="40px" />
-              </div>
-              <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Video Compro
+                Gambaran Umum
               </h5>
             </div>
           </div>
@@ -744,7 +732,7 @@
           <div class="card mb-3 shadow-sm article-list">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="<?php echo e(asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg')); ?>" class="img-fluid rounded-start" alt="..." />
+                <img src="{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}" class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -772,7 +760,7 @@
           <div class="card mb-3 shadow-sm article-list">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="<?php echo e(asset('storage/uploads/hero/202402_206-65bc616742301.jpg')); ?>" class="img-fluid rounded-start" alt="..." />
+                <img src="{{ asset('storage/uploads/hero/202402_206-65bc616742301.jpg') }}" class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -922,7 +910,7 @@
               <div class="d-flex flex-column align-items-center">
                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                   <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/icon-112.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Panggilan&nbsp;Darurat
@@ -933,7 +921,7 @@
               <div class="d-flex flex-column align-items-center">
                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                   <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/icon-wa.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/icon-wa.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Whatsapp
@@ -947,7 +935,7 @@
                     class="las la-database text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/facebook.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/facebook.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Facebook
@@ -967,7 +955,7 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/instagram.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/instagram.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Instagram
@@ -982,7 +970,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/icon-xt.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/icon-xt.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Twitter
@@ -997,7 +985,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/icon-ttk.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/icon-ttk.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Tiktok
@@ -1012,7 +1000,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                  <img src="<?php echo e(asset('storage/uploads/medsos/youtube.png')); ?>" width="40px" />
+                  <img src="{{ asset('storage/uploads/medsos/youtube.png') }}" width="40px" />
                 </div>
                 <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                   Youtube
@@ -1061,7 +1049,7 @@
                       <div class="d-flex flex-column align-items-center">
                         <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                           <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/ikmsmile.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/ikmsmile.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Indeks Kepuasan Masyarakat
@@ -1072,7 +1060,7 @@
                       <div class="d-flex flex-column align-items-center">
                         <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                           <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/splp.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/splp.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Sistem Penghubung Layanan Pemerintah
@@ -1084,7 +1072,7 @@
                     <div class="col-6 col-lg-6 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
                       <div class="d-flex flex-column align-items-center">
                         <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/lpse-logo.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/lpse-logo.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Layanan Pengadaan Barang/Jasa
@@ -1103,7 +1091,7 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/spmb.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/spmb.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Pendaftaran Murid Baru
@@ -1118,7 +1106,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/sepakat.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/sepakat.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Layanan Pengaduan Penyimpanan Aparat Pemerintah
@@ -1133,7 +1121,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/saraswati.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/saraswati.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Peminjaman Sarana Prasarana
@@ -1164,7 +1152,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                          <img src="<?php echo e(asset('storage/uploads/logo_aplikasi/saraswati.png')); ?>" width="40px" />
+                          <img src="{{ asset('storage/uploads/logo_aplikasi/saraswati.png') }}" width="40px" />
                         </div>
                         <h5 class="card-title mt-3 fw-bold title-icon text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                           Peminjaman Sarana Prasarana
@@ -1552,4 +1540,4 @@
   </script>
 </body>
 
-</html><?php /**PATH C:\Users\User\Downloads\folder\pasuruan\pasuruan gov\resources\views/landing/index.blade.php ENDPATH**/ ?>
+</html>
