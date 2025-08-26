@@ -2,16 +2,17 @@
 
 @push('styles')
     <style>
+        /* Base Component Styles */
         .profile-card {
             border: 1px solid #e0e0e0;
             border-radius: 1rem;
             overflow: hidden;
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease;
         }
 
         .profile-card:hover {
             transform: translateY(-5px);
-            border: 2px solid;
+            border-width: 2px;
             border-color: #0B7642;
         }
 
@@ -22,27 +23,7 @@
             object-position: center top;
         }
 
-        @media (max-width: 767.98px) {
-            .profile-img {
-                height: 350px;
-            }
-        }
-
-        .profile-body {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        @media (max-width: 767.98px) {
-            .profile-body {
-                text-align: center;
-            }
-        }
-
         .profile-subtitle {
-            font-weight: 600;
             color: #0B7642;
             margin-bottom: 0.5rem;
         }
@@ -65,13 +46,6 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .profile-divider {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
         .profile-action {
             margin-top: auto;
         }
@@ -89,20 +63,30 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        @media (max-width: 768px) {
+            .profile-img {
+                height: auto;
+            }
+
+            .profile-divider {
+                margin-inline: auto;
+            }
+        }
     </style>
 @endpush
 
 @section('content')
     {{-- Hero --}}
     <section
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://www.wartabromo.com/wp-content/uploads/2023/03/IMG-20230308-WA0043.jpg'); height: clamp(240px, 50vh, 480px); background-position: center; position: relative; background-size: cover;"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('https://www.wartabromo.com/wp-content/uploads/2023/03/IMG-20230308-WA0043.jpg'); height: clamp(240px, 50vh, 480px); background-position: center; position: relative; background-size: cover;"
         class="d-flex align-items-center justify-content-center">
         <div class="d-flex flex-column justify-content-center align-items-center">
             <h1 style="color: white;
                    font-weight: bold;
                    margin-bottom: 8px;
                    padding: 0"
-                class="fs-1">
+                class="fs-1 text-center">
                 {{ $devTitle }}
             </h1>
             <x-breadcrumb :items="$breadcrumbs" />
@@ -111,7 +95,7 @@
 
     {{-- @dd($devBupati) --}}
     {{-- Main --}}
-    <section class="container-fluid my-5" style="padding: 0 128px">
+    <section class="container-fluid my-5 px-4 px-md-5" style="">
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold">Bupati dan Wakil Bupati Kabupaten Pasuruan</h1>
             <p class="lead text-muted">Masa Jabatan {{ $devBupati->pemerintahan_periode->periode }}</p>
@@ -124,9 +108,9 @@
                             alt="Foto {{ $devBupati->nama }}">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body profile-body">
-                            <div class="text-content">
-                                <h5 class="profile-subtitle">{{ $devBupati->jabatan }}</h5>
+                        <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
+                            <div class="d-flex flex-column justify-content-start">
+                                <h5 class="profile-subtitle fw-semibold">{{ $devBupati->jabatan }}</h5>
                                 <h2 class="profile-title">{{ $devBupati->nama }}</h2>
                                 <hr class="profile-divider">
                             </div>
@@ -147,9 +131,9 @@
                             alt="Foto {{ $devWabup->nama }}">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body profile-body">
-                            <div class="text-content">
-                                <h5 class="profile-subtitle">{{ $devWabup->jabatan }}</h5>
+                        <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
+                            <div class="d-flex flex-column justify-content-start">
+                                <h5 class="profile-subtitle fw-semibold">{{ $devWabup->jabatan }}</h5>
                                 <h2 class="profile-title">{{ $devWabup->nama }}</h2>
                                 <hr class="profile-divider">
                             </div>

@@ -8,6 +8,10 @@
         <title>Document</title>
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+        {{-- Poppins --}}
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
         <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
