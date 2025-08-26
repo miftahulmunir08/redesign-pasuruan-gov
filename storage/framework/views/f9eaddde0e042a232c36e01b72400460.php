@@ -675,7 +675,7 @@
               </h5>
             </div>
 
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#aplikasiModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`<?php echo e(url('/layanan/aplikasi')); ?>`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-mobile-alt text-white"
