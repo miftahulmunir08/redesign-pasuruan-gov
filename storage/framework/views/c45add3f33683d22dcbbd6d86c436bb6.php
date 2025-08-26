@@ -8,7 +8,7 @@
     ];
 ?>
 
-<?php if (! $__env->hasRenderedOnce('96fb97a8-2228-443a-b7f9-afbd2d38eb44')): $__env->markAsRenderedOnce('96fb97a8-2228-443a-b7f9-afbd2d38eb44'); ?>
+<?php if (! $__env->hasRenderedOnce('b0e906af-8593-476c-ad85-ac7a458079c4')): $__env->markAsRenderedOnce('b0e906af-8593-476c-ad85-ac7a458079c4'); ?>
     <style>
         .footer-bg {
             background-color: #0B7642;

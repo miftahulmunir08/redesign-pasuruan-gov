@@ -28,7 +28,7 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<?php if (! $__env->hasRenderedOnce('a662a394-ee40-4d11-87c5-83b74e77c787')): $__env->markAsRenderedOnce('a662a394-ee40-4d11-87c5-83b74e77c787'); ?>
+<?php if (! $__env->hasRenderedOnce('bed37b03-2a5a-40fb-9023-772f89d55957')): $__env->markAsRenderedOnce('bed37b03-2a5a-40fb-9023-772f89d55957'); ?>
     <style>
         .breadcrumb-item a {
             transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
@@ -44,7 +44,7 @@ unset($__defined_vars, $__key, $__value); ?>
 <?php if(count($items) > 0): ?>
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%23ffffff'/%3E%3C/svg%3E&#34;);"
         aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0 fw-medium">
+        <ol class="breadcrumb mb-0 fw-medium align-items-center">
             <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php if($loop->last): ?>
                     <li class="breadcrumb-item active" aria-current="page">

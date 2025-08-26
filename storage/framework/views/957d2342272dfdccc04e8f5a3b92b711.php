@@ -28,7 +28,7 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<?php if (! $__env->hasRenderedOnce('7b074d8e-ccfd-49d3-85b0-7dd738aed6b6')): $__env->markAsRenderedOnce('7b074d8e-ccfd-49d3-85b0-7dd738aed6b6'); ?>
+<?php if (! $__env->hasRenderedOnce('96a7f041-e90a-4358-9e26-2ad4f7b561ac')): $__env->markAsRenderedOnce('96a7f041-e90a-4358-9e26-2ad4f7b561ac'); ?>
     <style>
         /* Style asli Anda, dipindahkan dari inline ke sini */
         .post-card__image {
@@ -74,8 +74,8 @@ unset($__defined_vars, $__key, $__value); ?>
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.175) !important;
+            transform: translateY(-4px);
+            box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.175) !important;
         }
 
         .post-card__title {
@@ -121,7 +121,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 
     
-    <div class="m-2 d-flex flex-column flex-grow-1">
+    <div class="p-3 d-flex flex-column flex-grow-1">
         <p class="post-card__title fw-semibold fs-6 mb-1">
             <?php echo e($post->judul_posts); ?>
 
@@ -131,7 +131,7 @@ unset($__defined_vars, $__key, $__value); ?>
             <p class="post-card__summary flex-grow-1">
                 <?php echo substr(strip_tags($post->konten_posts), 0, 150); ?>...
             </p>
-            <p class="post-card__meta d-flex flex-row justify-content-between mb-0 fw-bold">
+            <p class="post-card__meta d-flex flex-row justify-content-between mb-0 fw-medium">
                 <span><?php echo e(Carbon\Carbon::parse($post->waktu_publish)->isoFormat('DD MMMM YYYY')); ?></span>
                 <span class="post-card__author"><?php echo e($post->user_creator->nama_lengkap); ?></span>
             </p>
@@ -139,7 +139,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 </div>
 
-<?php if (! $__env->hasRenderedOnce('15a4e064-fbd7-49fe-baf8-b683aa242894')): $__env->markAsRenderedOnce('15a4e064-fbd7-49fe-baf8-b683aa242894'); ?>
+<?php if (! $__env->hasRenderedOnce('1e86a13b-1c6c-4821-a095-c346670f7b5a')): $__env->markAsRenderedOnce('1e86a13b-1c6c-4821-a095-c346670f7b5a'); ?>
     <?php $__env->startPush('scripts'); ?>
         <script>
             $(document).ready(function() {

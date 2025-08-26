@@ -1,47 +1,35 @@
-<?php if (! $__env->hasRenderedOnce('36f93238-7ad7-45c6-b78e-28bc5331145d')): $__env->markAsRenderedOnce('36f93238-7ad7-45c6-b78e-28bc5331145d'); ?>
+<?php if (! $__env->hasRenderedOnce('e5ec3745-bb4a-4e55-bc61-e8640c65388a')): $__env->markAsRenderedOnce('e5ec3745-bb4a-4e55-bc61-e8640c65388a'); ?>
     <style>
         .pagination.gap-2 .page-link {
             border-radius: var(--bs-border-radius) !important;
         }
 
-        /*
-                             * Modifikasi warna pagination
-                            */
-
-        /* Gaya dasar untuk semua tombol (abu-abu) */
         .pagination .page-link {
             background-color: #e2e2e2;
             color: #ffffff;
-            /* Teks dan ikon menjadi putih */
             border: none;
-            /* Menghilangkan garis tepi */
             font-weight: bold;
         }
 
-        /* Gaya saat mouse menyentuh tombol (hover), kecuali tombol yg non-aktif */
         .pagination .page-link:hover {
             background-color: #03D26F;
         }
 
-        /* Gaya untuk tombol yang sedang aktif (hijau) */
         .pagination .page-item.active .page-link {
             background-color: #03D26F;
             color: #ffffff;
         }
 
-        /* Gaya untuk tombol non-aktif (disabled) agar sedikit lebih transparan */
         .pagination .page-item.disabled .page-link {
             background-color: #e2e2e2;
             opacity: 0.7;
         }
 
-        /* Mengatur sudut tumpul yang sama untuk semua tombol */
         .pagination.gap-2 .page-link {
             border-radius: var(--bs-border-radius) !important;
         }
     </style>
 <?php endif; ?>
-
 
 <nav>
     <ul class="pagination justify-content-center gap-2">
@@ -68,15 +56,12 @@
             </li>
         <?php endif; ?>
 
-        
         <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            
             <?php if(is_string($element)): ?>
                 <li class="page-item disabled" aria-disabled="true"><span class="page-link"><?php echo e($element); ?></span>
                 </li>
             <?php endif; ?>
 
-            
             <?php if(is_array($element)): ?>
                 <?php $__currentLoopData = $element; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page => $url): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php if($page == $paginator->currentPage()): ?>
