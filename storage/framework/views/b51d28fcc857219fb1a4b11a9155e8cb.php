@@ -82,7 +82,7 @@
 <body>
     <header class="d-flex flex-row align-items-center justify-content-between px-md-5 px-3 py-2 border-bottom">
         <div class="d-flex flex-row align-items-center mx-auto mx-md-0" style="gap: 0.5rem">
-            <img src="{{ asset('storage/uploads/logo/pasuruan.png') }}" style="width: 2.5rem" />
+            <img src="<?php echo e(asset('storage/uploads/logo/pasuruan.png')); ?>" style="width: 2.5rem" />
             <p class="d-flex flex-column lh-tight mb-0">
                 <span>Pemerintah</span><span class="fw-semibold">Kabupaten Pasuruan<span class="text-custom-green">.</span></span>
             </p>
@@ -122,7 +122,7 @@
 
     <section id="hero-section">
         <div class="position-relative w-100">
-            <img src="{{ asset('storage/uploads/hero_section/202409_209-66d95f4f2b0ac.jpg') }}" alt="Kaliandra resort" class="w-100 object-fit-cover" style="max-height: 100vh" />
+            <img src="<?php echo e(asset('storage/uploads/hero_section/202409_209-66d95f4f2b0ac.jpg')); ?>" alt="Kaliandra resort" class="w-100 object-fit-cover" style="max-height: 100vh" />
             <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
                 <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end" style="max-width: 91.6%;">
                     <div class="mb-4 mb-md-0">
@@ -527,4 +527,4 @@
 
 </body>
 
-</html>
+</html><?php /**PATH C:\Users\User\Downloads\folder\pasuruan\pasuruan gov\resources\views/homepage/index.blade.php ENDPATH**/ ?>

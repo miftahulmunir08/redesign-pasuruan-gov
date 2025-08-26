@@ -53,7 +53,7 @@
       background: linear-gradient(135deg,
         rgba(2, 171, 90, 0.8),
         rgba(70, 192, 87, 0.8)),
-      url("{{ asset('storage/uploads/hero_section/202409_205-66d55924c94eb.jpg') }}");
+      url("{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}");
       /* path gambar */
 
       background-size: cover;
