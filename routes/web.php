@@ -7,7 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', [HomepageController::class, 'index']);
+Route::get('/', [HomepageController::class, 'index']);
 
 Route::get('/layanan', [LandingController::class, 'index_landing']);
 Route::get('/layanan/profile', [LandingController::class, 'profile']);
@@ -33,6 +33,8 @@ Route::prefix('profil')->group(function () {
     });
     Route::prefix('halaman')->group(function () {
         Route::get('/arti-lambang', [ProfileController::class, 'arti_lambang']);
+        Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
+        Route::get('/visi-misi', [ProfileController::class, 'arti_lambang']);
     });
 });
 

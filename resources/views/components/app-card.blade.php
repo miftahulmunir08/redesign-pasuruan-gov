@@ -16,7 +16,7 @@
         <span class=""></span>
 
         <div class="d-flex align-items-center gap-4">
-            <img src="{{ $gambarAplikasi }}" alt="{{ $namaAplikasi }}" class="" />
+            <img src="{{ $gambarAplikasi }}" alt="{{ $namaAplikasi }}" class="w-25" />
             <div>
                 <h5 class="mb-1">{{ $namaAplikasi }}</h5>
                 <p class="text-muted mb-0">{{ $deskripsiAplikasi }}</p>

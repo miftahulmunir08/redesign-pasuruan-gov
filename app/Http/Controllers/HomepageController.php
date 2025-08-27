@@ -250,6 +250,36 @@ class HomepageController extends Controller
             ]
         ];
 
-        return view('homepage/index', compact('devVisi', 'devBannerUtama', 'devAplikasi'));
+        $segments = $request->segments();
+        $breadcrumbs = [];
+        $url = '';
+
+        foreach ($segments as $segment) {
+            $url .= '/' . $segment;
+            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
+
+            $breadcrumbs[] = [
+                'text' => $text,
+                'url'  => $url
+            ];
+        }
+
+        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
+
+        if (count($breadcrumbs) > 1) {
+            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
+        }
+
+        $data = [
+            'devTitle' => 'halo',
+            'devVisi' => $devVisi,
+            'devBannerUtama' => $devBannerUtama,
+            'devAplikasi' => $devAplikasi,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+
+
+        return view('homepage/index', $data);
     }
 }
