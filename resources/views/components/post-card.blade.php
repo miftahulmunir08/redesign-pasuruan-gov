@@ -2,7 +2,6 @@
 
 @once
     <style>
-        /* Style asli Anda, dipindahkan dari inline ke sini */
         .post-card__image {
             width: 100%;
             height: 200px;

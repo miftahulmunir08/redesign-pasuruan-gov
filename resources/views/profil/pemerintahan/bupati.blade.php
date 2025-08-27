@@ -8,6 +8,10 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease;
+            display: flex;
+            /* Memastikan card bisa stretch */
+            flex-direction: column;
+            /* Arah konten di dalam card */
         }
 
         .profile-card:hover {
@@ -39,6 +43,7 @@
 
         .profile-action {
             margin-top: auto;
+            /* Mendorong tombol ke bagian bawah card */
         }
 
         .profile-action .btn {
@@ -80,60 +85,70 @@
         </div>
     </section>
 
-    {{-- @dd($devBupati) --}}
     {{-- Main --}}
-    <section class="container-fluid my-5 px-4 px-md-5">
+    <section class="container my-5">
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold">Bupati dan Wakil Bupati Kabupaten Pasuruan</h1>
             <p class="lead text-muted">Masa Jabatan {{ $devBupati->pemerintahan_periode->periode }}</p>
         </div>
-        <div class="d-flex flex-column gap-4">
-            <div class="card profile-card">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ $devBupati->gambar_pemerintahan }}" class="profile-img"
-                            alt="Foto {{ $devBupati->nama }}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
-                            <div class="d-flex flex-column justify-content-start">
-                                <h5 class="profile-subtitle fw-semibold mb-2">{{ $devBupati->jabatan }}</h5>
-                                <h2 class="fw-bold mb-0">{{ $devBupati->nama }}</h2>
-                                <hr class="profile-divider border-2 opacity-100 my-4">
-                            </div>
-                            <div class="profile-action">
-                                <a href="https://id.wikipedia.org/wiki/Mochamad_Rusdi_Sutejo" target="_blank"
-                                    class="btn btn-primary btn-lg px-4 fs-6">
-                                    Lihat Profil Lengkap
-                                </a>
+
+        {{-- Card Container --}}
+        <div class="row g-4 justify-content-center">
+
+            {{-- Card 1: Bupati --}}
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card profile-card w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ $devBupati->gambar_pemerintahan }}" class="profile-img"
+                                alt="Foto {{ $devBupati->nama }}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body d-flex flex-column h-100 p-4">
+                                <div>
+                                    <h5 class="profile-subtitle fw-semibold mb-2">{{ $devBupati->jabatan }}</h5>
+                                    <h2 class="fw-bold mb-0 h3">{{ $devBupati->nama }}</h2>
+                                    <hr class="profile-divider border-2 opacity-100 my-4">
+                                </div>
+                                <div class="profile-action">
+                                    <a href="https://id.wikipedia.org/wiki/Mochamad_Rusdi_Sutejo" target="_blank"
+                                        class="btn btn-primary btn-lg px-4 fs-6">
+                                        Lihat Profil Lengkap
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card profile-card">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ $devWabup->gambar_pemerintahan }}" class="profile-img"
-                            alt="Foto {{ $devWabup->nama }}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body d-flex flex-column justify-content-center text-md-start p-4">
-                            <div class="d-flex flex-column justify-content-start">
-                                <h5 class="profile-subtitle fw-semibold mb-2">{{ $devWabup->jabatan }}</h5>
-                                <h2 class="fw-bold mb-0">{{ $devWabup->nama }}</h2>
-                                <hr class="profile-divider border-2 opacity-100 my-4">
-                            </div>
-                            <div class="profile-action">
-                                <a href="https://id.wikipedia.org/wiki/Shobih_Asrori" target="_blank"
-                                    class="btn btn-primary btn-lg px-4 fs-6">
-                                    Lihat Profil Lengkap
-                                </a>
+
+            {{-- Card 2: Wakil Bupati --}}
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card profile-card w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ $devWabup->gambar_pemerintahan }}" class="profile-img"
+                                alt="Foto {{ $devWabup->nama }}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body d-flex flex-column h-100 p-4">
+                                <div>
+                                    <h5 class="profile-subtitle fw-semibold mb-2">{{ $devWabup->jabatan }}</h5>
+                                    <h2 class="fw-bold mb-0 h3">{{ $devWabup->nama }}</h2>
+                                    <hr class="profile-divider border-2 opacity-100 my-4">
+                                </div>
+                                <div class="profile-action">
+                                    <a href="https://id.wikipedia.org/wiki/Shobih_Asrori" target="_blank"
+                                        class="btn btn-primary btn-lg px-4 fs-6">
+                                        Lihat Profil Lengkap
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 @endsection
