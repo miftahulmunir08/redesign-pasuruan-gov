@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    @push('styles')
+    @stack('styles')
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -91,9 +91,6 @@
             }
         }
     </style>
-    }}
-
-    @endpush
 </head>
 
 <body>
@@ -211,7 +208,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="swiper-pagination mt-3"></div>
+                <div class="swiper-pagination" style=""></div>
             </div>
 
 

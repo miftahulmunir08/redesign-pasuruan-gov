@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <?php $__env->startPush('styles'); ?>
+    <?php echo $__env->yieldPushContent('styles'); ?>
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -91,9 +91,6 @@
             }
         }
     </style>
-    }}
-
-    <?php $__env->stopPush(); ?>
 </head>
 
 <body>
@@ -269,7 +266,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="swiper-pagination mt-3"></div>
+                <div class="swiper-pagination" style="mt-5"></div>
             </div>
 
 
