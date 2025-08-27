@@ -28,9 +28,8 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<?php if (! $__env->hasRenderedOnce('d4cb9a47-4e1b-4a47-b1ee-72d6cdbf76d5')): $__env->markAsRenderedOnce('d4cb9a47-4e1b-4a47-b1ee-72d6cdbf76d5'); ?>
+<?php if (! $__env->hasRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105')): $__env->markAsRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105'); ?>
     <style>
-        /* Style asli Anda, dipindahkan dari inline ke sini */
         .post-card__image {
             width: 100%;
             height: 200px;
@@ -143,7 +142,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 </div>
 
-<?php if (! $__env->hasRenderedOnce('c1e58b2e-54ae-4f24-98f8-bc01968940e1')): $__env->markAsRenderedOnce('c1e58b2e-54ae-4f24-98f8-bc01968940e1'); ?>
+<?php if (! $__env->hasRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77')): $__env->markAsRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77'); ?>
     <?php $__env->startPush('scripts'); ?>
         <script>
             $(document).ready(function() {

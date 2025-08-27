@@ -12,7 +12,7 @@
 
 <div class="p-1 h-100 isbig mt-3">
     <div class="d-flex align-items-center p-4 gap-4 bg-white shadow rounded-3 h-100 position-relative"
-        data-id="{{ $idAplikasi }}" style="min-height: 220px;">
+        data-id="{{ $idAplikasi }}" style="min-height: 250px;">
         <span class=""></span>
 
         <div class="d-flex align-items-center gap-4">
