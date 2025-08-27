@@ -4,18 +4,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kab. Pasuruan (Bootstrap 5 Version)</title>
+        <title>Kab. Pasuruan</title>
+
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet" />
 
-        <style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        {{-- <style>
             body {
                 font-family: "Poppins", sans-serif;
             }
@@ -79,64 +80,66 @@
             .btn-video-effect:hover .btn-background {
                 width: 100%;
             }
-        </style>
+
+            .search-bar-margin {
+                margin-top: 2rem !important;
+            }
+
+            @media (min-width: 768px) {
+                .search-bar-margin {
+                    margin-top: -2rem !important;
+                    }
+                    }
+                </style> --}}
+        @stack('styles')
     </head>
 
     <body>
-        {{-- <header class="d-flex flex-row align-items-center justify-content-between px-md-5 px-3 py-2 border-bottom">
-        <div class="d-flex flex-row align-items-center mx-auto mx-md-0" style="gap: 0.5rem">
-            <img src="{{ asset('storage/uploads/logo/pasuruan.png') }}" style="width: 2.5rem" />
-            <p class="d-flex flex-column lh-tight mb-0">
-                <span>Pemerintah</span><span class="fw-semibold">Kabupaten Pasuruan<span class="text-custom-green">.</span></span>
-            </p>
-        </div>
-        <p class="d-none d-sm-flex flex-row align-items-center mb-0" style="gap: 0.25rem">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span class="small">Kompleks Perkantoran Pemerintah Kabupaten Pasuruan Jalan Raya Raci
-                Km.9, Bangil, Pasuruan, 67153</span>
-        </p>
-    </header> --}}
-
         <header>
             <x-web-info />
             <x-desktop-navigation />
         </header>
 
-        <section id="hero-section">
-            <div class="position-relative w-100">
-                <img src="{{ asset('storage/uploads/hero_section/202409_209-66d95f4f2b0ac.jpg') }}"
-                    alt="Kaliandra resort" class="w-100 object-fit-cover" style="max-height: 100vh" />
-                <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
-                    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
-                        style="max-width: 91.6%;">
-                        <div class="mb-4 mb-md-0">
-                            <h1 class="display-4 fw-bold">Kaliandra</h1>
-                            <h2 class="h5">
-                                Kabupaten Pasuruan yang Maju, Sejahtera dan Berkeadilan.
-                            </h2>
+        <section id="hero-section" class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                @foreach ($devBannerUtama as $banner)
+                    <div class="position-relative w-100 swiper-slide"
+                        style="height: 90vh; min-height: 400px; width: 100%;">
+                        <img src="{{ asset($banner->thumbnail) }}" alt="Kaliandra resort"
+                            class="w-100 object-fit-cover hero-img-zoom"
+                            style="height: 100%; width: 100%; object-fit: cover; max-height: 100%; transform: scale(1.02)" />
+                        <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
+                            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
+                                style="max-width: 91.6%;">
+                                <div class="mb-4 mb-md-0 mr-md-1">
+                                    <h1 class="display-4 fw-bold">{{ $banner->nama_banner }}</h1>
+                                    <h2 class="h5">
+                                        {{ $devVisi }}
+                                    </h2>
+                                </div>
+                                <button
+                                    class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
+                                    <span class="btn-background"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="me-2"
+                                        style="width: 20px; height: 20px; position: relative; z-index: 1;">
+                                        <path
+                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                        <path d="m10 15 5-3-5-3z" />
+                                    </svg>
+                                    <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
+                                </button>
+                            </div>
                         </div>
-                        <button
-                            class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark">
-                            <span class="btn-background"></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="me-2" style="width: 20px; height: 20px; position: relative; z-index: 1;">
-                                <path
-                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                                <path d="m10 15 5-3-5-3z" />
-                            </svg>
-                            <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
-                        </button>
                     </div>
-                </div>
+                @endforeach
             </div>
         </section>
 
         <main class="container-fluid" style="max-width: 91.6%; position: relative; padding-bottom: 4rem;">
-            <div class="bg-white border-md-0 rounded-lg shadow p-3 position-relative z-2" style="margin-top: -2rem">
+            <div class="bg-white border-md-0 rounded shadow-sm p-3 position-relative z-2 search-bar-margin"
+                style="">
                 <div class="input-group">
                     <input name="search" type="search" placeholder="Keyword pencarian" class="form-control" />
                     <button class="btn btn-custom-green d-flex align-items-center">
@@ -151,15 +154,15 @@
                 </div>
             </div>
 
-            <div class="mt-5">
-                <p class="h4 fw-medium">
+            <div class="mt-4">
+                <p class="h4 fw-medium ">
                     Sumber daya<span class="text-custom-green">.</span>
                 </p>
-                <div class="row g-4 mt-2">
+                <div class="row g-4">
                     <div class="col-12 col-sm-6 col-md-3">
                         <a href="#sumber-daya" class="text-decoration-none text-dark">
                             <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                                <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                                <img src="https://americansforprosperity.org/wp-content/uploads/2021/03/GettyImages-614037306-768x402.jpg"
                                     alt="rapat kerja pemda" class="card-img-top object-fit-cover"
                                     style="height: 8rem" />
                                 <div class="card-body text-center">
@@ -171,7 +174,7 @@
                     <div class="col-12 col-sm-6 col-md-3">
                         <a href="#sumber-daya" class="text-decoration-none text-dark">
                             <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                                <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                                <img src="https://jlloveassociates.com/wp-content/uploads/2014/10/canstockphoto2214512.jpg"
                                     alt="rapat kerja pemda" class="card-img-top object-fit-cover"
                                     style="height: 8rem" />
                                 <div class="card-body text-center">
@@ -182,7 +185,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                            <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                            <img src="https://images.unsplash.com/photo-1578625155481-7bc40a6481b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
                             <div class="card-body text-center">
                                 <p class="card-text">Agenda</p>
@@ -191,7 +194,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                            <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg"
+                            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/Brochure-Catalog-Magazine-Mock-Up.png"
                                 alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
                             <div class="card-body text-center">
                                 <p class="card-text">Majalah</p>
@@ -213,6 +216,12 @@
                     </select>
                 </div>
 
+                <div>
+                    @foreach ($devAplikasi as $app)
+                        <x-app-card :jenisAplikasi="$app->jenis_aplikasi" :idAplikasi="$app->id_aplikasi" :urlAplikasi="$app->url_aplikasi" :namaAplikasi="$app->nama_aplikasi"
+                            :deskripsiAplikasi="$app->deskripsi_aplikasi" :gambarAplikasi="$app->gambar_aplikasi" />
+                    @endforeach
+                </div>
                 <div id="layananCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#layananCarousel" data-bs-slide-to="0" class="active"
@@ -241,6 +250,11 @@
                                 <div class="col-md-3 col-sm-6">
                                     <div class="card">
                                         <div class="card-body">Layanan 4</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">Layanan 5</div>
                                     </div>
                                 </div>
                             </div>
@@ -585,7 +599,23 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+        <script>
+            const bannerSwiper = new Swiper('.banner-swiper', {
+                direction: 'horizontal',
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 2000,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+        </script>
+        @stack('scripts')
     </body>
 
 </html>
