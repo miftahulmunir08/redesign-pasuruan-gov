@@ -250,35 +250,71 @@ class HomepageController extends Controller
             ]
         ];
 
-        $segments = $request->segments();
-        $breadcrumbs = [];
-        $url = '';
-
-        foreach ($segments as $segment) {
-            $url .= '/' . $segment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
-
-            $breadcrumbs[] = [
-                'text' => $text,
-                'url'  => $url
-            ];
-        }
-
-        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
-
-        if (count($breadcrumbs) > 1) {
-            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
-        }
+        $devLayanan = [
+            (object)[
+                'text' => 'Kependudukan',
+                'url' => '#',
+                'children' => [
+                    (object)['text' => 'Kartu Identitas Anak', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/kartu-identitas-anak', 'children' => []],
+                    (object)['text' => 'Akta Perkawinan dan Perceraian', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/akta-perkawinan-dan-perceraian', 'children' => []],
+                    (object)['text' => 'Akta Pencatatan Kematian', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/akta-pencatatan-kematian', 'children' => []],
+                    (object)['text' => 'Surat Mutasi Penduduk', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/surat-mutasi-penduduk-skpwni-', 'children' => []],
+                    (object)['text' => 'KTP Elektronik', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/kartu-tanda-penduduk-elektronik-ktp---el-', 'children' => []],
+                    (object)['text' => 'SKTT', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/sktt', 'children' => []],
+                    (object)['text' => 'Kartu Keluarga', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/kartu-keluarga-kk', 'children' => []],
+                    (object)['text' => 'Akta Pencatatan Sipil', 'url' => 'https://dispendukcapil.pasuruankab.go.id/halaman/akta-pencatatan-sipil', 'children' => []],
+                ],
+            ],
+            (object)[
+                'text' => 'Perhubungan',
+                'url' => '#',
+                'children' => [
+                    (object)['text' => 'Pengujian Kendaraan Bermotor', 'url' => 'https://dishub.pasuruankab.go.id/pages/ujikir', 'children' => []],
+                    (object)['text' => 'Ramp Check', 'url' => 'https://dishub.pasuruankab.go.id/pages/rampcek', 'children' => []],
+                    (object)['text' => 'Perizinan Angkutan', 'url' => 'https://dishub.pasuruankab.go.id/pages/angkut', 'children' => []],
+                    (object)['text' => 'Perizinan Perpakiran', 'url' => 'https://dishub.pasuruankab.go.id/pages/parkir', 'children' => []],
+                    (object)['text' => 'Analisis Dampak Lalu Lintas', 'url' => 'https://dishub.pasuruankab.go.id/pages/andalalin', 'children' => []],
+                    (object)['text' => 'Pengaduan PJU Kabupaten Pauruan', 'url' => 'https://dishub.pasuruankab.go.id/pages/adupju', 'children' => []],
+                ],
+            ],
+            (object)[
+                'text' => 'Informasi & Komunikasi',
+                'url' => '#',
+                'children' => [
+                    (object)['text' => 'Pelayanan Konsultasi TIK Pada Aplikasi SAKTI', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-konsultasi-tik-pada-aplikasi-sakti', 'children' => []],
+                    (object)['text' => 'Layanan Nomor Tunggal Panggilan Darurat 112', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/layanan-nomor-tunggal-panggilan-darurat-112', 'children' => []],
+                    (object)['text' => 'Pelayanan Pengaduan', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-pengaduan', 'children' => []],
+                    (object)['text' => 'Pelayanan Sub Domain, Hosting dan VPS', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-sub-domain-hosting-dan-vps', 'children' => []],
+                    (object)['text' => 'Pelayanan Gangguan Jaringan Internet/LAN', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-gangguan-jaringan-internet-lan', 'children' => []],
+                    (object)['text' => 'Pelayanan Pengajuan Keamanan Sistem Informasi', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-pengajuan-keamanan-sistem-informasi', 'children' => []],
+                    (object)['text' => 'Pelayanan Permohonan Penyelenggaraan Video Conference', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-permohonan-penyelenggaraan-video-conference', 'children' => []],
+                    (object)['text' => 'Pelayanan Sandi dan Telekomunikasi (Santel)', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-sandi-dan-telekomunikasi-santel', 'children' => []],
+                    (object)['text' => 'Pelayanan Sosialisasi Permohonan Narasumber Terkait Aplikasi', 'url' => 'https://diskominfo.pasuruankab.go.id/halaman/pelayanan-sosialisasi-permohonan-narasumber-terkait-aplikasi', 'children' => []],
+                ],
+            ],
+            (object)[
+                'text' => 'UMUM/PERIJINAN',
+                'url' => '#',
+                'children' => [
+                    (object)['text' => 'Sektor Peternakan', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-peternakan', 'children' => []],
+                    (object)['text' => 'Sektor Perikanan', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-perikanan', 'children' => []],
+                    (object)['text' => 'Sektor Perhubungan', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-perhubungan', 'children' => []],
+                    (object)['text' => 'Sektor Pariwisata', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-pariwisata', 'children' => []],
+                    (object)['text' => 'Sektor Sosial', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-sosial', 'children' => []],
+                    (object)['text' => 'Sektor Tenaga Kerja', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-tenaga-kerja', 'children' => []],
+                    (object)['text' => 'Sektor Kesehatan', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-kesehatan', 'children' => []],
+                    (object)['text' => 'Sektor Pendidikan', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-pendidikan', 'children' => []],
+                    (object)['text' => 'Sektor Pekerjaan Umum', 'url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-pekerjaan-umum', 'children' => []],
+                ],
+            ],
+        ];
 
         $data = [
-            'devTitle' => 'halo',
             'devVisi' => $devVisi,
             'devBannerUtama' => $devBannerUtama,
             'devAplikasi' => $devAplikasi,
-            'breadcrumbs' => $breadcrumbs
+            'devLayanan' => $devLayanan
         ];
-
-
 
         return view('homepage/index', $data);
     }
