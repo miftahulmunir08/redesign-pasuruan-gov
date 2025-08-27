@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomepageController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $devVisi = "Kabupaten Pasuruan yang Maju, Sejahtera dan Berkeadilan.";
         $devBannerUtama = collect([
