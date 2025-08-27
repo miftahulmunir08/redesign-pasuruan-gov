@@ -179,16 +179,11 @@
                 </li>
 
                 <!-- GANTI INI: Dropdown -->
-                <li class="splide__slide dropdown dropup">
-                    <a class="text-dark text-decoration-none dropdown-toggle" href="#" id="dropdownMenuButton" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="splide__slide">
+                    <a class="text-dark text-decoration-none" href="#">
                         <i class="bi bi-person nav-icon"></i>
                         Layanan
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Layanan 1</a></li>
-                        <li><a class="dropdown-item" href="#">Layanan 2</a></li>
-                        <li><a class="dropdown-item" href="#">Layanan 3</a></li>
-                    </ul>
                 </li>
                 <!-- END Dropdown -->
 

@@ -26,6 +26,8 @@
     </header>
 
     @yield('content')
+
+    <x-navbottom />
     {{-- Footer --}}
     <x-footer />
 

@@ -34,7 +34,7 @@ Route::prefix('profil')->group(function () {
     Route::prefix('halaman')->group(function () {
         Route::get('/arti-lambang', [ProfileController::class, 'arti_lambang']);
         Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
-        Route::get('/visi-misi', [ProfileController::class, 'arti_lambang']);
+        Route::get('/visi-misi', [ProfileController::class, 'visi_misi']);
     });
 });
 

@@ -69,8 +69,8 @@ class ProfileController extends Controller
         }
 
         $data = [
-            'namePage' => 'Pemimpin Daerah Kabupaten Pasuruan',
-            'devTitle' => 'Pemimpin Daerah Kabupaten Pasuruan',
+            'namePage' => 'Arti Lambang',
+            'devTitle' => 'Arti Lambang',
             'devIndex' => 'Pemimpin Daerah Kabupaten Pasuruan',
             'devBupati' => $devBupati,
             'devWabup' => $devWabub,
@@ -140,9 +140,9 @@ class ProfileController extends Controller
         }
 
         $data = [
-            'namePage' => 'Pemimpin Daerah Kabupaten Pasuruan',
-            'devTitle' => 'Pemimpin Daerah Kabupaten Pasuruan',
-            'devIndex' => 'Pemimpin Daerah Kabupaten Pasuruan',
+            'namePage' => 'Visi & Misi Pemimpin Daerah Kabupaten Pasuruan',
+            'devTitle' => 'Visi & Misi Pemimpin Daerah Kabupaten Pasuruan',
+            'devIndex' => 'Visi & Misi Pemimpin Daerah Kabupaten Pasuruan',
             'devBupati' => $devBupati,
             'devWabup' => $devWabub,
             'breadcrumbs' => $breadcrumbs
@@ -211,9 +211,9 @@ class ProfileController extends Controller
         }
 
         $data = [
-            'namePage' => 'Pemimpin Daerah Kabupaten Pasuruan',
-            'devTitle' => 'Pemimpin Daerah Kabupaten Pasuruan',
-            'devIndex' => 'Pemimpin Daerah Kabupaten Pasuruan',
+            'namePage' => 'Peta Kabupaten Pasuruan',
+            'devTitle' => 'Peta Kabupaten Pasuruan',
+            'devIndex' => 'Peta Kabupaten Pasuruan',
             'devBupati' => $devBupati,
             'devWabup' => $devWabub,
             'breadcrumbs' => $breadcrumbs

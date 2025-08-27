@@ -127,7 +127,7 @@
                 <div class="mt-5" id="sumber-daya">
                     <div>
                         <p class="h4 fw-medium">
-                            Arti Lambang<span class="text-custom-green">.</span>
+                            Peta Pasuruan<span class="text-custom-green">.</span>
                         </p>
                         <p class="text-muted">
                             Pemerintah Kabupaten Pasuruan belakangan ini semakin gencar

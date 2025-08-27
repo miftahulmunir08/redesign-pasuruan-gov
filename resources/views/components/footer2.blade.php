@@ -81,102 +81,105 @@
 
 <footer class="bg-success text-white pt-5 pb-4">
     <div class="container">
-        <div class="row align-items-center mt-5">
-            <div class="col-auto">
+        <div class="row align-items-center mt-5 text-center text-lg-start">
+            <div class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex justify-content-center justify-content-lg-start">
                 <img src="{{ asset('storage/uploads/logo/pasuruan.png') }}" style="width: 75px" alt="PASURUANKAB.GO.ID" />
             </div>
-            <div class="col-auto">
-                <h5 class="fw-bold mb-3 mb-lg-0">PEMKAB PASURUANKAB.GO.ID</h5>
+            <div class="col-12 col-lg-auto d-flex justify-content-center justify-content-lg-start">
+                <h5 class="fw-bold mb-0">PEMKAB PASURUANKAB.GO.ID</h5>
             </div>
         </div>
 
-        <div class="row mt-5">
-            <!-- Logo dan Kontak -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" width="50" class="me-2">
 
-                <p class="mt-4">
-                    Kompleks Perkantoran Pemerintah Kabupaten Pasuruan Jalan Raya Raci Km. 9, Bangil, Pasuruan, 67153
-                </p>
+        <div class="col-lg-12 col-md-6 text-center mt-4">
+            <div class="d-flex flex-wrap justify-content-between justify-content-center text-white text-start text-center text-lg-start">
+
+                <!-- Logo dan Kontak -->
+                <div class="col-12 col-lg-6 p-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" width="50" class="mb-3">
+                    <p>
+                        Kompleks Perkantoran Pemerintah Kabupaten Pasuruan <br>
+                        Jalan Raya Raci Km. 9, Bangil, Pasuruan, 67153
+                    </p>
+                </div>
+
+                <!-- Email -->
+                <div class="col-12 col-lg-3 p-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="50" class="mb-3">
+                    <p>info@kabpasuruan.go.id</p>
+                </div>
+
+                <!-- Sosial Media -->
+                <div class="col-12 col-lg-3 p-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="50" class="mb-3" alt="Ikon Media Sosial">
+                    <div>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm"><i class="lab la-youtube"></i></a>
+                    </div>
+                </div>
+
             </div>
 
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="20" class="me-2">
-                <p><i class="la la-envelope"></i> info@jabarprov.go.id</p>
-            </div>
+            <div class="d-flex justify-content-between flex-wrap text-center text-lg-start p-3">
 
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <p><i class="la la-comment-alt"></i> Isi survei performa situs web</p>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4 text-end">
-                <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-facebook-f"></i></a>
-                <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-instagram"></i></a>
-                <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="lab la-twitter"></i></a>
-                <a href="#" class="btn btn-outline-light btn-sm"><i class="lab la-youtube"></i></a>
-            </div>
-            
-        </div>
-
-        <!-- Sitemap -->
-        <div class="col-lg-12 col-md-6">
-            <div class="row">
-                <div class="col-6 col-lg-3 mb-3">
-                    <h6 class="fw-bold">Berita Kabupaten Pasuruan</h6>
-                    <ul class="list-unstyled">
+                <!-- Berita -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <h6 class="fw-bold">Kategori Berita Kabupaten Pasuruan</h6>
+                    <ul class="list-unstyled mt-2">
+                        <li><a href="#" class="text-white text-decoration-none">Agrowisata</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Budaya</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Ekonomi</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Kepegawaian</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Kesehatan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Lingkungan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Pariwisata</a></li>
+                    </ul>
+                </div>
+
+                <!-- Layanan Publik -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <h6 class="fw-bold">Fasilitas</h6>
+                    <ul class="list-unstyled mt-2">
+                        <li><a href="#" class="text-white text-decoration-none">Kesehatan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Pasar Daerah</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">PDAM</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Pendidikan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Pemerintahan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Infrastruktur</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Sosial</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Teknologi</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Perhubungan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Perpustakaan</a></li>
                     </ul>
                 </div>
-                <div class="col-6 col-lg-3 mb-3">
-                    <h6 class="fw-bold">Layanan Publik</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Administrasi Kependudukan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Kelahiran</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Sekolah</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Pendidikan Tinggi</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Lowongan Pekerjaan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Kesehatan Individu & Keluarga</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 mb-3">
-                    <h6 class="fw-bold">Data Kabupaten Pasuruan</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Open Data Jabar</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Satu Peta</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Dashboard Jabar</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 mb-3">
+
+                <!-- Profil -->
+                <div class="col-6 col-lg-3 mb-4">
                     <h6 class="fw-bold">Profil Kabupaten Pasuruan</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Selayang Pandang</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Tentang Kabupaten Pasuruan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Arsip dan Dokumen</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Jaringan Dokumentasi</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Layanan Pengadaan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Sapawarga</a></li>
+                    <ul class="list-unstyled mt-2">
+                        <li><a href="#" class="text-white text-decoration-none">Bupati & Wakil Bupati</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Lembaga Legislatif</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Lembaga Eksekutif</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Sejarah Kabupaten Pasuruan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Arti Lambang</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Peta Pasuruan</a></li>
                     </ul>
                 </div>
-                <div class="col-6 col-lg-2 mb-3">
-                    <h6 class="fw-bold">PPID</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Profil PPID</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Alur Layanan Informasi Publik</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Permohonan Informasi</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Pengajuan Keberatan</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Informasi yang Wajib</a></li>
+
+                <!-- Data Kabupaten -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <h6 class="fw-bold">Sumber Daya</h6>
+                    <ul class="list-unstyled mt-2">
+                        <li><a href="#" class="text-white text-decoration-none">Transparansi</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Download</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Agenda</a></li>
                     </ul>
                 </div>
+
             </div>
+
         </div>
+
+
     </div>
     </div>
 </footer>
