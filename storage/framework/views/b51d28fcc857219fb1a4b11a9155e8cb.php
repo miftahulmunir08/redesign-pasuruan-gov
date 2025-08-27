@@ -90,6 +90,21 @@
                 margin-top: -2rem !important;
             }
         }
+
+        .swiper-pagination {
+            position: relative !important;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: #aaa;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #333;
+        }
     </style>
 </head>
 
@@ -266,34 +281,8 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="swiper-pagination" style="mt-5"></div>
+                <div class="swiper-pagination" style=""></div>
             </div>
-
-
-            <!-- <div>
-                <?php $__currentLoopData = $devAplikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $app): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php if (isset($component)) { $__componentOriginal593082f5d9bbe85e64b8909ad2db569b = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal593082f5d9bbe85e64b8909ad2db569b = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.app-card','data' => ['jenisAplikasi' => $app->jenis_aplikasi,'idAplikasi' => $app->id_aplikasi,'urlAplikasi' => $app->url_aplikasi,'namaAplikasi' => $app->nama_aplikasi,'deskripsiAplikasi' => $app->deskripsi_aplikasi,'gambarAplikasi' => $app->gambar_aplikasi]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('app-card'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['jenisAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->jenis_aplikasi),'idAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->id_aplikasi),'urlAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->url_aplikasi),'namaAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->nama_aplikasi),'deskripsiAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->deskripsi_aplikasi),'gambarAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->gambar_aplikasi)]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal593082f5d9bbe85e64b8909ad2db569b)): ?>
-<?php $attributes = $__attributesOriginal593082f5d9bbe85e64b8909ad2db569b; ?>
-<?php unset($__attributesOriginal593082f5d9bbe85e64b8909ad2db569b); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal593082f5d9bbe85e64b8909ad2db569b)): ?>
-<?php $component = $__componentOriginal593082f5d9bbe85e64b8909ad2db569b; ?>
-<?php unset($__componentOriginal593082f5d9bbe85e64b8909ad2db569b); ?>
-<?php endif; ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div> -->
 
             <div id="layananCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -581,8 +570,27 @@
                 </div>
             </div>
         </div>
+        <?php if (isset($component)) { $__componentOriginalf4656f7a545c03a7e7395ae6755cd55a = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.navbottom','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('navbottom'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a)): ?>
+<?php $attributes = $__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a; ?>
+<?php unset($__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf4656f7a545c03a7e7395ae6755cd55a)): ?>
+<?php $component = $__componentOriginalf4656f7a545c03a7e7395ae6755cd55a; ?>
+<?php unset($__componentOriginalf4656f7a545c03a7e7395ae6755cd55a); ?>
+<?php endif; ?>
     </main>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

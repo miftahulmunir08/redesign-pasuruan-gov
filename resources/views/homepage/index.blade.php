@@ -90,6 +90,21 @@
                 margin-top: -2rem !important;
             }
         }
+
+        .swiper-pagination {
+            position: relative !important;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: #aaa;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #333;
+        }
     </style>
 </head>
 
@@ -210,13 +225,6 @@
                 <!-- Pagination -->
                 <div class="swiper-pagination" style=""></div>
             </div>
-
-
-            <!-- <div>
-                @foreach ($devAplikasi as $app)
-                <x-app-card :jenisAplikasi="$app->jenis_aplikasi" :idAplikasi="$app->id_aplikasi" :urlAplikasi="$app->url_aplikasi" :namaAplikasi="$app->nama_aplikasi" :deskripsiAplikasi="$app->deskripsi_aplikasi" :gambarAplikasi="$app->gambar_aplikasi" />
-                @endforeach
-            </div> -->
 
             <div id="layananCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -504,8 +512,8 @@
                 </div>
             </div>
         </div>
+        <x-navbottom />
     </main>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

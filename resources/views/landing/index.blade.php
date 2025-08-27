@@ -696,7 +696,7 @@
                 <img src="{{ asset('storage/uploads/icon_app/board.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
-                Video Compro
+                Video Profile
               </h5>
             </div>
           </div>
