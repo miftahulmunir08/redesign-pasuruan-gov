@@ -1,4 +1,3 @@
-@extends('profil.layout')
 
 @push('styles')
 <style>
@@ -649,46 +648,6 @@
             </div>
         </main>
 
-        <footer class="d-flex flex-row justify-content-between w-100 text-white px-4 py-4 align-items-center"
-            style="background-color: #0b7642;">
-            <ul class="list-inline mb-0">
-                <li class="list-inline-item">
-                    <a href="https://instagram.com" class="p-2 rounded d-inline-block"
-                        style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                        </svg></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://instagram.com" class="p-2 rounded d-inline-block"
-                        style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                        </svg></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://instagram.com" class="p-2 rounded d-inline-block"
-                        style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                        </svg></a>
-                </li>
-            </ul>
-            <div class="d-flex flex-row text-white small" style="gap: 0.5rem">
-                <a href="#" class="text-white text-decoration-none">2025 Website Kabupaten Pasuruan</a>
-                <span>|</span>
-                <a href="#" class="text-white text-decoration-none">Kebijakan Privasi</a>
-            </div>
-        </footer>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -698,3 +657,6 @@
     </body>
 
 </html>
+
+
+        <x-footer2/>
