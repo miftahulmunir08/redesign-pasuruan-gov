@@ -133,7 +133,7 @@ class DesktopNavigation extends Component
                     ],
                 ],
             ],
-            ['text' => 'Sumber Daya', 'url' => "$baseUrl/home#sumber-daya", 'children' => []],
+            ['text' => 'Sumber Daya', 'url' => "$baseUrl/#sumber-daya", 'children' => []],
             ['text' => 'Kontak', 'url' => "$baseUrl/kontak", 'children' => []],
         ];
     }
