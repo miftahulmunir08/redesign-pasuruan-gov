@@ -1,4 +1,4 @@
-@extends('pemerintahan.layout')
+@extends('profil.layout')
 
 @push('styles')
 <style>
@@ -107,7 +107,7 @@
 </section>
 @endsection
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>

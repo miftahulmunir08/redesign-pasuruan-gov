@@ -1,4 +1,4 @@
-@extends('pemerintahan.layout')
+@extends('profil.layout')
 
 @push('styles')
 <style>

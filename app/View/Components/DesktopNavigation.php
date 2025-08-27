@@ -21,7 +21,7 @@ class DesktopNavigation extends Component
                 'text' => 'Profil',
                 'url' => '#',
                 'children' => [
-                    ['text' => 'Arti Lambang', 'url' => '#', 'children' => []],
+                    ['text' => 'Arti Lambang', 'url' => "$baseUrl/profil/halaman/arti-lambang", 'children' => []],
                     ['text' => 'Peta Pasuruan', 'url' => '#', 'children' => []],
                     ['text' => 'Visi dan Misi', 'url' => '#', 'children' => []],
                     [

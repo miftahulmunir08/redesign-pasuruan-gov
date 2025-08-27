@@ -8,16 +8,21 @@
         <title>Document</title>
         <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
 
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
         <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     </head>
 
-    <body>
+    <body class="d-flex flex-column" style="min-height: 100vh">
         <header>
             <?php if (isset($component)) { $__componentOriginala70429be12c0ed20dabf9047149c24ec = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginala70429be12c0ed20dabf9047149c24ec = $attributes; } ?>
@@ -112,21 +117,24 @@
         </section>
 
         
-        <section style="width: 96%" class="mx-auto my-4 container-fluid">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
-                <?php $__currentLoopData = $devData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    
-                    <div class="col">
-                        <?php if (isset($component)) { $__componentOriginal14b498b52c33a1421ff8895e4557790f = $component; } ?>
+        <main class="flex-grow-1 d-flex flex-column">
+            
+            <section style="width: 96%" class="mx-auto my-4 container-fluid">
+                <?php if($devData->isNotEmpty()): ?>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
+                        <?php $__currentLoopData = $devData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            
+                            <div class="col">
+                                <?php if (isset($component)) { $__componentOriginal14b498b52c33a1421ff8895e4557790f = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal14b498b52c33a1421ff8895e4557790f = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.post-card','data' => ['post' => $post,'categoryTitle' => $devTitle]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.post-card','data' => ['post' => $post,'categoryTitle' => $devTitle,'typeCategory' => $typeCategory,'slugCategory' => $slugCategory]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('post-card'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['post' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($post),'categoryTitle' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($devTitle)]); ?>
+<?php $component->withAttributes(['post' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($post),'categoryTitle' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($devTitle),'typeCategory' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($typeCategory),'slugCategory' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($slugCategory)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal14b498b52c33a1421ff8895e4557790f)): ?>
@@ -137,13 +145,18 @@
 <?php $component = $__componentOriginal14b498b52c33a1421ff8895e4557790f; ?>
 <?php unset($__componentOriginal14b498b52c33a1421ff8895e4557790f); ?>
 <?php endif; ?>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
-            
-            <?php echo e($devData->links('components.dev-pagination')); ?>
+                    
+                    <?php echo e($devData->links('components.dev-pagination')); ?>
 
-        </section>
+                <?php endif; ?>
+                <?php if($devData->isEmpty()): ?>
+                    <p>Belum Ada Data yang Ditambahkan</p>
+                <?php endif; ?>
+            </section>
+        </main>
 
         
         <?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
@@ -170,6 +183,18 @@
         
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#kategori_id').on('change', function() {
+                    var slugKategori = $(this).val();
+                    var typeCategory = "<?php echo e($typeCategory); ?>";
+                    if (slugKategori && slugKategori !== 'null') {
+                        window.location.href = `/postingan/${typeCategory}/${slugKategori}`;
+                    }
+                });
+            });
+        </script>
         <?php echo $__env->yieldPushContent('scripts'); ?>
     </body>
 

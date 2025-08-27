@@ -32,5 +32,9 @@ Route::prefix('profil')->group(function () {
         Route::get('/lembaga-eksekutif', [PemerintahanController::class, 'lembaga']);
         Route::get('/lembaga-legislatif', [PemerintahanController::class, 'lembaga']);
     });
+    Route::prefix('halaman')->group(function () {
+        Route::get('/arti-lambang', [ProfileController::class, 'arti_lambang']);
+    });
 });
+
 // Redirect for no page routes

@@ -1,10 +1,8 @@
-<?php if (! $__env->hasRenderedOnce('b52f1d67-f5a8-4819-b888-1cb6f5e5be1f')): $__env->markAsRenderedOnce('b52f1d67-f5a8-4819-b888-1cb6f5e5be1f'); ?>
+<?php if (! $__env->hasRenderedOnce('19c83774-1a46-45bd-a65d-f7ac9a9e5d0f')): $__env->markAsRenderedOnce('19c83774-1a46-45bd-a65d-f7ac9a9e5d0f'); ?>
     <style>
-        /* CSS kustom HANYA untuk enhancement (animasi) yang tidak ada di Bootstrap */
-
-        /* --- EFEK UTAMA PADA NAV-LINK --- */
         .navbar-nav .nav-link {
             transition: color 0.2s ease-in-out;
+            font-size: 0.9rem
         }
 
         .navbar-nav>.nav-item>.nav-link::after {
@@ -26,7 +24,6 @@
             transform: scaleX(1);
         }
 
-        /* --- ANIMASI DROPDOWN MENU --- */
         .navbar-nav .dropdown-menu {
             display: block;
             opacity: 0;
@@ -38,7 +35,6 @@
             overflow-y: auto;
         }
 
-        /* Styling scrollbar */
         .navbar-nav .dropdown-menu::-webkit-scrollbar {
             width: 6px;
         }
@@ -64,12 +60,11 @@
             }
         }
 
-        /* --- EFEK PADA DROPDOWN ITEM --- */
+        /* ANIMATION */
         .navbar-nav .dropdown-item {
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
-        /* --- ANIMASI PANAH DROPDOWN --- */
         .navbar-nav .dropdown-toggle::after {
             transition: transform 0.2s ease-out;
         }
@@ -93,31 +88,42 @@
             color: var(--bs-secondary-color);
         }
 
-        /* --- PERUBAHAN: ANIMASI ITEM DROPDOWN (STAGGERED) --- */
-        /* Kondisi awal item (sebelum muncul) */
         .navbar-nav .dropdown-menu .nav-item {
             opacity: 0;
             transform: translateX(-15px);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* Kondisi akhir item (saat dropdown terbuka) */
         .navbar-nav .dropdown:hover>.dropdown-menu .nav-item {
             opacity: 1;
             transform: translateX(0);
-            /* Kunci animasi staggered: delay dihitung berdasarkan urutan item */
             transition-delay: calc(var(--animation-order, 0) * 40ms);
         }
 
-        /* --- AKHIR PERUBAHAN --- */
+        .chevron-animated {
+            transition: transform 0.3s cubic-bezier(.4, 2, .3, 1);
+        }
+
+        .nav-item.show>.nav-link .chevron-animated {
+            transform: rotate(180deg);
+        }
+
+        .nav-item>.nav-link .chevron-animated {
+            transform: rotate(0deg);
+        }
+
+        @media (min-width: 992px) {
+            .navbar-nav .dropdown:hover>.nav-link .chevron-animated {
+                transform: rotate(180deg);
+            }
+        }
     </style>
 <?php endif; ?>
-
 
 <?php
     $level = $level ?? 1;
     $hasChildren = !empty($item['children']);
-    $animationOrder = $animationOrder ?? 0; // Ambil urutan animasi
+    $animationOrder = $animationOrder ?? 0;
 
     $indentationClass = $level > 1 ? ' ps-' . ($level + 1) : '';
     $aClass = $level > 1 ? 'dropdown-item' : 'nav-link';
@@ -132,7 +138,6 @@
     }
 ?>
 
-
 <li class="nav-item <?php echo e($level == 1 && $hasChildren ? 'dropdown' : ''); ?>"
     style="--animation-order: <?php echo e($animationOrder); ?>;">
 
@@ -142,6 +147,14 @@
             aria-expanded="false" <?php endif; ?>>
         <?php echo e($item['text']); ?>
 
+        <?php if($hasChildren): ?>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down chevron-animated"
+                style="transition: transform 0.3s cubic-bezier(.4,2,.3,1);">
+                <path d="m6 9 6 6 6-6" />
+            </svg>
+        <?php endif; ?>
     </a>
 
     <?php if($level == 1 && $hasChildren): ?>
