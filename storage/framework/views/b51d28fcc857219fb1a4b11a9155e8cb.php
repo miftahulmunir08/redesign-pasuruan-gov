@@ -161,34 +161,45 @@
 <?php endif; ?>
     </header>
 
-    <section id="hero-section" class="swiper banner-swiper">
-        <div class="swiper-wrapper">
-            <?php $__currentLoopData = $devBannerUtama; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="position-relative w-100 swiper-slide" style="height: 90vh; min-height: 400px; width: 100%;">
-                <img src="<?php echo e(asset($banner->thumbnail)); ?>" alt="Kaliandra resort" class="w-100 object-fit-cover hero-img-zoom" style="height: 100%; width: 100%; object-fit: cover; max-height: 100%; transform: scale(1.02)" />
-                <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
-                    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end" style="max-width: 91.6%;">
-                        <div class="mb-4 mb-md-0 mr-md-1">
-                            <h1 class="display-4 fw-bold"><?php echo e($banner->nama_banner); ?></h1>
-                            <h2 class="h5">
-                                <?php echo e($devVisi); ?>
+        <section id="hero-section" class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                <?php $__currentLoopData = $devBannerUtama; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="position-relative w-100 swiper-slide"
+                        style="height: 90vh; min-height: 400px; width: 100%;">
+                        <img src="<?php echo e(asset($banner->thumbnail)); ?>" alt="<?php echo e($banner->nama_banner); ?>"
+                            class="w-100 object-fit-cover position-relative"
+                            style="height: 100%; max-height: 100%; transform: scale(1.02)" />
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0, 0, 0, 0.2); pointer-events: none;"></div>
+                        <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
+                            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
+                                style="max-width: 91.6%;">
+                                <div class="mb-4 mb-md-0 mr-md-1">
+                                    <h1 class="display-4 fw-bold"><?php echo e($banner->nama_banner); ?></h1>
+                                    <h2 class="h5">
+                                        <?php echo e($devVisi); ?>
 
-                            </h2>
+                                    </h2>
+                                </div>
+                                <button
+                                    class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
+                                    <span class="btn-background"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="me-2"
+                                        style="width: 20px; height: 20px; position: relative; z-index: 1;">
+                                        <path
+                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                        <path d="m10 15 5-3-5-3z" />
+                                    </svg>
+                                    <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
+                                </button>
+                            </div>
                         </div>
-                        <button class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
-                            <span class="btn-background"></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" style="width: 20px; height: 20px; position: relative; z-index: 1;">
-                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                                <path d="m10 15 5-3-5-3z" />
-                            </svg>
-                            <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
-                        </button>
                     </div>
-                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </div>
-    </section>
+        </section>
 
     <main class="container-fluid position-relative" style="max-width: 91.6%; padding-bottom: 4rem;">
         <div class="bg-white border-md-0 rounded shadow-sm p-3 position-relative z-2 search-bar-margin" style="">
@@ -204,49 +215,26 @@
             </div>
         </div>
 
-        <div class="mt-4">
-            <p class="h4 fw-medium ">
-                Sumber daya<span class="text-custom-green">.</span>
-            </p>
-            <div class="row g-4">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="#sumber-daya" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                            <img src="https://americansforprosperity.org/wp-content/uploads/2021/03/GettyImages-614037306-768x402.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center bg-white">
-                                <p class="card-text">Transparansi</p>
-                            </div>
+            <div class="mt-4">
+                <p class="h4 fw-medium ">
+                    Sumber daya<span class="text-custom-green">.</span>
+                </p>
+                <div class="row g-4">
+                    <?php $__currentLoopData = $devSumberDaya; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sumberDaya): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="<?php echo e($sumberDaya->url); ?>" class="text-decoration-none text-dark">
+                                <div class="card h-100 shadow-sm border-0 card-hover-scale">
+                                    <img src="<?php echo e($sumberDaya->imageUrl); ?>" alt="<?php echo e($sumberDaya->name); ?>"
+                                        class="card-img-top object-fit-cover" style="height: 8rem" />
+                                    <div class="card-body text-center bg-white">
+                                        <p class="card-text"><?php echo e($sumberDaya->name); ?></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="#sumber-daya" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                            <img src="https://jlloveassociates.com/wp-content/uploads/2014/10/canstockphoto2214512.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center bg-white">
-                                <p class="card-text">Download</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                        <img src="https://images.unsplash.com/photo-1578625155481-7bc40a6481b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                        <div class="card-body text-center bg-white">
-                            <p class="card-text">Agenda</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                        <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/Brochure-Catalog-Magazine-Mock-Up.png" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                        <div class="card-body text-center bg-white">
-                            <p class="card-text">Majalah</p>
-                        </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
-        </div>
 
         <div class="mt-5">
             <div class="d-flex flex-row justify-content-between align-items-center">
