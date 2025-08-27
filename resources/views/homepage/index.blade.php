@@ -121,9 +121,11 @@
                 @foreach ($devBannerUtama as $banner)
                     <div class="position-relative w-100 swiper-slide"
                         style="height: 90vh; min-height: 400px; width: 100%;">
-                        <img src="{{ asset($banner->thumbnail) }}" alt="Kaliandra resort"
-                            class="w-100 object-fit-cover hero-img-zoom"
-                            style="height: 100%; width: 100%; object-fit: cover; max-height: 100%; transform: scale(1.02)" />
+                        <img src="{{ asset($banner->thumbnail) }}" alt="{{ $banner->nama_banner }}"
+                            class="w-100 object-fit-cover position-relative"
+                            style="height: 100%; max-height: 100%; transform: scale(1.02)" />
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0, 0, 0, 0.2); pointer-events: none;"></div>
                         <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
                             <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
                                 style="max-width: 91.6%;">
@@ -175,48 +177,19 @@
                     Sumber daya<span class="text-custom-green">.</span>
                 </p>
                 <div class="row g-4">
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <a href="#sumber-daya" class="text-decoration-none text-dark">
-                            <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                                <img src="https://americansforprosperity.org/wp-content/uploads/2021/03/GettyImages-614037306-768x402.jpg"
-                                    alt="rapat kerja pemda" class="card-img-top object-fit-cover"
-                                    style="height: 8rem" />
-                                <div class="card-body text-center bg-white">
-                                    <p class="card-text">Transparansi</p>
+                    @foreach ($devSumberDaya as $sumberDaya)
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="{{ $sumberDaya->url }}" class="text-decoration-none text-dark">
+                                <div class="card h-100 shadow-sm border-0 card-hover-scale">
+                                    <img src="{{ $sumberDaya->imageUrl }}" alt="{{ $sumberDaya->name }}"
+                                        class="card-img-top object-fit-cover" style="height: 8rem" />
+                                    <div class="card-body text-center bg-white">
+                                        <p class="card-text">{{ $sumberDaya->name }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <a href="#sumber-daya" class="text-decoration-none text-dark">
-                            <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                                <img src="https://jlloveassociates.com/wp-content/uploads/2014/10/canstockphoto2214512.jpg"
-                                    alt="rapat kerja pemda" class="card-img-top object-fit-cover"
-                                    style="height: 8rem" />
-                                <div class="card-body text-center bg-white">
-                                    <p class="card-text">Download</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                            <img src="https://images.unsplash.com/photo-1578625155481-7bc40a6481b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center bg-white">
-                                <p class="card-text">Agenda</p>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/Brochure-Catalog-Magazine-Mock-Up.png"
-                                alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center bg-white">
-                                <p class="card-text">Majalah</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 

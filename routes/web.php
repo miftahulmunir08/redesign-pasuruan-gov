@@ -5,13 +5,14 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PemerintahanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SumberDayaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index']);
+Route::get('/kontak', [LandingController::class, 'kontak']);
 
 Route::get('/layanan', [LandingController::class, 'index_landing']);
 Route::get('/layanan/profile', [LandingController::class, 'profile']);
-Route::get('/layanan/kontak', [LandingController::class, 'kontak']);
 Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
 
 Route::prefix('postingan')->group(function () {
@@ -38,4 +39,11 @@ Route::prefix('profil')->group(function () {
     });
 });
 
-// Redirect for no page routes
+Route::prefix('sumber-daya')->group(function () {
+    Route::get('/transparansi', [SumberDayaController::class, 'transparansi']);
+    Route::get('/download', [SumberDayaController::class, 'download']);
+    Route::get('/agenda', [SumberDayaController::class, 'agenda']);
+    Route::get('/majalah', [SumberDayaController::class, 'majalah']);
+});
+
+Route::redirect('/sumber-daya', '/');

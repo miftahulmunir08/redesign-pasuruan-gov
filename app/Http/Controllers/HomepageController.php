@@ -37,6 +37,35 @@ class HomepageController extends Controller
             ],
         ]);
 
+        $devSumberDaya = [
+            // Data asli dari kamu
+            (object)[
+                'id' => 1,
+                'name' => 'Transparansi',
+                'imageUrl' => 'https://americansforprosperity.org/wp-content/uploads/2021/03/GettyImages-614037306-768x402.jpg',
+                'url' => '/sumber-daya/transparansi'
+            ],
+            // Data baru dari HTML
+            (object)[
+                'id' => 2,
+                'name' => 'Download',
+                'imageUrl' => 'https://jlloveassociates.com/wp-content/uploads/2014/10/canstockphoto2214512.jpg',
+                'url' => '/sumber-daya/download'
+            ],
+            (object)[
+                'id' => 3,
+                'name' => 'Agenda',
+                'imageUrl' => 'https://images.unsplash.com/photo-1578625155481-7bc40a6481b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                'url' => '/sumber-daya/agenda'
+            ],
+            (object)[
+                'id' => 4,
+                'name' => 'Majalah',
+                'imageUrl' => 'https://colorlib.com/wp/wp-content/uploads/sites/2/Brochure-Catalog-Magazine-Mock-Up.png',
+                'url' => '/sumber-daya/majalah'
+            ],
+        ];
+
         $devAplikasi = [
             (object) [
                 "id_aplikasi" => 2,
@@ -313,7 +342,8 @@ class HomepageController extends Controller
             'devVisi' => $devVisi,
             'devBannerUtama' => $devBannerUtama,
             'devAplikasi' => $devAplikasi,
-            'devLayanan' => $devLayanan
+            'devLayanan' => $devLayanan,
+            'devSumberDaya' => $devSumberDaya,
         ];
 
         return view('homepage/index', $data);
