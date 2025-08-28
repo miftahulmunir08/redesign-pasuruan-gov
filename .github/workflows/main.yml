@@ -26,3 +26,5 @@ jobs:
           server-dir: ./laravel/              # karena FTP login langsung ke folder subdomain
           local-dir: ./               # semua isi repo akan diupload
           dry-run: false               # test dulu tanpa benar-benar mengupload
+          allow-delete: true             # hapus file lama yang tidak ada di local
+          continue-on-error: true        # skip file/folder yang tidak ada
