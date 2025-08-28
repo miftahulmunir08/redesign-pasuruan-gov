@@ -19,9 +19,9 @@ jobs:
       - name: 📦 Checkout code
         uses: actions/checkout@v2
 
-      # 2️⃣ Deploy via FTP
+      # 2️⃣ Deploy via FTP (stabil, no 550 errors)
       - name: 🚀 FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: SamKirkland/FTP-Deploy-Action@4.4.0
         with:
           server: ${{ secrets.FTP_SERVER_PRODUCTION }}
           username: ${{ secrets.FTP_USERNAME_PRODUCTION }}
@@ -29,12 +29,13 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./                  # semua isi repo
-          server-dir: ./laravel/         # path Laravel di server, sesuaikan
-          dry-run: false                 # false = benar-benar deploy
+          server-dir: ./laravel/         # sesuaikan path Laravel di server
+          dry-run: false
           allow-delete: false            # jangan hapus file/folder lama → hindari error 550
           continue-on-error: true        # skip file/folder yang hilang
 
-      # 3️⃣ (Opsional) Clear cached views via artisan (kalau ada route/artisan di server)
+      # 3️⃣ (Opsional) Clear Laravel cached views via URL
+      # Pastikan ada route/artisan command di server yang bisa dipanggil
       - name: ⚡ Clear Laravel cached views
         run: |
           curl -s -X GET https://${{ secrets.SERVER_URL }}/artisan-view-clear || true
