@@ -23,6 +23,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_PRODUCTION }}
           port: 21
           protocol: ftp
-          server-dir: ./laravel/              # karena FTP login langsung ke folder subdomain
+          server-dir: domains/redesign.myporto.icu/public_html/laravel/              # karena FTP login langsung ke folder subdomain
           local-dir: ./               # semua isi repo akan diupload
           dry-run: false               # test dulu tanpa benar-benar mengupload
