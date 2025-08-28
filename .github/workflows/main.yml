@@ -1,21 +1,26 @@
+name: 🚀 Deploy Laravel via FTP
+
 on:
   push:
     branches:
       - main
 
-name: 🚀 Deploy master on push
-
 jobs:
   web-deploy:
-    name: 🎉 Deploy to main
+    name: 🎉 Deploy to production
     runs-on: ubuntu-latest
     environment: production
-    concurrency: master-deploy
+    concurrency:
+      group: master-deploy
+      cancel-in-progress: true
+
     steps:
+      # 1️⃣ Checkout repository
       - name: 📦 Checkout code
         uses: actions/checkout@v2
 
-      - name: 🚀 Deploy via FTP (dry-run)
+      # 2️⃣ Deploy via FTP
+      - name: 🚀 FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER_PRODUCTION }}
@@ -24,10 +29,12 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./                  # semua isi repo
-          server-dir: ./laravel/         # pastikan sesuai FTP
-          dry-run: false
-          allow-delete: false            # jangan hapus file/folder lama
+          server-dir: ./laravel/         # path Laravel di server, sesuaikan
+          dry-run: false                 # false = benar-benar deploy
+          allow-delete: false            # jangan hapus file/folder lama → hindari error 550
           continue-on-error: true        # skip file/folder yang hilang
 
-
-          
+      # 3️⃣ (Opsional) Clear cached views via artisan (kalau ada route/artisan di server)
+      - name: ⚡ Clear Laravel cached views
+        run: |
+          curl -s -X GET https://${{ secrets.SERVER_URL }}/artisan-view-clear || true
