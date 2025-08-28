@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center justify-content-md-between align-items-center px-5 py-3 border-bottom">
-    <a href="/home" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+    <a href="/" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lambang_Kabupaten_Pasuruan.png/250px-Lambang_Kabupaten_Pasuruan.png"
             alt="Logo Kabupaten Pasuruan" style="height: 48px;">
 

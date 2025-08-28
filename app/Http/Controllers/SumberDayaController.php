@@ -19,18 +19,45 @@ class SumberDayaController extends Controller
         return view('sumber-daya.transparansi', $data);
     }
 
-    public function download()
+    public function download(Request $request)
     {
-        return view('sumber-daya.download');
+
+        $devTitle = 'Download';
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+
+        $data = [
+            'devTitle' => $devTitle,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('sumber-daya.download', $data);
     }
 
-    public function agenda()
+    public function agenda(Request $request)
     {
-        return view('sumber-daya.agenda');
+
+        $devTitle = 'Agenda';
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+
+        $data = [
+            'devTitle' => $devTitle,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('sumber-daya.agenda', $data);
     }
 
-    public function majalah()
+    public function majalah(Request $request)
     {
-        return view('sumber-daya.majalah');
+
+        $devTitle = 'Majalah';
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+
+        $data = [
+            'devTitle' => $devTitle,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('sumber-daya.majalah', $data);
     }
 }
