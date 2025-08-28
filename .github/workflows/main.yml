@@ -19,9 +19,9 @@ jobs:
       - name: 📦 Checkout code
         uses: actions/checkout@v2
 
-      # 2️⃣ Deploy via FTP (stabil, no 550 errors)
+      # 2️⃣ Deploy via FTP
       - name: 🚀 FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER_PRODUCTION }}
           username: ${{ secrets.FTP_USERNAME_PRODUCTION }}
