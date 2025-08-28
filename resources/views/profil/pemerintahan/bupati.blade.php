@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="profile-action">
                                     <a href="https://id.wikipedia.org/wiki/Mochamad_Rusdi_Sutejo" target="_blank"
-                                        class="btn btn-primary btn-lg px-4 fs-6">
+                                        class="btn btn-lg px-4 fs-6 text-white" style="background-color: #0B7642">
                                         Lihat Profil Lengkap
                                     </a>
                                 </div>
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="profile-action">
                                     <a href="https://id.wikipedia.org/wiki/Shobih_Asrori" target="_blank"
-                                        class="btn btn-primary btn-lg px-4 fs-6">
+                                        class="btn btn-lg px-4 fs-6 text-white" style="background-color: #0B7642">
                                         Lihat Profil Lengkap
                                     </a>
                                 </div>

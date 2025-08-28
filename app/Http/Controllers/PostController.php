@@ -171,25 +171,7 @@ class PostController extends Controller
         $devData = new LengthAwarePaginator($currentPageItems, count($filteredData), $perPage);
         $devData->setPath(request()->url());
 
-        $segments = $request->segments();
-        $breadcrumbs = [];
-        $url = '';
-
-        foreach ($segments as $segment) {
-            $url .= '/' . $segment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $segment));
-
-            $breadcrumbs[] = [
-                'text' => $text,
-                'url'  => $url
-            ];
-        }
-
-        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
-
-        if (count($breadcrumbs) > 1) {
-            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
-        }
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
 
         $data = [
             'namePage' => $tipe_kategori,

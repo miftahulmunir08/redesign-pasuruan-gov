@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\PemerintahanController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SumberDayaController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,20 +21,22 @@ Route::prefix('postingan')->group(function () {
     Route::get('/postingan/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', "LandingPostinganController@detail");
 });
 
-// Profil pakai group profil
+// Nav profil
 Route::prefix('profil')->group(function () {
     Route::redirect('/pemerintahan', '/pemerintahan/bupati-wakil-bupati');
     Route::redirect('/gambaran-umum', '/gambaran-umum/gambaran-umum-kabupaten-pasuruan-2025');
-    Route::get("/{slug_posts}", [PostController::class], 'post-detail');
+
+    // Arti lambang, visi misi, sejarah
+    Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
+
     Route::prefix('pemerintahan')->group(function () {
-        Route::get('/bupati-wakil-bupati', [PemerintahanController::class, 'bupati']);
-        Route::get('/lembaga-eksekutif', [PemerintahanController::class, 'lembaga']);
-        Route::get('/lembaga-legislatif', [PemerintahanController::class, 'lembaga']);
+        Route::get('/bupati-wakil-bupati', [ProfilController::class, 'bupati']);
+        Route::get('/lembaga-eksekutif', [ProfilController::class, 'lembaga']);
+        Route::get('/lembaga-legislatif', [ProfilController::class, 'lembaga']);
     });
-    Route::prefix('halaman')->group(function () {
-        Route::get('/arti-lambang', [ProfileController::class, 'arti_lambang']);
-        Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
-        Route::get('/visi-misi', [ProfileController::class, 'visi_misi']);
+
+    Route::prefix('gambaran-umum')->group(function () {
+        Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
     });
 });
 

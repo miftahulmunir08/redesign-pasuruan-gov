@@ -81,7 +81,7 @@
         class="d-flex align-items-center justify-content-center">
         <div class="d-flex flex-column justify-content-center align-items-center">
             <h1 style="color: white; font-weight: bold; margin-bottom: 8px; padding: 0" class="fs-1">
-                Lembaga Legislatif
+                {{ $formattedTitle }}
             </h1>
             @if (isset($breadcrumbs))
                 <x-breadcrumb :items="$breadcrumbs" />
@@ -289,15 +289,6 @@
         ];
 
         const dummyDataEksekutif = [{
-                "id": 301,
-                "nama": "Dr. Andriyanto, S.H., M.Kes.",
-                "jabatan": "Pj. Bupati Pasuruan",
-                "nama_lembaga": "Pemerintah Kabupaten Pasuruan",
-                "periode": "2024-2025",
-                "foto_url": "https://placehold.co/1706x2560/EFEFEF/333333?text=Foto",
-                "riwayat_pendidikan": "Menjabat sebagai Penjabat Bupati untuk menjalankan roda pemerintahan hingga terpilihnya bupati definitif hasil Pilkada."
-            },
-            {
                 "id": 302,
                 "nama": "Yudha Triwidya Sasongko, S.Sos., M.Si",
                 "jabatan": "Sekretaris Daerah",

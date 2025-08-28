@@ -21,9 +21,9 @@ class DesktopNavigation extends Component
                 'text' => 'Profil',
                 'url' => '#',
                 'children' => [
-                    ['text' => 'Arti Lambang', 'url' => "$baseUrl/profil/halaman/arti-lambang", 'children' => []],
-                    ['text' => 'Peta Pasuruan', 'url' => "$baseUrl/profil/halaman/peta-pasuruan", 'children' => []],
-                    ['text' => 'Visi dan Misi', 'url' => "$baseUrl/profil/halaman/visi-misi", 'children' => []],
+                    ['text' => 'Visi dan Misi', 'url' => "$baseUrl/profil/visi-dan-misi", 'children' => []],
+                    ['text' => 'Arti Lambang', 'url' => "$baseUrl/profil/arti-lambang", 'children' => []],
+                    ['text' => 'Peta Pasuruan', 'url' => "$baseUrl/profil/peta-pasuruan", 'children' => []],
                     [
                         'text' => 'Pemerintahan',
                         'url' => '#',
@@ -33,12 +33,12 @@ class DesktopNavigation extends Component
                             ['text' => 'Lembaga Eksekutif', 'url' => "$baseUrl/profil/pemerintahan/lembaga-eksekutif", 'children' => []],
                         ],
                     ],
-                    ['text' => 'Sejarah Kabupaten Pasuruan', 'url' => "$baseUrl/halaman/sejarah-singkat-kab-pasuruan", 'children' => []],
+                    ['text' => 'Sejarah Kabupaten Pasuruan', 'url' => "$baseUrl/profil/sejarah-singkat-kab-pasuruan", 'children' => []],
                     [
                         'text' => 'Gambaran Umum',
-                        'url' => "$baseUrl/halaman/gambaran-umum-kabupaten-pasuruan-2023",
+                        'url' => "#",
                         'children' => [
-                            ['text' => 'Gambaran Umum Kabupaten Pasuruan', 'url' => "$baseUrl/halaman/gambaran-umum-kabupaten-pasuruan-2025", 'children' => []],
+                            ['text' => 'Gambaran Umum Kabupaten Pasuruan', 'url' => "$baseUrl/profil/gambaran-umum-kabupaten-pasuruan-2025", 'children' => []],
                         ],
                     ],
                 ],

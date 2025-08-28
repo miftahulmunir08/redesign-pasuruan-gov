@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 
 class SumberDayaController extends Controller
 {
-    public function transparansi()
+    public function transparansi(Request $request)
     {
-        return view('sumber-daya.transparansi');
+        $devTitle = 'Transparansi';
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+
+        $data = [
+            'devTitle' => $devTitle,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('sumber-daya.transparansi', $data);
     }
 
     public function download()

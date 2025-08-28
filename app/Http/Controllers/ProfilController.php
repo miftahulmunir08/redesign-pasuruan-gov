@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Str;
 
-class PemerintahanController extends Controller
+class ProfilController extends Controller
 {
     public function bupati(Request $request)
     {
@@ -26,7 +27,7 @@ class PemerintahanController extends Controller
             'id_pemerintahan' => 101,
             'nama' => 'H. Mochamad Rusdi Sutejo, S.M.',
             'jabatan' => 'Bupati Pasuruan',
-            'gambar_pemerintahan' => 'https://upload.wikimedia.org/wikipedia/commons/3/33/H._M._Rusdi_Sutejo_Bupati_Pasuruan.png',
+            'gambar_pemerintahan' => 'https://www.pasuruankab.go.id/download-file/eyJpdiI6IjZ0YXVRSTM4S2JOOXRBYm9DZ21iSXc9PSIsInZhbHVlIjoicU1VZWY1MTlnd29IZFF4c1R2WWlSZz09IiwibWFjIjoiMTE3OTU0MTkxYTAwNGQ4OTViMGI1ZGU1M2NhZDllN2UyZGVmYTM0YmRjYmIzMDJjZDgzYzYyYmE0NjJhZTU4NiIsInRhZyI6IiJ9/pemerintahan/gambar_pemerintahan/0',
             'pemerintahan_lembaga_id' => $devLembagaBupati->id_pemerintahan_lembaga,
             'pemerintahan_periode_id' => $periode->id_pemerintahan_periode,
             'pemerintahan_lembaga' => $devLembagaBupati,
@@ -37,32 +38,14 @@ class PemerintahanController extends Controller
             'id_pemerintahan' => 102,
             'nama' => 'K.H. Shobih Asrori, S.H.',
             'jabatan' => 'Wakil Bupati Pasuruan',
-            'gambar_pemerintahan' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/K.H._M._Shobih_Asrori_Wakil_Bupati_Pasuruan.png/1200px-K.H._M._Shobih_Asrori_Wakil_Bupati_Pasuruan.png',
+            'gambar_pemerintahan' => 'https://www.pasuruankab.go.id/download-file/eyJpdiI6IjhNcUs3cUJjbUI4b29wK3l6TVd6WFE9PSIsInZhbHVlIjoiamErQnBpdXkxK1RLeDd1NFBOV1IxUT09IiwibWFjIjoiOGZlYzJjMTE4NTlhYWE3NWVkMzVhNzllOGU2NTI4YWI5NGUyZWNkYTMzZjYxN2I1YmIyZjg2ZDBhYzUyMTE1YSIsInRhZyI6IiJ9/pemerintahan/gambar_pemerintahan/0',
             'pemerintahan_lembaga_id' => $devLembagaWabup->id_pemerintahan_lembaga,
             'pemerintahan_periode_id' => $periode->id_pemerintahan_periode,
             'pemerintahan_lembaga' => $devLembagaWabup,
             'pemerintahan_periode' => $periode,
         ];
 
-        $segments = $request->segments();
-        $breadcrumbs = [];
-        $url = '';
-
-        if (count($segments) > 0) {
-            $lastSegment = end($segments);
-            $url = '/' . $lastSegment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $lastSegment));
-            $breadcrumbs[] = [
-                'text' => $text,
-                'url'  => null
-            ];
-        }
-
-        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
-
-        if (count($breadcrumbs) > 1) {
-            $breadcrumbs[count($breadcrumbs) - 1]['url'] = null;
-        }
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
 
         $data = [
             'namePage' => 'Pemimpin Daerah Kabupaten Pasuruan',
@@ -78,26 +61,30 @@ class PemerintahanController extends Controller
 
     public function lembaga(Request $request)
     {
-        $segments = $request->segments();
-        $breadcrumbs = [];
-        $url = '';
+        $lastSegment = last($request->segments());
+        $formattedTitle = Str::title(str_replace('-', ' ', $lastSegment));
 
-        if (count($segments) > 0) {
-            $lastSegment = end($segments);
-            $url = '/' . $lastSegment;
-            $text = ucwords(str_replace(['-', '_'], ' ', $lastSegment));
-            $breadcrumbs[] = [
-                'text' => $text,
-                'url'  => null
-            ];
-        }
-
-        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
 
         $data = [
-            'breadcrumbs' => $breadcrumbs
+            'breadcrumbs' => $breadcrumbs,
+            'formattedTitle' => $formattedTitle
         ];
 
         return view('profil.pemerintahan.lembaga', $data);
+    }
+
+    public function detailPost(Request $request, $slug_post)
+    {
+        $devData = collect(config('dummy.profilPosts'))->firstWhere('slug_posts', $slug_post);
+
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+
+        $data = [
+            'devData' => $devData,
+            'breadcrumbs' => $breadcrumbs
+        ];
+
+        return view('profil.detail-post', $data);
     }
 }
