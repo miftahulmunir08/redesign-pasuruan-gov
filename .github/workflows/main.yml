@@ -23,8 +23,11 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_PRODUCTION }}
           port: 21
           protocol: ftp
-          server-dir: ./laravel/              # karena FTP login langsung ke folder subdomain
-          local-dir: ./               # semua isi repo akan diupload
-          dry-run: false               # test dulu tanpa benar-benar mengupload
-          allow-delete: true             # hapus file lama yang tidak ada di local
-          continue-on-error: true        # skip file/folder yang tidak ada
+          local-dir: ./                  # semua isi repo
+          server-dir: ./laravel/         # pastikan sesuai FTP
+          dry-run: false
+          allow-delete: false            # jangan hapus file/folder lama
+          continue-on-error: true        # skip file/folder yang hilang
+
+
+          
