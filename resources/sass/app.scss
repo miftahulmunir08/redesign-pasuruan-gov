@@ -3,6 +3,10 @@ $primary: #0b7642;
 
 @import "bootstrap/scss/bootstrap";
 
+body {
+    font-family: "Poppins", sans-serif;
+}
+
 .hero-swiper {
     height: 80vh;
     width: 100%;

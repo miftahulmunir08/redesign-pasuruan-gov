@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kab. Pasuruan (Bootstrap 5 Version)</title>
+    <title>Kab. Pasuruan</title>
+
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <?php echo $__env->yieldPushContent('styles'); ?>
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -76,76 +80,129 @@
         .btn-video-effect:hover .btn-background {
             width: 100%;
         }
+
+        .search-bar-margin {
+            margin-top: 2rem !important;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar-margin {
+                margin-top: -2rem !important;
+            }
+        }
+
+        .layanan-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 80px;
+            height: 100%;
+            word-break: break-word;
+        }
+
+        @media (min-width: 768px) {
+            .layanan-card {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .swiper-pagination {
+            margin-top: 20px;
+            /* jarak dari card ke pagination */
+            position: relative;
+            /* biar ngikut flow normal */
+
+        }
     </style>
 </head>
 
 <body>
-    <header class="d-flex flex-row align-items-center justify-content-between px-md-5 px-3 py-2 border-bottom">
-        <div class="d-flex flex-row align-items-center mx-auto mx-md-0" style="gap: 0.5rem">
-            <img src="<?php echo e(asset('storage/uploads/logo/pasuruan.png')); ?>" style="width: 2.5rem" />
-            <p class="d-flex flex-column lh-tight mb-0">
-                <span>Pemerintah</span><span class="fw-semibold">Kabupaten Pasuruan<span class="text-custom-green">.</span></span>
-            </p>
-        </div>
-        <p class="d-none d-sm-flex flex-row align-items-center mb-0" style="gap: 0.25rem">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span class="small">Kompleks Perkantoran Pemerintah Kabupaten Pasuruan Jalan Raya Raci
-                Km.9, Bangil, Pasuruan, 67153</span>
-        </p>
+    <header>
+        <?php if (isset($component)) { $__componentOriginala70429be12c0ed20dabf9047149c24ec = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginala70429be12c0ed20dabf9047149c24ec = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.web-info','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('web-info'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginala70429be12c0ed20dabf9047149c24ec)): ?>
+<?php $attributes = $__attributesOriginala70429be12c0ed20dabf9047149c24ec; ?>
+<?php unset($__attributesOriginala70429be12c0ed20dabf9047149c24ec); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginala70429be12c0ed20dabf9047149c24ec)): ?>
+<?php $component = $__componentOriginala70429be12c0ed20dabf9047149c24ec; ?>
+<?php unset($__componentOriginala70429be12c0ed20dabf9047149c24ec); ?>
+<?php endif; ?>
+        <?php if (isset($component)) { $__componentOriginal2489997eb8eea5e3fc9fb859cd403c90 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal2489997eb8eea5e3fc9fb859cd403c90 = $attributes; } ?>
+<?php $component = App\View\Components\DesktopNavigation::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('desktop-navigation'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\DesktopNavigation::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal2489997eb8eea5e3fc9fb859cd403c90)): ?>
+<?php $attributes = $__attributesOriginal2489997eb8eea5e3fc9fb859cd403c90; ?>
+<?php unset($__attributesOriginal2489997eb8eea5e3fc9fb859cd403c90); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal2489997eb8eea5e3fc9fb859cd403c90)): ?>
+<?php $component = $__componentOriginal2489997eb8eea5e3fc9fb859cd403c90; ?>
+<?php unset($__componentOriginal2489997eb8eea5e3fc9fb859cd403c90); ?>
+<?php endif; ?>
     </header>
 
-    <nav class="d-none d-md-block">
-        <ul class="nav justify-content-center py-2 fw-medium">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" style="--bs-nav-link-hover-color: #0b7642">Profil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" style="--bs-nav-link-hover-color: #0b7642">Potensi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" style="--bs-nav-link-hover-color: #0b7642">Fasilitas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" style="--bs-nav-link-hover-color: #0b7642">Layanan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#sumber-daya" style="--bs-nav-link-hover-color: #0b7642">Sumber Daya</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" style="--bs-nav-link-hover-color: #0b7642">Kontak</a>
-            </li>
-        </ul>
-    </nav>
+        <section id="hero-section" class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                <?php $__currentLoopData = $devBannerUtama; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="position-relative w-100 swiper-slide"
+                        style="height: 90vh; min-height: 400px; width: 100%;">
+                        <img src="<?php echo e(asset($banner->thumbnail)); ?>" alt="<?php echo e($banner->nama_banner); ?>"
+                            class="w-100 object-fit-cover position-relative"
+                            style="height: 100%; max-height: 100%; transform: scale(1.02)" />
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0, 0, 0, 0.2); pointer-events: none;"></div>
+                        <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
+                            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
+                                style="max-width: 91.6%;">
+                                <div class="mb-4 mb-md-0 mr-md-1">
+                                    <h1 class="display-4 fw-bold"><?php echo e($banner->nama_banner); ?></h1>
+                                    <h2 class="h5">
+                                        <?php echo e($devVisi); ?>
 
-    <section id="hero-section">
-        <div class="position-relative w-100">
-            <img src="<?php echo e(asset('storage/uploads/hero_section/202409_209-66d95f4f2b0ac.jpg')); ?>" alt="Kaliandra resort" class="w-100 object-fit-cover" style="max-height: 100vh" />
-            <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
-                <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end" style="max-width: 91.6%;">
-                    <div class="mb-4 mb-md-0">
-                        <h1 class="display-4 fw-bold">Kaliandra</h1>
-                        <h2 class="h5">
-                            Kabupaten Pasuruan yang Maju, Sejahtera dan Berkeadilan.
-                        </h2>
+                                    </h2>
+                                </div>
+                                <button
+                                    class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
+                                    <span class="btn-background"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="me-2"
+                                        style="width: 20px; height: 20px; position: relative; z-index: 1;">
+                                        <path
+                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                        <path d="m10 15 5-3-5-3z" />
+                                    </svg>
+                                    <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark">
-                        <span class="btn-background"></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" style="width: 20px; height: 20px; position: relative; z-index: 1;">
-                            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                            <path d="m10 15 5-3-5-3z" />
-                        </svg>
-                        <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
-                    </button>
-                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <main class="container-fluid" style="max-width: 91.6%; position: relative; padding-bottom: 4rem;">
-        <div class="bg-white border-md-0 rounded-lg shadow p-3 position-relative z-2" style="margin-top: -2rem">
+    <main class="container-fluid position-relative" style="max-width: 91.6%; padding-bottom: 4rem;">
+        <div class="bg-white border-md-0 rounded shadow-sm p-3 position-relative z-2 search-bar-margin" style="">
             <div class="input-group">
                 <input name="search" type="search" placeholder="Keyword pencarian" class="form-control" />
                 <button class="btn btn-custom-green d-flex align-items-center">
@@ -158,49 +215,26 @@
             </div>
         </div>
 
-        <div class="mt-5">
-            <p class="h4 fw-medium">
-                Sumber daya<span class="text-custom-green">.</span>
-            </p>
-            <div class="row g-4 mt-2">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="#sumber-daya" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                            <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center">
-                                <p class="card-text">Transparansi</p>
-                            </div>
+            <div class="mt-4">
+                <p class="h4 fw-medium ">
+                    Sumber daya<span class="text-custom-green">.</span>
+                </p>
+                <div class="row g-4">
+                    <?php $__currentLoopData = $devSumberDaya; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sumberDaya): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="<?php echo e($sumberDaya->url); ?>" class="text-decoration-none text-dark">
+                                <div class="card h-100 shadow-sm border-0 card-hover-scale">
+                                    <img src="<?php echo e($sumberDaya->imageUrl); ?>" alt="<?php echo e($sumberDaya->name); ?>"
+                                        class="card-img-top object-fit-cover" style="height: 8rem" />
+                                    <div class="card-body text-center bg-white">
+                                        <p class="card-text"><?php echo e($sumberDaya->name); ?></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <a href="#sumber-daya" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                            <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                            <div class="card-body text-center">
-                                <p class="card-text">Download</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                        <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                        <div class="card-body text-center">
-                            <p class="card-text">Agenda</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="card h-100 shadow-sm border-0 card-hover-scale" style="cursor: pointer;">
-                        <img src="https://bappeda.bulelengkab.go.id/uploads/konten/49_rapat-koordinasi-persiapan-pelaksanaan-musrenbang-rkpd-di-kecamatan-tahun-2024-untuk-penyusunan-rencana-kerja-pemerintah-daerah-rkpd-kabupaten-buleleng-tahun-2025.jpg" alt="rapat kerja pemda" class="card-img-top object-fit-cover" style="height: 8rem" />
-                        <div class="card-body text-center">
-                            <p class="card-text">Majalah</p>
-                        </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
-        </div>
 
         <div class="mt-5">
             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -214,61 +248,37 @@
                 </select>
             </div>
 
-            <div id="layananCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#layananCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#layananCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 1</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 2</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 3</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 4</div>
-                                </div>
-                            </div>
-                        </div>
+
+            <div class="swiper app-swiper">
+                <div class="swiper-wrapper">
+                    <?php $__currentLoopData = $devAplikasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $app): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="swiper-slide">
+                        <?php if (isset($component)) { $__componentOriginal593082f5d9bbe85e64b8909ad2db569b = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal593082f5d9bbe85e64b8909ad2db569b = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.app-card','data' => ['jenisAplikasi' => $app->jenis_aplikasi,'idAplikasi' => $app->id_aplikasi,'urlAplikasi' => $app->url_aplikasi,'namaAplikasi' => $app->nama_aplikasi,'deskripsiAplikasi' => $app->deskripsi_aplikasi,'gambarAplikasi' => $app->gambar_aplikasi]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('app-card'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['jenisAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->jenis_aplikasi),'idAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->id_aplikasi),'urlAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->url_aplikasi),'namaAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->nama_aplikasi),'deskripsiAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->deskripsi_aplikasi),'gambarAplikasi' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($app->gambar_aplikasi)]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal593082f5d9bbe85e64b8909ad2db569b)): ?>
+<?php $attributes = $__attributesOriginal593082f5d9bbe85e64b8909ad2db569b; ?>
+<?php unset($__attributesOriginal593082f5d9bbe85e64b8909ad2db569b); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal593082f5d9bbe85e64b8909ad2db569b)): ?>
+<?php $component = $__componentOriginal593082f5d9bbe85e64b8909ad2db569b; ?>
+<?php unset($__componentOriginal593082f5d9bbe85e64b8909ad2db569b); ?>
+<?php endif; ?>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 5</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 6</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 7</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">Layanan 8</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination" style=""></div>
             </div>
         </div>
 
@@ -277,7 +287,59 @@
                 Layanan<span class="text-custom-green">.</span>
             </p>
             <div id="layanan-section" class="mt-3">
-                <p class="text-muted">Layanan content will be loaded here.</p>
+                <?php $__currentLoopData = $devLayanan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tipeLayanan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="mb-4">
+                    <p class="fw-semibold text-custom-green fs-5 mb-2"><?php echo e($tipeLayanan->text); ?></p>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                        <?php $__currentLoopData = $tipeLayanan->children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $layanan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col">
+                            <a href="<?php echo e($layanan->url); ?>" class="layanan-card d-flex flex-column flex-md-row align-items-md-center gap-3 p-3 border rounded shadow-sm card-hover-scale text-decoration-none text-dark" style="transition: box-shadow 0.3s, border-color 0.3s; min-height: 80px;" target="_blank">
+                                <span class="d-flex align-items-center justify-content-center flex-shrink-0" style="width: 40px; height: 40px;">
+                                    <?php if($tipeLayanan->text == 'Kependudukan'): ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <circle cx="9" cy="7" r="4" />
+                                    </svg>
+                                    <?php elseif($tipeLayanan->text == 'Perhubungan'): ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 6 2 7" />
+                                        <path d="M10 6h4" />
+                                        <path d="m22 7-2-1" />
+                                        <rect width="16" height="16" x="4" y="3" rx="2" />
+                                        <path d="M4 11h16" />
+                                        <path d="M8 15h.01" />
+                                        <path d="M16 15h.01" />
+                                        <path d="M6 19v2" />
+                                        <path d="M18 21v-2" />
+                                    </svg>
+                                    <?php elseif($tipeLayanan->text == 'Informasi & Komunikasi'): ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 16v-4" />
+                                        <path d="M12 8h.01" />
+                                    </svg>
+                                    <?php elseif($tipeLayanan->text == 'UMUM/PERIJINAN'): ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                                        <path d="M9 18h6" />
+                                        <path d="M10 22h4" />
+                                    </svg>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="flex-grow-1 d-flex align-items-center">
+                                    <p class="mb-0 fs-6 fw-semibold text-dark text-wrap" style="word-break: break-word; white-space: normal;">
+                                        <?php echo e($layanan->text); ?>
+
+                                    </p>
+                                </span>
+                            </a>
+                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
 
@@ -462,22 +524,28 @@
                                 <div class="tab-pane fade show active" id="v-pills-transparansi" role="tabpanel" aria-labelledby="v-pills-transparansi-tab" tabindex="0">
                                     <div class="d-flex flex-column h-100">
                                         <div class="flex-grow-1">
-                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan APBD Tahun 2025</a>
-                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan APBD Tahun 2024</a>
+                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                APBD Tahun 2025</a>
+                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                APBD Tahun 2024</a>
                                         </div>
                                         <div class="text-end mt-4">
-                                            <a href="#" class="text-custom-green fw-semibold">Lihat Semua...</a>
+                                            <a href="#" class="text-custom-green fw-semibold">Lihat
+                                                Semua...</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-download" role="tabpanel" aria-labelledby="v-pills-download-tab" tabindex="0">
                                     <div class="d-flex flex-column h-100">
                                         <div class="flex-grow-1">
-                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Formulir Izin Mendirikan Bangunan</a>
-                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Dokumen Standar Pelayanan Minimal</a>
+                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Formulir
+                                                Izin Mendirikan Bangunan</a>
+                                            <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Dokumen
+                                                Standar Pelayanan Minimal</a>
                                         </div>
                                         <div class="text-end mt-4">
-                                            <a href="#" class="text-custom-green fw-semibold">Lihat Semua...</a>
+                                            <a href="#" class="text-custom-green fw-semibold">Lihat
+                                                Semua...</a>
                                         </div>
                                     </div>
                                 </div>
@@ -489,42 +557,98 @@
                 </div>
             </div>
         </div>
+
+        <?php if (isset($component)) { $__componentOriginalf4656f7a545c03a7e7395ae6755cd55a = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.navbottom','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('navbottom'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a)): ?>
+<?php $attributes = $__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a; ?>
+<?php unset($__attributesOriginalf4656f7a545c03a7e7395ae6755cd55a); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalf4656f7a545c03a7e7395ae6755cd55a)): ?>
+<?php $component = $__componentOriginalf4656f7a545c03a7e7395ae6755cd55a; ?>
+<?php unset($__componentOriginalf4656f7a545c03a7e7395ae6755cd55a); ?>
+<?php endif; ?>
     </main>
 
-    <footer class="d-flex flex-row justify-content-between w-100 text-white px-4 py-4 align-items-center" style="background-color: #0b7642;">
-        <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-                <a href="https://instagram.com" class="p-2 rounded d-inline-block" style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg></a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://instagram.com" class="p-2 rounded d-inline-block" style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg></a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://instagram.com" class="p-2 rounded d-inline-block" style="background-color: rgba(3, 210, 111, 0.7);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg></a>
-            </li>
-        </ul>
-        <div class="d-flex flex-row text-white small" style="gap: 0.5rem">
-            <a href="#" class="text-white text-decoration-none">2025 Website Kabupaten Pasuruan</a>
-            <span>|</span>
-            <a href="#" class="text-white text-decoration-none">Kebijakan Privasi</a>
-        </div>
-    </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+        const bannerSwiper = new Swiper('.banner-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 2000,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+
+
+        var swiper = new Swiper(".app-swiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                },
+            }
+        });
+    </script>
+    <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 
-</html><?php /**PATH C:\Users\User\Downloads\folder\pasuruan\pasuruan gov\resources\views/homepage/index.blade.php ENDPATH**/ ?>
+</html>
+
+
+<?php if (isset($component)) { $__componentOriginal391633768592254ff49abdaadf69e71c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal391633768592254ff49abdaadf69e71c = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.footer2','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('footer2'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal391633768592254ff49abdaadf69e71c)): ?>
+<?php $attributes = $__attributesOriginal391633768592254ff49abdaadf69e71c; ?>
+<?php unset($__attributesOriginal391633768592254ff49abdaadf69e71c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal391633768592254ff49abdaadf69e71c)): ?>
+<?php $component = $__componentOriginal391633768592254ff49abdaadf69e71c; ?>
+<?php unset($__componentOriginal391633768592254ff49abdaadf69e71c); ?>
+<?php endif; ?><?php /**PATH C:\Users\User\Downloads\folder\pasuruan\pasuruan gov\resources\views/homepage/index.blade.php ENDPATH**/ ?>

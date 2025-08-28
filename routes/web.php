@@ -2,14 +2,49 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\PemerintahanController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SumberDayaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [LandingController::class, 'index_landing']);
-Route::get('/home', [HomepageController::class, 'index']);
-Route::get('/potensi/pariwisata', [PostController::class, 'postsList']);
-Route::get('/pemerintahan/bupati', [PemerintahanController::class, 'bupati']);
-Route::get('/pemerintahan/lembaga-legislatif', [PemerintahanController::class, 'legislatif']);
+Route::get('/', [HomepageController::class, 'index']);
+Route::get('/kontak', [LandingController::class, 'kontak']);
 
+Route::get('/layanan', [LandingController::class, 'index_landing']);
+Route::get('/layanan/profile', [LandingController::class, 'profile']);
+Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
 
+Route::prefix('postingan')->group(function () {
+    // Route::get('/postingan', "LandingPostinganController@postingan");
+    // Route::get('/postingan/{slug_kategori?}', "LandingPostinganController@postingan");
+    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'post_list']);
+    Route::get('/postingan/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', "LandingPostinganController@detail");
+});
+
+// Nav profil
+Route::prefix('profil')->group(function () {
+    Route::redirect('/pemerintahan', '/pemerintahan/bupati-wakil-bupati');
+    Route::redirect('/gambaran-umum', '/gambaran-umum/gambaran-umum-kabupaten-pasuruan-2025');
+
+    // Arti lambang, visi misi, sejarah
+    Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
+
+    Route::prefix('pemerintahan')->group(function () {
+        Route::get('/bupati-wakil-bupati', [ProfilController::class, 'bupati']);
+        Route::get('/lembaga-eksekutif', [ProfilController::class, 'lembaga']);
+        Route::get('/lembaga-legislatif', [ProfilController::class, 'lembaga']);
+    });
+
+    Route::prefix('gambaran-umum')->group(function () {
+        Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
+    });
+});
+
+Route::prefix('sumber-daya')->group(function () {
+    Route::get('/transparansi', [SumberDayaController::class, 'transparansi']);
+    Route::get('/download', [SumberDayaController::class, 'download']);
+    Route::get('/agenda', [SumberDayaController::class, 'agenda']);
+    Route::get('/majalah', [SumberDayaController::class, 'majalah']);
+});
+
+Route::redirect('/sumber-daya', '/');

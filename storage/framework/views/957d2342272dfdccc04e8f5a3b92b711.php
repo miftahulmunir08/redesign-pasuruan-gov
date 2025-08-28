@@ -1,7 +1,7 @@
 <?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
 
 $__newAttributes = [];
-$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames((['post', 'categoryTitle']));
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames((['post', 'categoryTitle', 'typeCategory', 'slugCategory']));
 
 foreach ($attributes->all() as $__key => $__value) {
     if (in_array($__key, $__propNames)) {
@@ -16,7 +16,7 @@ $attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
 unset($__propNames);
 unset($__newAttributes);
 
-foreach (array_filter((['post', 'categoryTitle']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+foreach (array_filter((['post', 'categoryTitle', 'typeCategory', 'slugCategory']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
 
@@ -28,9 +28,8 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<?php if (! $__env->hasRenderedOnce('96a7f041-e90a-4358-9e26-2ad4f7b561ac')): $__env->markAsRenderedOnce('96a7f041-e90a-4358-9e26-2ad4f7b561ac'); ?>
+<?php if (! $__env->hasRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105')): $__env->markAsRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105'); ?>
     <style>
-        /* Style asli Anda, dipindahkan dari inline ke sini */
         .post-card__image {
             width: 100%;
             height: 200px;
@@ -88,29 +87,33 @@ unset($__defined_vars, $__key, $__value); ?>
     </style>
 <?php endif; ?>
 
+<?php
+    $placeholder = 'https://placehold.co/400x200/EFEFEF/333333?text=No+Image';
+?>
+
 <div class="card px-0 rounded h-100 d-flex flex-column">
     <div class="position-relative">
         <?php if(isset($post->gambar_posts_2)): ?>
             <div class="slick-slider"
                 data-slick='{"infinite": true, "autoplay": false, "arrows": false, "slidesToShow": 1}'>
                 <div class="slick-slide">
-                    <a
-                        href="/postingan/<?php echo e($post->kategori->slug_kategori); ?>/<?php echo e($post->kategori->tipe_kategori); ?>/<?php echo e($post->slug_posts); ?>">
-                        <img src="<?php echo e($post->gambar_posts); ?>" class="post-card__image rounded-top" alt="Blog">
+                    <a href="/postingan/<?php echo e($typeCategory); ?>/<?php echo e($slugCategory); ?>/<?php echo e($post->slug_posts); ?>">
+                        <img src="<?php echo e($post->gambar_posts ?? $placeholder); ?>" class="post-card__image rounded-top"
+                            alt="Blog" onerror="this.onerror=null;this.src='<?php echo e($placeholder); ?>';">
                     </a>
                 </div>
                 <div class="slick-slide">
-                    <a
-                        href="/postingan/<?php echo e($post->kategori->slug_kategori); ?>/<?php echo e($post->kategori->tipe_kategori); ?>/<?php echo e($post->slug_posts); ?>">
-                        <img src="<?php echo e($post->gambar_posts_2); ?>" class="post-card__image rounded-top" alt="Blog">
+                    <a href="/postingan/<?php echo e($typeCategory); ?>/<?php echo e($slugCategory); ?>/<?php echo e($post->slug_posts); ?>">
+                        <img src="<?php echo e($post->gambar_posts_2 ?? $placeholder); ?>" class="post-card__image rounded-top"
+                            alt="Blog" onerror="this.onerror=null;this.src='<?php echo e($placeholder); ?>';">
                     </a>
                 </div>
             </div>
         <?php else: ?>
             <div>
-                <a
-                    href="/postingan/<?php echo e($post->kategori->slug_kategori); ?>/<?php echo e($post->kategori->tipe_kategori); ?>/<?php echo e($post->slug_posts); ?>">
-                    <img src="<?php echo e($post->gambar_posts); ?>" class="post-card__image rounded-top" alt="Blog">
+                <a href="/postingan/<?php echo e($typeCategory); ?>/<?php echo e($slugCategory); ?>/<?php echo e($post->slug_posts); ?>">
+                    <img src="<?php echo e($post->gambar_posts ?? $placeholder); ?>" class="post-card__image rounded-top"
+                        alt="Blog" onerror="this.onerror=null;this.src='<?php echo e($placeholder); ?>';">
                 </a>
             </div>
         <?php endif; ?>
@@ -139,7 +142,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 </div>
 
-<?php if (! $__env->hasRenderedOnce('1e86a13b-1c6c-4821-a095-c346670f7b5a')): $__env->markAsRenderedOnce('1e86a13b-1c6c-4821-a095-c346670f7b5a'); ?>
+<?php if (! $__env->hasRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77')): $__env->markAsRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77'); ?>
     <?php $__env->startPush('scripts'); ?>
         <script>
             $(document).ready(function() {

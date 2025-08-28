@@ -1,8 +1,7 @@
-@props(['post', 'categoryTitle'])
+@props(['post', 'categoryTitle', 'typeCategory', 'slugCategory'])
 
 @once
     <style>
-        /* Style asli Anda, dipindahkan dari inline ke sini */
         .post-card__image {
             width: 100%;
             height: 200px;
@@ -60,29 +59,33 @@
     </style>
 @endonce
 
+@php
+    $placeholder = 'https://placehold.co/400x200/EFEFEF/333333?text=No+Image';
+@endphp
+
 <div class="card px-0 rounded h-100 d-flex flex-column">
     <div class="position-relative">
         @if (isset($post->gambar_posts_2))
             <div class="slick-slider"
                 data-slick='{"infinite": true, "autoplay": false, "arrows": false, "slidesToShow": 1}'>
                 <div class="slick-slide">
-                    <a
-                        href="/postingan/{{ $post->kategori->slug_kategori }}/{{ $post->kategori->tipe_kategori }}/{{ $post->slug_posts }}">
-                        <img src="{{ $post->gambar_posts }}" class="post-card__image rounded-top" alt="Blog">
+                    <a href="/postingan/{{ $typeCategory }}/{{ $slugCategory }}/{{ $post->slug_posts }}">
+                        <img src="{{ $post->gambar_posts ?? $placeholder }}" class="post-card__image rounded-top"
+                            alt="Blog" onerror="this.onerror=null;this.src='{{ $placeholder }}';">
                     </a>
                 </div>
                 <div class="slick-slide">
-                    <a
-                        href="/postingan/{{ $post->kategori->slug_kategori }}/{{ $post->kategori->tipe_kategori }}/{{ $post->slug_posts }}">
-                        <img src="{{ $post->gambar_posts_2 }}" class="post-card__image rounded-top" alt="Blog">
+                    <a href="/postingan/{{ $typeCategory }}/{{ $slugCategory }}/{{ $post->slug_posts }}">
+                        <img src="{{ $post->gambar_posts_2 ?? $placeholder }}" class="post-card__image rounded-top"
+                            alt="Blog" onerror="this.onerror=null;this.src='{{ $placeholder }}';">
                     </a>
                 </div>
             </div>
         @else
             <div>
-                <a
-                    href="/postingan/{{ $post->kategori->slug_kategori }}/{{ $post->kategori->tipe_kategori }}/{{ $post->slug_posts }}">
-                    <img src="{{ $post->gambar_posts }}" class="post-card__image rounded-top" alt="Blog">
+                <a href="/postingan/{{ $typeCategory }}/{{ $slugCategory }}/{{ $post->slug_posts }}">
+                    <img src="{{ $post->gambar_posts ?? $placeholder }}" class="post-card__image rounded-top"
+                        alt="Blog" onerror="this.onerror=null;this.src='{{ $placeholder }}';">
                 </a>
             </div>
         @endif
