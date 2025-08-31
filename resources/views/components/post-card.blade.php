@@ -9,12 +9,13 @@
         }
 
         .post-card__badge {
-            background-color: #03D26F;
+            /* background-color: #338D24; */
+            background-color: rgba(51, 141, 36, 0.8);
         }
 
         .post-card__title {
-            color: #0B7642;
-            text-align: justify;
+            color: rgba(51, 141, 36, 0.8);
+            text-align: start;
         }
 
         .post-card__summary {
@@ -28,7 +29,7 @@
         }
 
         .post-card__author {
-            color: #0B7642;
+            color: rgba(51, 141, 36, 0.8);
         }
 
         .slick-slider {
@@ -54,7 +55,7 @@
         }
 
         .card:hover .post-card__title {
-            color: #03D26F;
+            color: #338D24;
         }
     </style>
 @endonce
@@ -96,7 +97,7 @@
 
     {{-- Konten Teks --}}
     <div class="p-3 d-flex flex-column flex-grow-1">
-        <p class="post-card__title fw-semibold fs-6 mb-1">
+        <p class="post-card__title fs-6 mb-1" style="font-weight: 900">
             {{ $post->judul_posts }}
         </p>
 

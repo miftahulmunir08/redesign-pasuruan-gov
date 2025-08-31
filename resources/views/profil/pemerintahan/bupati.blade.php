@@ -1,4 +1,4 @@
-@extends('profil.layout')
+@extends('layout')
 
 @push('styles')
     <style>

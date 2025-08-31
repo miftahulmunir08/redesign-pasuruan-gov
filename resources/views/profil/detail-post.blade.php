@@ -1,4 +1,4 @@
-@extends('profil.layout')
+@extends('layout')
 
 @push('styles')
     <style>
@@ -112,7 +112,6 @@
         </div>
     </section>
 
-    {{-- @dd($devBupati) --}}
     {{-- Main --}}
     <section class="container my-5">
         <div class="col-12 text-start my-5" style="position: relative; padding-bottom: 4rem">
@@ -123,7 +122,7 @@
 
                     <div class="mt-4">
                         <p class="h4 fw-medium">
-                            17 Aug, 2025<span class="text-custom-green"> - </span>
+                            {{ dateFormatToID($devData->waktu_publish) }}<span class="text-custom-green"> - </span>
                             <span class="text-custom-green fs-small">Author</span>
                         </p>
                     </div>
