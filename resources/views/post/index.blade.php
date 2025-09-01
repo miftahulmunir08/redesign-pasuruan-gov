@@ -77,7 +77,7 @@
         </main>
 
         {{-- Footer --}}
-        <x-footer2 />
+        <x-footer-new />
 
         {{-- Javascript --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

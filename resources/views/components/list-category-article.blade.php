@@ -52,8 +52,6 @@
 </style>
 </head>
 
-
-
 <div class="container" style="">
     <div class="card category-card">
         <h5 class="category-title">Kategori</h5>
