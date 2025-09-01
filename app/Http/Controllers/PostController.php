@@ -12,6 +12,7 @@ class PostController extends Controller
     //
     function post_list(Request $request, $tipe_kategori = 'potensi', $slug_kategori = 'prestasi')
     {
+
         $devLis = collect([
             (object)['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
             (object)['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],

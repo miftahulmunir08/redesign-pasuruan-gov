@@ -556,4 +556,4 @@
 </html>
 
 
-<x-footer2 />
+<x-footer-new />
