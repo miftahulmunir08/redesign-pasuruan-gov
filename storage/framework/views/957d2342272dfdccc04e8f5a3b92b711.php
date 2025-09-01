@@ -28,7 +28,7 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<?php if (! $__env->hasRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105')): $__env->markAsRenderedOnce('d8fdd4b7-f961-4376-a91b-5458f80b2105'); ?>
+<?php if (! $__env->hasRenderedOnce('aad25938-b4ca-4352-9cd4-4ce15b1465f0')): $__env->markAsRenderedOnce('aad25938-b4ca-4352-9cd4-4ce15b1465f0'); ?>
     <style>
         .post-card__image {
             width: 100%;
@@ -142,7 +142,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 </div>
 
-<?php if (! $__env->hasRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77')): $__env->markAsRenderedOnce('cd228b0a-83c5-4028-abd8-97dc2bfb9f77'); ?>
+<?php if (! $__env->hasRenderedOnce('44969e6b-4fcd-48ad-8ca4-c97e36ea3661')): $__env->markAsRenderedOnce('44969e6b-4fcd-48ad-8ca4-c97e36ea3661'); ?>
     <?php $__env->startPush('scripts'); ?>
         <script>
             $(document).ready(function() {

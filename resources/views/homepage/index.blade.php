@@ -500,6 +500,8 @@
         </div>
 
         <x-navbottom />
+
+
     </main>
 
 

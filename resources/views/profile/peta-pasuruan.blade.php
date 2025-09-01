@@ -120,7 +120,7 @@
                 <div class="mt-4">
                     <p class="h4 fw-medium">
                         17 Aug, 2025<span class="text-custom-green"> - </span>
-                        <span class="text-custom-green fs-small">Author</span>
+                        <span class="text-custom-green fs-small">Authorr</span>
                     </p>
                 </div>
 
@@ -153,7 +153,7 @@
                     </div>
                 </div>
 
-                <x-share-button />
+                <!-- <x-share-button /> -->
             </div>
             <div class="col-12 col-md-4 col-lg-5 card-content-right-bar">
                 <x-search />
