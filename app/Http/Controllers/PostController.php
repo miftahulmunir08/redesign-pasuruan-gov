@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    function post_list(Request $request, $tipe_kategori = 'potensi', $slug_kategori = 'prestasi')
+    public function postList(Request $request, $tipe_kategori = 'potensi', $slug_kategori = 'prestasi')
     {
 
         $devLis = collect([
@@ -49,5 +49,22 @@ class PostController extends Controller
         ];
 
         return view('post.index', $data);
+    }
+
+    public function detail(Request $request, $tipe_kategori, $slug_kategori, $slug_posts)
+    {
+        $devData = collect(config('dummy.potensiPosts'))->where('slug_posts', $slug_posts)->first();
+
+        $breadcrumbs = generateParentBreadcrumb($request);
+
+        $data = [
+            'tipeKategori' => $tipe_kategori,
+            'slugKategori' => $slug_kategori,
+            'slugPosts' => $slug_posts,
+            'devData' => $devData,
+            'breadcrumbs' => $breadcrumbs,
+        ];
+
+        return view('post.detail', $data);
     }
 }
