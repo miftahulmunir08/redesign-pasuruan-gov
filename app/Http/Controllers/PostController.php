@@ -26,18 +26,20 @@ class PostController extends Controller
                 (object)['slug_kategori' => 'perhubungan', 'nama_kategori' => 'Perhubungan'],
                 (object)['slug_kategori' => 'perpustakaan', 'nama_kategori' => 'Perpustakaan'],
             ]);
+
+            $filteredData = collect(config('dummy.fasilitasPosts'))
+                ->where('kategori.slug_kategori', $slug_kategori);
         } else {
             $devLis = collect([
                 (object)['slug_kategori' => 'prestasi', 'nama_kategori' => 'Prestasi'],
                 (object)['slug_kategori' => 'pariwisata', 'nama_kategori' => 'Pariwisata'],
                 (object)['slug_kategori' => 'industri', 'nama_kategori' => 'Industri'],
             ]);
+
+            $filteredData = collect(config('dummy.potensiPosts'))
+                ->where('kategori.slug_kategori', $slug_kategori);
         }
 
-
-
-        $filteredData = collect(config('dummy.potensiPosts'))
-            ->where('kategori.slug_kategori', $slug_kategori);
 
         $perPage = 12;
         $currentPage = Paginator::resolveCurrentPage('page');
