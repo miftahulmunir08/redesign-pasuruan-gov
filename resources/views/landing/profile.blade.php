@@ -631,7 +631,7 @@
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profil/peta-pasuruan')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/map.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
                 Peta Pasuruan
@@ -640,7 +640,7 @@
             <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profile/visi-misi')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/policeman.png') }}" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/goal.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
                 Visi & Misi
@@ -652,7 +652,7 @@
                     class="las la-database text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/file.png') }}" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/government.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
                 Pemerintahan
@@ -668,7 +668,7 @@
                     class="las la-phone text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/passport.png') }}" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/history-book.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
                 Sejarah Kabupaten Pasuruan
@@ -681,7 +681,7 @@
                     class="las la-mobile-alt text-white"
                     style="font-size: 30pt"
                   ></i> -->
-                <img src="{{ asset('storage/uploads/icon_app/news.png') }}" width="40px" />
+                <img src="{{ asset('storage/uploads/icon_app/analytics.png') }}" width="40px" />
               </div>
               <h5 class="card-title mt-3 fw-bold title-icon" style="color: rgb(172, 172, 172); font-size: 13pt">
                 Gambaran Umum
