@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -48,6 +49,10 @@ Route::prefix('profil')->group(function () {
     //     Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
     //     Route::get('/visi-misi', [ProfileController::class, 'visi_misi']);
     // });
+});
+
+Route::prefix('layanan')->group(function () {
+    Route::get('/{slug_layanan}', [LayananController::class, 'index']);
 });
 
 Route::prefix('sumber-daya')->group(function () {

@@ -43,8 +43,7 @@
                 </div>
 
                 <div>
-                    <select id="kategori_id" name="kategori_id"
-                        class="form-select form-select-sm shadow-none form-select-custom">
+                    <select id="kategori_id" name="kategori_id" class="form-select form-select-sm shadow-none">
                         <option value="null">Pilih {{ $devTitle }}</option>
                         @foreach ($devLis as $item)
                             <option value="{{ $item->slug_kategori }}">{{ $item->nama_kategori }}</option>
@@ -61,7 +60,6 @@
                 @if ($devData->isNotEmpty())
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mb-4">
                         @foreach ($devData as $post)
-                            {{-- Setiap item sekarang dibungkus oleh <div> kolom --}}
                             <div class="col">
                                 <x-post-card :post="$post" :categoryTitle="$devTitle" :typeCategory="$typeCategory" :slugCategory="$slugCategory" />
                             </div>
