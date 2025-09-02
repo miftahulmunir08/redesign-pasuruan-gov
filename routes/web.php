@@ -5,15 +5,20 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SumberDayaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/kontak', [LandingController::class, 'kontak']);
 
-Route::get('/layanan', [LandingController::class, 'index_landing']);
-Route::get('/layanan/profile', [LandingController::class, 'profile']);
-Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
+Route::prefix('digital')->group(function () {
+    Route::get('/', [LandingController::class, 'index_landing']);
+    Route::get('/profile', [LandingController::class, 'profile']);
+    Route::get('/aplikasi', [LandingController::class, 'aplikasi']);
+    Route::get('/kontak', [LandingController::class, 'kontak']);
+});
+
 
 Route::prefix('postingan')->group(function () {
     // Route::get('/postingan', "LandingPostinganController@postingan");
@@ -39,6 +44,11 @@ Route::prefix('profil')->group(function () {
     Route::prefix('gambaran-umum')->group(function () {
         Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
     });
+
+    // Route::prefix('halaman')->group(function () {
+    //     Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
+    //     Route::get('/visi-misi', [ProfileController::class, 'visi_misi']);
+    // });
 });
 
 Route::prefix('layanan')->group(function () {

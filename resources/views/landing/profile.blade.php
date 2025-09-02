@@ -628,7 +628,7 @@
         <div class="container text-center">
           <!-- Tambah g-4 untuk jarak antar col -->
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#profileModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profil/peta-pasuruan')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
@@ -637,7 +637,7 @@
                 Peta Pasuruan
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://ppid.pasuruankab.go.id/`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profile/visi-misi')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/policeman.png') }}" width="40px" />

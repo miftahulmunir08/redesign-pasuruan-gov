@@ -129,30 +129,6 @@
 
                     <div class="mt-5" id="sumber-daya">
                         <div>
-                            <p class="h4 fw-medium">
-                                Arti Lambang<span class="text-custom-green">.</span>
-                            </p>
-                            {{-- <p class="text-muted">
-                                Pemerintah Kabupaten Pasuruan belakangan ini semakin gencar
-                                mendorong berbagai program pembangunan yang berfokus pada sektor
-                                pertanian, pariwisata, dan UMKM. Sebagai salah satu daerah di
-                                Jawa Timur yang dikenal dengan potensi alamnya, Pasuruan
-                                memiliki beragam komoditas unggulan, mulai dari hortikultura di
-                                kawasan Nongkojajar hingga wisata alam di sekitar Bromo. Di sisi
-                                pelayanan publik, pemerintah daerah terus berupaya memanfaatkan
-                                teknologi digital untuk mempermudah masyarakat mengakses layanan
-                                administrasi. Misalnya, melalui penerapan sistem pelayanan
-                                terpadu berbasis online yang dapat diakses warga tanpa harus
-                                datang langsung ke kantor dinas. Selain itu, Pemkab Pasuruan
-                                juga aktif mengadakan pelatihan keterampilan bagi generasi muda,
-                                bekerja sama dengan lembaga pendidikan dan dunia usaha.
-                                Harapannya, program ini bisa menekan angka pengangguran dan
-                                sekaligus meningkatkan daya saing masyarakat di era modern.
-                                Meskipun begitu, tantangan seperti perbaikan infrastruktur,
-                                pengelolaan lingkungan, dan pemerataan pembangunan tetap menjadi
-                                agenda yang perlu terus dipacu agar visi Pasuruan sebagai daerah
-                                maju dan sejahtera dapat tercapai.
-                            </p> --}}
                             {!! $devData->konten_posts !!}
                         </div>
                     </div>
@@ -168,3 +144,4 @@
         </div>
     </section>
 @endsection
+

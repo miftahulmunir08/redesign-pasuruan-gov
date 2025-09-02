@@ -79,6 +79,13 @@
             .btn-video-effect:hover .btn-background {
                 width: 100%;
             }
+
+            /* Hilangkan bullet hitam di submenu dropdown mobile */
+            .dropup .dropdown-menu ul {
+                list-style: none !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
         </style>
     </head>
 
@@ -97,7 +104,7 @@
 
             <div class="col-lg-12 col-md-6 text-center mt-4">
                 <div
-                    class="d-flex flex-wrap justify-content-between justify-content-center text-white text-center text-lg-start">
+                    class="d-flex flex-wrap justify-content-between justify-content-center text-white text-start text-lg-start">
 
                     <!-- Logo dan Kontak -->
                     <div class="col-12 col-lg-6 p-3">
