@@ -25,7 +25,7 @@ if (!function_exists('generateSimpleBreadcrumbs')) {
     }
 }
 
-if (!function_exists('formatTanggalIndo')) {
+if (!function_exists('dateFormatToID')) {
     function dateFormatToID($date)
     {
         if (!$date) return null;

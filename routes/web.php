@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SumberDayaController;
@@ -38,6 +39,10 @@ Route::prefix('profil')->group(function () {
     Route::prefix('gambaran-umum')->group(function () {
         Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
     });
+});
+
+Route::prefix('layanan')->group(function () {
+    Route::get('/{slug_layanan}', [LayananController::class, 'index']);
 });
 
 Route::prefix('sumber-daya')->group(function () {

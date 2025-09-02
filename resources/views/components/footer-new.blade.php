@@ -97,7 +97,7 @@
 
             <div class="col-lg-12 col-md-6 text-center mt-4">
                 <div
-                    class="d-flex flex-wrap justify-content-between justify-content-center text-white text-start text-center text-lg-start">
+                    class="d-flex flex-wrap justify-content-between justify-content-center text-white text-center text-lg-start">
 
                     <!-- Logo dan Kontak -->
                     <div class="col-12 col-lg-6 p-3">
