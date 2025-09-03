@@ -4,118 +4,231 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kab. Pasuruan</title>
+        <t .hover-link::before { content: '' ; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 6px; height: 6px; background-color: #338d24; border-radius: 50%; opacity: 0; transition: opacity 0.3s
+            ease; } .hover-link:hover { color: #338d24 !important; transform: translateX(5px); }</title>
 
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+            @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+                crossorigin="anonymous" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-        @stack('styles')
-        <style>
-            body {
-                font-family: "Poppins", sans-serif;
-            }
-
-            /* Custom green color similar to the original */
-            .bg-custom-green {
-                background-color: #0b7642;
-            }
-
-            .text-custom-green {
-                color: #0b7642;
-            }
-
-            .border-custom-green {
-                border-color: #0b7642 !important;
-            }
-
-            .btn-custom-green {
-                background-color: #0b7642;
-                color: white;
-            }
-
-            .btn-custom-green:hover {
-                background-color: #0a6337;
-                color: white;
-            }
-
-            .card {
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .card:hover {
-                transform: translateY(-4px);
-            }
-
-            .img-hover-scale {
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .img-hover-scale:hover {
-                transform: scale(1.05);
-            }
-
-            .btn-video-effect {
-                position: relative;
-                overflow: hidden;
-                transition: color 0.3s ease-in-out;
-                z-index: 1;
-            }
-
-            .btn-video-effect .btn-background {
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 0;
-                background-color: #0b7642;
-                transition: width 0.3s ease-in-out;
-                z-index: -1;
-            }
-
-            .btn-video-effect:hover {
-                color: white;
-            }
-
-            .btn-video-effect:hover .btn-background {
-                width: 100%;
-            }
-
-            .search-bar-margin {
-                margin-top: 2rem !important;
-            }
-
-            .layanan-card__hover {
-                transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, .125);
-            }
-
-            .layanan-card__hover:hover {
-                transform: translateY(-5px);
-                border: 1px solid #e43434;
-            }
-
-
-            @media (min-width: 768px) {
-                .search-bar-margin {
-                    margin-top: -2rem !important;
+            @stack('styles')
+            <style>
+                body {
+                    font-family: "Poppins", sans-serif;
                 }
-            }
 
-            @media (min-width: 768px) {}
+                /* Custom green color similar to the original */
+                .bg-custom-green {
+                    background-color: #338d24;
+                }
 
-            .swiper-pagination {
-                margin-top: 20px;
-                position: relative;
-            }
-        </style>
+                .text-custom-green {
+                    color: #338d24;
+                }
+
+                .border-custom-green {
+                    border-color: #338d24 !important;
+                }
+
+                .btn-custom-green {
+                    background-color: #338d24;
+                    color: white;
+                }
+
+                .btn-custom-green:hover {
+                    background-color: #2a7320;
+                    color: white;
+                }
+
+                .card {
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .card:hover {
+                    transform: translateY(-4px);
+                }
+
+                .img-hover-scale {
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                .img-hover-scale:hover {
+                    transform: scale(1.05);
+                }
+
+                .btn-video-effect {
+                    position: relative;
+                    overflow: hidden;
+                    transition: color 0.3s ease-in-out;
+                    z-index: 1;
+                }
+
+                .btn-video-effect .btn-background {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 0;
+                    background-color: #338d24;
+                    transition: width 0.3s ease-in-out;
+                    z-index: -1;
+                }
+
+                .btn-video-effect:hover {
+                    color: white;
+                }
+
+                .btn-video-effect:hover .btn-background {
+                    width: 100%;
+                }
+
+                .search-bar-margin {
+                    margin-top: 2rem !important;
+                }
+
+                .layanan-card__hover {
+                    transition: all 0.3s ease;
+                    border: 1px solid rgba(0, 0, 0, .125);
+                }
+
+                .layanan-card__hover:hover {
+                    transform: translateY(-5px);
+                    border: 1px solid #e43434;
+                }
+
+
+                @media (min-width: 768px) {
+                    .search-bar-margin {
+                        margin-top: -2rem !important;
+                    }
+                }
+
+                @media (min-width: 768px) {}
+
+                .swiper-pagination {
+                    margin-top: 20px;
+                    position: relative;
+                }
+
+                /* Enhanced Sumber Daya Tab Styles */
+                .nav-pills .nav-link {
+                    background: transparent;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 12px 16px;
+                    margin-bottom: 8px;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .nav-pills .nav-link:hover {
+                    background-color: rgba(51, 141, 36, 0.1);
+                    transform: translateX(5px);
+                    color: #338d24;
+                }
+
+                .nav-pills .nav-link.active {
+                    background-color: #338d24;
+                    color: white;
+                    box-shadow: 0 4px 12px rgba(51, 141, 36, 0.3);
+                    transform: translateX(8px);
+                }
+
+                .nav-pills .nav-link.active svg {
+                    stroke: white;
+                }
+
+                .nav-pills .nav-link svg {
+                    transition: all 0.3s ease;
+                    flex-shrink: 0;
+                }
+
+                .nav-pills .nav-link:hover svg {
+                    transform: scale(1.1);
+                }
+
+                .tab-content {
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    padding: 20px;
+                    min-height: 200px;
+                }
+
+                .hover-link {
+                    transition: all 0.3s ease;
+                    position: relative;
+                    padding-left: 20px;
+                }
+
+                .hover-link::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6px;
+                    height: 6px;
+                    background-color: #338d24;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .hover-link:hover {
+                    color: #338d24 !important;
+                    transform: translateX(5px);
+                }
+
+                .hover-link:hover::before {
+                    opacity: 1;
+                }
+
+                .border-start-md {
+                    border-left: 2px solid #e9ecef !important;
+                    padding-left: 30px !important;
+                }
+
+                @media (max-width: 767.98px) {
+                    .border-start-md {
+                        border-left: none !important;
+                        border-top: 2px solid #e9ecef !important;
+                        padding-left: 0 !important;
+                        padding-top: 20px !important;
+                        margin-top: 20px !important;
+                    }
+
+                    .nav-pills {
+                        flex-direction: row !important;
+                        overflow-x: auto;
+                        padding-bottom: 10px;
+                    }
+
+                    .nav-pills .nav-link {
+                        white-space: nowrap;
+                        margin-right: 8px;
+                        margin-bottom: 0;
+                        transform: none !important;
+                    }
+
+                    .nav-pills .nav-link:hover {
+                        transform: translateY(-2px) !important;
+                    }
+
+                    .nav-pills .nav-link.active {
+                        transform: translateY(-2px) !important;
+                    }
+                }
+            </style>
     </head>
 
     <body>
@@ -443,7 +556,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 
