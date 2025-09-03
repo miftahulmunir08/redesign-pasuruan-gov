@@ -243,7 +243,7 @@
                 </li>
                 <li class="splide__slide dropup ">
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-graph-up-arrow nav-icon"></i>
+                        <i class="bi bi-building nav-icon"></i>
                         Fasilitas
                     </a>
                     <ul class="dropdown-menu">
@@ -256,79 +256,9 @@
                     </ul>
                 </li>
 
-                <li class="splide__slide dropup">
-                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-badge nav-icon"></i>
-                        Layanan
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle fw-bold" style="color: black !important;" href="#submenu-pemerintahan" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="submenu-pemerintahan">
-                                Kependudukan
-                            </a>
-                            <ul class="collapse show" id="submenu-pemerintahan">
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/bupati-wakil-bupati')}}">Kartu Identitas Anak</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-legislatif')}}">Akta Perkawinan & Perceraian</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Akta Pencatatan Kematian</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Surat Mutasi Penduduk</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">KTP Elektronik</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">SKTT</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Kartu Keluarga</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Akta Pencatatan SIpil</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle fw-bold" style="color: black !important;" href="#submenu-pemerintahan" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="submenu-pemerintahan">
-                                Perhubungan
-                            </a>
-                            <ul class="collapse show" id="submenu-pemerintahan">
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/bupati-wakil-bupati')}}">Pengujian Kendaraan Bermotor</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-legislatif')}}">Ram Check</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Perizinan Angkutan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Perizinan Perparkiran</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Analisis Dampak Lalulintas</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pengaduan PJU Kabupaten Pasuruan</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item fw-bold" style="color: black !important;" href="{{ url('profil/peta-pasuruan')}}">KESEHATAN</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle fw-bold" style="color: black !important;" href="#submenu-pemerintahan" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="submenu-pemerintahan">
-                                INFORMASI & KOMUNIKASI
-                            </a>
-                            <ul class="collapse show" id="submenu-pemerintahan">
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/bupati-wakil-bupati')}}">Pelayanan&nbsp;Konsultasi&nbsp;TIK&nbsp;Pada&nbsp;Aplikasi&nbsp;SAKTI</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-legislatif')}}">Layanan&nbsp;Nomor&nbsp;Tunggal&nbsp;Panggilan&nbsp;Darurat&nbsp;112</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan Pengaduan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan Sub Domain, Hosting dan VPS</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan&nbsp;Gangguan&nbsp;Jaringan&nbsp;Internet/LAN</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan&nbsp;Pengajuan&nbsp;Keamanan&nbsp;</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan&nbsp;Permohonan&nbsp;Penyelenggaraan&nbsp;</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan&nbsp;Sandi&nbsp;dan&nbsp;Telekomunikasi&nbsp;(Santel)</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Pelayanan&nbsp;Sosialisasi&nbsp;Permohonan&nbsp;Narasumber</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle fw-bold" style="color: black !important;" href="#submenu-gambaran" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="submenu-gambaran">
-                                Umum/Perijinan
-                            </a>
-                            <ul class="collapse show" id="submenu-pemerintahan">
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/bupati-wakil-bupati')}}">Sektor Peternakan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-legislatif')}}">Sektor Perikanan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Perhubungan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Pariwisata</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Sosial</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Tenaga Kerja</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Kesehatan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Pendidikan</a></li>
-                                <li><a class="dropdown-item" style="color: black !important;" href="{{ url('profil/pemerintahan/lembaga-eksekutif')}}">Sektor Pekerjaan Umum</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
                 <li class="splide__slide dropup ">
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-graph-up-arrow nav-icon"></i>
+                        <i class="bi bi-gear nav-icon"></i>
                         Layanan
                     </a>
                     <ul class="dropdown-menu">

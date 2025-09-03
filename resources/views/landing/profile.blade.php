@@ -637,7 +637,7 @@
                 Peta Pasuruan
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profile/visi-misi')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profil/visi-dan-misi')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-info-circle text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/goal.png') }}" width="40px" />
@@ -646,7 +646,7 @@
                 Visi & Misi
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profil/pemerintahan/bupati-wakil-bupati')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-database text-white"
@@ -658,7 +658,7 @@
                 Pemerintahan
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" style="" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/profil/sejarah-singkat-kab-pasuruan')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="
                     border-radius: 50px;
                     background-color: #02ab5a;
@@ -675,7 +675,7 @@
               </h5>
             </div>
 
-            <div class="col-4 col-lg-2 mt-4 pointer" data-bs-toggle="modal" data-bs-target="#aplikasiModal">
+            <div class="col-4 col-lg-2 mt-4 pointer" >
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-mobile-alt text-white"
@@ -697,7 +697,7 @@
             left: 50%;
             transform: translateX(-50%);
           ">
-        <button class="btn btn-warning mt-5" style="background-color: #ffdd46">
+        <button class="btn btn-warning mt-5" style="background-color: #ffdd46" onclick="goToPage(`{{url('/')}}`)">
           Masuk Website Utama <i class="las la-arrow-circle-right"></i>
         </button>
       </div>
@@ -708,7 +708,7 @@
             left: 50%;
             transform: translateX(-50%);
           ">
-        <button class="btn btn-warning mt-5 w-100 p-3" style="background-color: #ffdd46">
+        <button class="btn btn-warning mt-5 w-100 p-3" style="background-color: #ffdd46" onclick="goToPage(`{{url('/')}}`)">
           Masuk Website Utama <i class="las la-arrow-circle-right"></i>
         </button>
       </div>

@@ -727,7 +727,7 @@
                                         <div class="col-6 col-lg-2 mt-4 pointer" onclick="goToPage(`https://ppid.pasuruankab.go.id/`)">
                                             <div class="d-flex flex-column align-items-center">
                                                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                                                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
+                                                    <img class="" src="{{ asset('storage/uploads/logo_aplikasi/pemerintah/baja.png') }}" width="40px" />
                                                 </div>
                                                 <h5 class="card-title mt-3 fw-bold title-icon w-100 text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                                                     Administrasi Pengadaan
@@ -737,7 +737,7 @@
                                         <div class="col-6 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
                                             <div class="d-flex flex-column align-items-center">
                                                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                                                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
+                                                    <img class="rounded-circle" src="{{ asset('storage/uploads/logo_aplikasi/pemerintah/splp.png') }}" width="40px" />
                                                 </div>
                                                 <h5 class="card-title mt-3 fw-bold title-icon w-100 text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                                                     Sistem Penghubung Layanan Pemerintah
@@ -747,7 +747,7 @@
                                         <div class="col-6 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
                                             <div class="d-flex flex-column align-items-center">
                                                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                                                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
+                                                    <img class="rounded-circle" src="{{ asset('storage/uploads/logo_aplikasi/pemerintah/sakti.png') }}" width="40px" />
                                                 </div>
                                                 <h5 class="card-title mt-3 fw-bold title-icon w-100 text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                                                     layanan Teknologi Pemerintah
@@ -757,7 +757,7 @@
                                         <div class="col-6 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
                                             <div class="d-flex flex-column align-items-center">
                                                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                                                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
+                                                    <img class="rounded-circle" src="{{ asset('storage/uploads/logo_aplikasi/pemerintah/112.png') }}" width="40px" />
                                                 </div>
                                                 <h5 class="card-title mt-3 fw-bold title-icon w-100 text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                                                     Panggilan Gawat Darurat
@@ -768,7 +768,7 @@
                                         <div class="col-6 col-lg-2 mt-4 pointer" onclick="goToPage(`https://satudata.pasuruankab.go.id/`)">
                                             <div class="d-flex flex-column align-items-center">
                                                 <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
-                                                    <img src="{{ asset('storage/uploads/medsos/icon-112.png') }}" width="40px" />
+                                                    <img class="rounded-circle"  src="{{ asset('storage/uploads/logo_aplikasi/pemerintah/suara_pasuruan.png') }}" width="40px" />
                                                 </div>
                                                 <h5 class="card-title mt-3 fw-bold title-icon w-100 text-center" style="color: rgb(172, 172, 172); font-size: 13pt">
                                                     Radio Suara Pasuruan
@@ -796,13 +796,13 @@
                     </div>
                 </div>
 
-                <div class="text-center d-lg-block d-none" style="">
+                <div class="text-center d-lg-block d-none" style="" onclick="goToPage(`{{url('/')}}`)">
                     <button class="btn btn-warning mt-5" style="background-color: #ffdd46">
                         Masuk Website Utama <i class="las la-arrow-circle-right"></i>
                     </button>
                 </div>
 
-                <div class="text-center w-100 d-lg-none d-block">
+                <div class="text-center w-100 d-lg-none d-block" onclick="goToPage(`{{url('/')}}`)">
                     <button class="btn btn-warning mt-5 w-100 p-3" style="background-color: #ffdd46">
                         Masuk Website Utama <i class="las la-arrow-circle-right"></i>
                     </button>
@@ -991,6 +991,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             function goToPage(url) {
+
                 // Tampilkan modal loading
                 var loading = new bootstrap.Modal(
                     document.getElementById("loadingModal")
