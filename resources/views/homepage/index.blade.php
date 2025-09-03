@@ -4,231 +4,247 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <t .hover-link::before { content: '' ; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-            width: 6px; height: 6px; background-color: #338d24; border-radius: 50%; opacity: 0; transition: opacity 0.3s
-            ease; } .hover-link:hover { color: #338d24 !important; transform: translateX(5px); }</title>
+        <title>Kabupaten Pasuruan Web.</title>
 
-            @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-                crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-            @stack('styles')
-            <style>
-                body {
-                    font-family: "Poppins", sans-serif;
-                }
+        @stack('styles')
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+            }
 
-                /* Custom green color similar to the original */
-                .bg-custom-green {
-                    background-color: #338d24;
-                }
+            /* Custom green color similar to the original */
+            .bg-custom-green {
+                background-color: #338d24;
+            }
 
-                .text-custom-green {
-                    color: #338d24;
-                }
+            .text-custom-green {
+                color: #338d24;
+            }
 
-                .border-custom-green {
-                    border-color: #338d24 !important;
-                }
+            .border-custom-green {
+                border-color: #338d24 !important;
+            }
 
-                .btn-custom-green {
-                    background-color: #338d24;
-                    color: white;
-                }
+            .btn-custom-green {
+                background-color: #338d24;
+                color: white;
+            }
 
-                .btn-custom-green:hover {
-                    background-color: #2a7320;
-                    color: white;
-                }
+            .btn-custom-green:hover {
+                background-color: #2a7320;
+                color: white;
+            }
 
-                .card {
-                    cursor: pointer;
-                    transition: all 0.3s ease-in-out;
-                }
+            .card {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
 
-                .card:hover {
-                    transform: translateY(-4px);
-                }
+            .card:hover {
+                transform: translateY(-4px);
+            }
 
-                .img-hover-scale {
-                    transition: transform 0.3s ease-in-out;
-                }
+            .img-hover-scale {
+                transition: transform 0.3s ease-in-out;
+            }
 
-                .img-hover-scale:hover {
-                    transform: scale(1.05);
-                }
+            .img-hover-scale:hover {
+                transform: scale(1.05);
+            }
 
-                .btn-video-effect {
-                    position: relative;
-                    overflow: hidden;
-                    transition: color 0.3s ease-in-out;
-                    z-index: 1;
-                }
+            .btn-video-effect {
+                position: relative;
+                overflow: hidden;
+                transition: color 0.3s ease-in-out;
+                z-index: 1;
+            }
 
-                .btn-video-effect .btn-background {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 0;
-                    background-color: #338d24;
-                    transition: width 0.3s ease-in-out;
-                    z-index: -1;
-                }
+            .btn-video-effect .btn-background {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 0;
+                background-color: #338d24;
+                transition: width 0.3s ease-in-out;
+                z-index: -1;
+            }
 
-                .btn-video-effect:hover {
-                    color: white;
-                }
+            .btn-video-effect:hover {
+                color: white;
+            }
 
-                .btn-video-effect:hover .btn-background {
-                    width: 100%;
-                }
+            .btn-video-effect:hover .btn-background {
+                width: 100%;
+            }
 
+            .search-bar-margin {
+                margin-top: 2rem !important;
+            }
+
+            .layanan-card__hover {
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, .125);
+            }
+
+            .layanan-card__hover:hover {
+                transform: translateY(-5px);
+                border: 1px solid #e43434;
+            }
+
+
+            @media (min-width: 768px) {
                 .search-bar-margin {
-                    margin-top: 2rem !important;
+                    margin-top: -2rem !important;
+                }
+            }
+
+            @media (min-width: 768px) {}
+
+            .swiper-pagination {
+                margin-top: 20px;
+                position: relative;
+            }
+
+            /* Enhanced Sumber Daya Tab Styles */
+            .nav-pills .nav-link {
+                background: transparent;
+                border: none;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin-bottom: 8px;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .nav-pills .nav-link:hover {
+                background-color: rgba(51, 141, 36, 0.1);
+                transform: translateX(5px);
+                color: #338d24;
+            }
+
+            .nav-pills .nav-link.active {
+                background-color: #338d24;
+                color: white;
+                box-shadow: 0 4px 12px rgba(51, 141, 36, 0.3);
+                transform: translateX(8px);
+            }
+
+            .nav-pills .nav-link.active svg {
+                stroke: white;
+            }
+
+            .nav-pills .nav-link svg {
+                transition: all 0.3s ease;
+                flex-shrink: 0;
+            }
+
+            .nav-pills .nav-link:hover svg {
+                transform: scale(1.1);
+            }
+
+            .tab-content {
+                background: #f8f9fa;
+                border-radius: 8px;
+                padding: 20px;
+                min-height: 200px;
+            }
+
+            .hover-link {
+                transition: all 0.3s ease;
+                position: relative;
+                padding-left: 20px;
+            }
+
+            .hover-link::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                background-color: #338d24;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .hover-link:hover {
+                color: #338d24 !important;
+                transform: translateX(5px);
+            }
+
+            .hover-link:hover::before {
+                opacity: 1;
+            }
+
+            .border-start-md {
+                border-left: 2px solid #e9ecef !important;
+                padding-left: 30px !important;
+            }
+
+            @media (max-width: 767.98px) {
+                .border-start-md {
+                    border-left: none !important;
+                    border-top: 2px solid #e9ecef !important;
+                    padding-left: 0 !important;
+                    padding-top: 20px !important;
+                    margin-top: 20px !important;
                 }
 
-                .layanan-card__hover {
-                    transition: all 0.3s ease;
-                    border: 1px solid rgba(0, 0, 0, .125);
+                .nav-pills {
+                    flex-direction: row !important;
+                    overflow-x: auto;
+                    padding-bottom: 10px;
                 }
 
-                .layanan-card__hover:hover {
-                    transform: translateY(-5px);
-                    border: 1px solid #e43434;
-                }
-
-
-                @media (min-width: 768px) {
-                    .search-bar-margin {
-                        margin-top: -2rem !important;
-                    }
-                }
-
-                @media (min-width: 768px) {}
-
-                .swiper-pagination {
-                    margin-top: 20px;
-                    position: relative;
-                }
-
-                /* Enhanced Sumber Daya Tab Styles */
                 .nav-pills .nav-link {
-                    background: transparent;
-                    border: none;
-                    border-radius: 8px;
-                    padding: 12px 16px;
-                    margin-bottom: 8px;
-                    transition: all 0.3s ease;
-                    position: relative;
-                    overflow: hidden;
+                    white-space: nowrap;
+                    margin-right: 8px;
+                    margin-bottom: 0;
+                    transform: none !important;
                 }
 
                 .nav-pills .nav-link:hover {
-                    background-color: rgba(51, 141, 36, 0.1);
-                    transform: translateX(5px);
-                    color: #338d24;
+                    transform: translateY(-2px) !important;
                 }
 
                 .nav-pills .nav-link.active {
-                    background-color: #338d24;
-                    color: white;
-                    box-shadow: 0 4px 12px rgba(51, 141, 36, 0.3);
-                    transform: translateX(8px);
+                    transform: translateY(-2px) !important;
                 }
+            }
 
-                .nav-pills .nav-link.active svg {
-                    stroke: white;
-                }
+            .hover-link::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                background-color: #338d24;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
 
-                .nav-pills .nav-link svg {
-                    transition: all 0.3s ease;
-                    flex-shrink: 0;
-                }
-
-                .nav-pills .nav-link:hover svg {
-                    transform: scale(1.1);
-                }
-
-                .tab-content {
-                    background: #f8f9fa;
-                    border-radius: 8px;
-                    padding: 20px;
-                    min-height: 200px;
-                }
-
-                .hover-link {
-                    transition: all 0.3s ease;
-                    position: relative;
-                    padding-left: 20px;
-                }
-
-                .hover-link::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 6px;
-                    height: 6px;
-                    background-color: #338d24;
-                    border-radius: 50%;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
-
-                .hover-link:hover {
-                    color: #338d24 !important;
-                    transform: translateX(5px);
-                }
-
-                .hover-link:hover::before {
-                    opacity: 1;
-                }
-
-                .border-start-md {
-                    border-left: 2px solid #e9ecef !important;
-                    padding-left: 30px !important;
-                }
-
-                @media (max-width: 767.98px) {
-                    .border-start-md {
-                        border-left: none !important;
-                        border-top: 2px solid #e9ecef !important;
-                        padding-left: 0 !important;
-                        padding-top: 20px !important;
-                        margin-top: 20px !important;
-                    }
-
-                    .nav-pills {
-                        flex-direction: row !important;
-                        overflow-x: auto;
-                        padding-bottom: 10px;
-                    }
-
-                    .nav-pills .nav-link {
-                        white-space: nowrap;
-                        margin-right: 8px;
-                        margin-bottom: 0;
-                        transform: none !important;
-                    }
-
-                    .nav-pills .nav-link:hover {
-                        transform: translateY(-2px) !important;
-                    }
-
-                    .nav-pills .nav-link.active {
-                        transform: translateY(-2px) !important;
-                    }
-                }
-            </style>
+            .hover-link:hover {
+                color: #338d24 !important;
+                transform: translateX(5px);
+            }
+        </style>
     </head>
 
     <body>
@@ -560,127 +576,450 @@
                 </div>
             </div>
 
-            <div class="mt-5" id="sumber-daya">
-                <div>
-                    <p class="h4 fw-medium">
-                        Sumber Daya<span class="text-custom-green">.</span>
-                    </p>
-                    <p class="text-muted">
-                        Kami menyediakan beberapa sumber daya yang memudahkan masyarakat
-                        dalam mengakses informasi terkait termasuk unduhan, agenda acara,
-                        majalah digital, dan informasi terbaru dari pemerintah kabupaten
-                        pasuruan
-                    </p>
+
+            <div class="mt-5">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <p class="h4 fw-medium">
+                            Gallery Terbaru<span class="text-custom-green">.</span>
+                        </p>
+                        <p class="text-muted">
+                            Gallery terbaru dari Kabupaten Pasuruan
+                        </p>
+                    </div>
+                    <button class="btn btn-custom-green align-self-start align-self-md-auto">
+                        Semua Gallery
+                    </button>
                 </div>
-                <div class="card mt-4 shadow-sm border-0">
-                    <div class="card-body p-4 p-md-5">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                                    aria-orientation="vertical">
-                                    <button class="nav-link active text-start d-flex align-items-center gap-3"
-                                        id="v-pills-transparansi-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-transparansi" type="button" role="tab"
-                                        aria-controls="v-pills-transparansi" aria-selected="true">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect width="18" height="11" x="3" y="11" rx="2"
-                                                ry="2" />
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                        </svg>
-                                        Transparansi
-                                    </button>
-                                    <button class="nav-link text-start d-flex align-items-center gap-3"
-                                        id="v-pills-download-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-download" type="button" role="tab"
-                                        aria-controls="v-pills-download" aria-selected="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect width="18" height="11" x="3" y="11" rx="2"
-                                                ry="2" />
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                        </svg>
-                                        Download
-                                    </button>
-                                    <button class="nav-link text-start d-flex align-items-center gap-3"
-                                        id="v-pills-agenda-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-agenda" type="button" role="tab"
-                                        aria-controls="v-pills-agenda" aria-selected="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect width="18" height="11" x="3" y="11" rx="2"
-                                                ry="2" />
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                        </svg>
-                                        Agenda
-                                    </button>
-                                    <button class="nav-link text-start d-flex align-items-center gap-3"
-                                        id="v-pills-majalah-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-majalah" type="button" role="tab"
-                                        aria-controls="v-pills-majalah" aria-selected="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect width="18" height="11" x="3" y="11" rx="2"
-                                                ry="2" />
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                        </svg>
-                                        Majalah
-                                    </button>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-12">
+                        <div class="row g-4">
+
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                            alt="news image" class="card-img-top object-fit-cover img-hover-scale"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar
+                                        </p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-9 border-start-md">
-                                <div class="tab-content pt-4 pt-md-0" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="v-pills-transparansi" role="tabpanel"
-                                        aria-labelledby="v-pills-transparansi-tab" tabindex="0">
-                                        <div class="d-flex flex-column h-100">
-                                            <div class="flex-grow-1">
-                                                <a href="#"
-                                                    class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
-                                                    APBD Tahun 2025</a>
-                                                <a href="#"
-                                                    class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
-                                                    APBD Tahun 2024</a>
-                                            </div>
-                                            <div class="text-end mt-4">
-                                                <a href="#" class="text-custom-green fw-semibold">Lihat
-                                                    Semua...</a>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6IjVUMGZlWlJkMVJrS1lhN3VJbGpnUnc9PSIsInZhbHVlIjoiUW9IclNHQTIzdEtLTmxEWUxTZnVWUT09IiwibWFjIjoiZGEwYjBmYzJkMjBiOTA5ZWFkN2QxYWQzZjYxYTM1YmZjMjIyMGM2ZTVlODk1NTkyNTc3MTYxYzA1OTQ1YmJlYyIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4">
+                        <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
+                            style="min-height: 24rem;">
+                            Widget
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+
+            <div class="mt-5">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div>
+                        <p class="h4 fw-medium">
+                            Video Terbaru<span class="text-custom-green">.</span>
+                        </p>
+                        <p class="text-muted">
+                            Video terbaru dari Kabupaten Pasuruan
+                        </p>
+                    </div>
+                    <button class="btn btn-custom-green align-self-start align-self-md-auto">
+                        Semua Video Gallery
+                    </button>
+                </div>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-12">
+                        <div class="row g-4">
+
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+
+                                        <!-- overlay hitam -->
+                                        <div
+                                            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50
+                        d-flex justify-content-center align-items-center">
+                                            <button class="btn btn-danger rounded-circle">
+                                                <i class="bi bi-play-fill fs-3"></i>
+                                            </button>
+                                        </div>
+
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar
+                                        </p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Video
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+
+                                        <!-- overlay hitam -->
+                                        <div
+                                            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50
+                        d-flex justify-content-center align-items-center">
+                                            <button class="btn btn-danger rounded-circle">
+                                                <i class="bi bi-play-fill fs-3"></i>
+                                            </button>
+                                        </div>
+
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar
+                                        </p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Video
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0"
+                                            alt="news image" class="card-img-top object-fit-cover"
+                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                            Nasionalisme
+                                        </p>
+                                    </div>
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN
+                                            TMT 1 Juni 2025</p>
+                                        <a href="#"
+                                            class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
+                                            Lihat Gambar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4">
+                        <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
+                            style="min-height: 24rem;">
+                            Widget
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="mt-5" id="sumber-daya">
+                <div class="mt-5" id="sumber-daya">
+                    <div>
+                        <p class="h4 fw-medium">
+                            Sumber Daya<span class="text-custom-green">.</span>
+                        </p>
+                        <p class="text-muted">
+                            Kami menyediakan beberapa sumber daya yang memudahkan masyarakat
+                            dalam mengakses informasi terkait termasuk unduhan, agenda acara,
+                            majalah digital, dan informasi terbaru dari pemerintah kabupaten
+                            pasuruan
+                        </p>
+                    </div>
+                    <div class="card mt-4 shadow-sm border-0">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                        aria-orientation="vertical">
+                                        <button class="nav-link active text-start d-flex align-items-center gap-3"
+                                            id="v-pills-transparansi-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-transparansi" type="button" role="tab"
+                                            aria-controls="v-pills-transparansi" aria-selected="true">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="11" x="3" y="11" rx="2"
+                                                    ry="2" />
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            </svg>
+                                            Transparansi
+                                        </button>
+                                        <button class="nav-link text-start d-flex align-items-center gap-3"
+                                            id="v-pills-download-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-download" type="button" role="tab"
+                                            aria-controls="v-pills-download" aria-selected="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="11" x="3" y="11" rx="2"
+                                                    ry="2" />
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            </svg>
+                                            Download
+                                        </button>
+                                        <button class="nav-link text-start d-flex align-items-center gap-3"
+                                            id="v-pills-agenda-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-agenda" type="button" role="tab"
+                                            aria-controls="v-pills-agenda" aria-selected="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="11" x="3" y="11" rx="2"
+                                                    ry="2" />
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            </svg>
+                                            Agenda
+                                        </button>
+                                        <button class="nav-link text-start d-flex align-items-center gap-3"
+                                            id="v-pills-majalah-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-majalah" type="button" role="tab"
+                                            aria-controls="v-pills-majalah" aria-selected="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="11" x="3" y="11" rx="2"
+                                                    ry="2" />
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            </svg>
+                                            Majalah
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-9 border-start-md">
+                                    <div class="tab-content pt-4 pt-md-0" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-transparansi"
+                                            role="tabpanel" aria-labelledby="v-pills-transparansi-tab"
+                                            tabindex="0">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="flex-grow-1">
+                                                    <a href="#"
+                                                        class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                        APBD Tahun 2025</a>
+                                                    <a href="#"
+                                                        class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                        APBD Tahun 2024</a>
+                                                </div>
+                                                <div class="text-end mt-4">
+                                                    <a href="#" class="text-custom-green fw-semibold">Lihat
+                                                        Semua...</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="v-pills-download" role="tabpanel"
-                                        aria-labelledby="v-pills-download-tab" tabindex="0">
-                                        <div class="d-flex flex-column h-100">
-                                            <div class="flex-grow-1">
-                                                <a href="#"
-                                                    class="d-block py-1 text-decoration-none text-dark hover-link">Formulir
-                                                    Izin Mendirikan Bangunan</a>
-                                                <a href="#"
-                                                    class="d-block py-1 text-decoration-none text-dark hover-link">Dokumen
-                                                    Standar Pelayanan Minimal</a>
-                                            </div>
-                                            <div class="text-end mt-4">
-                                                <a href="#" class="text-custom-green fw-semibold">Lihat
-                                                    Semua...</a>
+                                        <div class="tab-pane fade" id="v-pills-download" role="tabpanel"
+                                            aria-labelledby="v-pills-download-tab" tabindex="0">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="flex-grow-1">
+                                                    <a href="#"
+                                                        class="d-block py-1 text-decoration-none text-dark hover-link">Formulir
+                                                        Izin Mendirikan Bangunan</a>
+                                                    <a href="#"
+                                                        class="d-block py-1 text-decoration-none text-dark hover-link">Dokumen
+                                                        Standar Pelayanan Minimal</a>
+                                                </div>
+                                                <div class="text-end mt-4">
+                                                    <a href="#" class="text-custom-green fw-semibold">Lihat
+                                                        Semua...</a>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="tab-pane fade" id="v-pills-agenda" role="tabpanel"
+                                            aria-labelledby="v-pills-agenda-tab" tabindex="0">Agenda Content...
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-majalah" role="tabpanel"
+                                            aria-labelledby="v-pills-majalah-tab" tabindex="0">Majalah Content...
+                                        </div>
                                     </div>
-                                    <div class="tab-pane fade" id="v-pills-agenda" role="tabpanel"
-                                        aria-labelledby="v-pills-agenda-tab" tabindex="0">Agenda Content...</div>
-                                    <div class="tab-pane fade" id="v-pills-majalah" role="tabpanel"
-                                        aria-labelledby="v-pills-majalah-tab" tabindex="0">Majalah Content...</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <x-navbottom />
+                <x-navbottom />
         </main>
 
 
