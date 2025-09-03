@@ -301,9 +301,9 @@
                     </button>
                 </div>
                 <div class="row g-4 mt-2">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="row g-4">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="card h-100 shadow-sm border-0">
                                     <div class="position-relative overflow-hidden">
                                         <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
@@ -330,7 +330,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="card h-100 shadow-sm border-0">
                                     <div class="position-relative overflow-hidden">
                                         <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
@@ -357,7 +357,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="card h-100 shadow-sm border-0">
                                     <div class="position-relative overflow-hidden">
                                         <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
@@ -414,12 +414,12 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
                             style="min-height: 24rem;">
                             Widget
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
