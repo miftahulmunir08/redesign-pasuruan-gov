@@ -11,12 +11,6 @@ class PostController extends Controller
 {
     public function postList(Request $request, $tipe_kategori = 'potensi', $slug_kategori = 'prestasi')
     {
-
-
-        // dd($tipe_kategori);
-        // die;
-
-
         if ($tipe_kategori == "fasilitas") {
             $devLis = collect([
                 (object)['slug_kategori' => 'kesehatan', 'nama_kategori' => 'Kesehatan'],
@@ -73,7 +67,10 @@ class PostController extends Controller
 
     public function detail(Request $request, $tipe_kategori, $slug_kategori, $slug_posts)
     {
-        $devData = collect(config('dummy.potensiPosts'))->where('slug_posts', $slug_posts)->first();
+        $potensiPosts = config('dummy.potensiPosts');
+        $fasilitasPosts = config('dummy.fasilitasPosts');
+        $allPosts = array_merge($potensiPosts, $fasilitasPosts);
+        $devData = collect($allPosts)->where('slug_posts', $slug_posts)->first();
 
         $breadcrumbs = generateParentBreadcrumb($request);
 

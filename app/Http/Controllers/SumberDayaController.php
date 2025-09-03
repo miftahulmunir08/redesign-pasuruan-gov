@@ -42,10 +42,12 @@ class SumberDayaController extends Controller
 
         $devTitle = 'Agenda';
         $breadcrumbs = generateSimpleBreadcrumbs($request);
+        $devData = collect(config('dummy.agenda'));
 
         $data = [
             'devTitle' => $devTitle,
-            'breadcrumbs' => $breadcrumbs
+            'breadcrumbs' => $breadcrumbs,
+            'devData' => $devData
         ];
 
         return view('sumber-daya.agenda', $data);
@@ -56,10 +58,12 @@ class SumberDayaController extends Controller
 
         $devTitle = 'Majalah';
         $breadcrumbs = generateSimpleBreadcrumbs($request);
+        $devData = collect(config('dummy.majalah'));
 
         $data = [
             'devTitle' => $devTitle,
-            'breadcrumbs' => $breadcrumbs
+            'breadcrumbs' => $breadcrumbs,
+            'devData' => $devData
         ];
 
         return view('sumber-daya.majalah', $data);

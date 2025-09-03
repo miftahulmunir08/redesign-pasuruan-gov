@@ -45,9 +45,16 @@
                 color: white;
             }
 
-            /* Custom hover effect from original design */
-            .card-hover-scale:hover {
-                transform: scale(1.02);
+            .card {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .card:hover {
+                transform: translateY(-4px);
+            }
+
+            .img-hover-scale {
                 transition: transform 0.3s ease-in-out;
             }
 
@@ -55,7 +62,6 @@
                 transform: scale(1.05);
             }
 
-            /* Video button hover effect */
             .btn-video-effect {
                 position: relative;
                 overflow: hidden;
@@ -127,7 +133,7 @@
                             class="w-100 object-fit-cover position-relative"
                             style="height: 100%; max-height: 100%; transform: scale(1.02)" />
                         <div class="position-absolute top-0 start-0 w-100 h-100"
-                            style="background: rgba(0, 0, 0, 0.2); pointer-events: none;"></div>
+                            style="background: rgba(0, 0, 0, 0.3); pointer-events: none;"></div>
                         <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
                             <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
                                 style="max-width: 91.6%;">
@@ -175,10 +181,10 @@
             </div>
 
             <div class="mt-4">
-                <p class="h4 fw-medium ">
+                <p class="h4 fw-medium mb-0">
                     Sumber daya<span class="text-custom-green">.</span>
                 </p>
-                <div class="row g-4">
+                <div class="row g-4 mt-1">
                     @foreach ($devSumberDaya as $sumberDaya)
                         <div class="col-12 col-sm-6 col-md-3">
                             <a href="{{ $sumberDaya->url }}" class="text-decoration-none text-dark">
@@ -227,7 +233,7 @@
                 <p class="h4 fw-medium">
                     Layanan<span class="text-custom-green">.</span>
                 </p>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 mt-2">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mt-2">
                     @foreach ($devLayanan as $tipeLayanan)
                         <div class="col">
                             <div class="card h-100 rounded-3 layanan-card__hover">
@@ -292,7 +298,7 @@
                         <p class="h4 fw-medium">
                             Berita Terbaru<span class="text-custom-green">.</span>
                         </p>
-                        <p class="text-muted">
+                        <p class="text-muted mb-0">
                             Berita terbaru dari Kabupaten Pasuruan
                         </p>
                     </div>
@@ -300,124 +306,142 @@
                         Semua Berita
                     </button>
                 </div>
-                <div class="row g-4 mt-2">
-                    <div class="col-md-8">
-                        <div class="row g-4">
-                            <div class="col-sm-6">
-                                <div class="card h-100 shadow-sm border-0">
-                                    <div class="position-relative overflow-hidden">
-                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                            alt="news image" class="card-img-top object-fit-cover img-hover-scale"
-                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                            Nasionalisme
-                                        </p>
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h6 class="text-custom-green fw-medium">
-                                            Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                            Ikuti Pelatihan Berbasis Kompetensi
-                                        </h6>
-                                        <p class="text-secondary small">
-                                            Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                            Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                            (12/8/2025).
-                                        </p>
-                                        <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                            <p class="mb-0">13 Agustus 2025</p>
-                                            <p class="mb-0 text-custom-green">Author</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row g-4 mt-1">
+                    <div class="col-sm-6">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative overflow-hidden rounded-top">
+                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
+                                    style="height: 20rem" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                    Nasionalisme
+                                </p>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="card h-100 shadow-sm border-0">
-                                    <div class="position-relative overflow-hidden">
-                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                            alt="news image" class="card-img-top object-fit-cover img-hover-scale"
-                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                            Nasionalisme
-                                        </p>
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h6 class="text-custom-green fw-medium">
-                                            Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                            Ikuti Pelatihan Berbasis Kompetensi
-                                        </h6>
-                                        <p class="text-secondary small">
-                                            Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                            Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                            (12/8/2025).
-                                        </p>
-                                        <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                            <p class="mb-0">13 Agustus 2025</p>
-                                            <p class="mb-0 text-custom-green">Author</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card h-100 shadow-sm border-0">
-                                    <div class="position-relative overflow-hidden">
-                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                            alt="news image" class="card-img-top object-fit-cover img-hover-scale"
-                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                            Nasionalisme
-                                        </p>
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h6 class="text-custom-green fw-medium">
-                                            Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                            Ikuti Pelatihan Berbasis Kompetensi
-                                        </h6>
-                                        <p class="text-secondary small">
-                                            Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                            Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                            (12/8/2025).
-                                        </p>
-                                        <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                            <p class="mb-0">13 Agustus 2025</p>
-                                            <p class="mb-0 text-custom-green">Author</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card h-100 shadow-sm border-0">
-                                    <div class="position-relative overflow-hidden">
-                                        <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                            alt="news image" class="card-img-top object-fit-cover img-hover-scale"
-                                            style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                        <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                            Nasionalisme
-                                        </p>
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h6 class="text-custom-green fw-medium">
-                                            Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                            Ikuti Pelatihan Berbasis Kompetensi
-                                        </h6>
-                                        <p class="text-secondary small">
-                                            Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                            Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                            (12/8/2025).
-                                        </p>
-                                        <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                            <p class="mb-0">13 Agustus 2025</p>
-                                            <p class="mb-0 text-custom-green">Author</p>
-                                        </div>
-                                    </div>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-custom-green fw-medium">
+                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                    Ikuti Pelatihan Berbasis Kompetensi
+                                </h6>
+                                <p class="text-secondary small">
+                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                    (12/8/2025).
+                                </p>
+                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                    <p class="mb-0">13 Agustus 2025</p>
+                                    <p class="mb-0 text-custom-green">Author</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
-                            style="min-height: 24rem;">
-                            Widget
+                    <div class="col-sm-6">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative overflow-hidden rounded-top">
+                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
+                                    style="height: 20rem;" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                    Nasionalisme
+                                </p>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-custom-green fw-medium">
+                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                    Ikuti Pelatihan Berbasis Kompetensi
+                                </h6>
+                                <p class="text-secondary small">
+                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                    (12/8/2025).
+                                </p>
+                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                    <p class="mb-0">13 Agustus 2025</p>
+                                    <p class="mb-0 text-custom-green">Author</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 mt-1">
+                    <div class="col-sm-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative overflow-hidden rounded-top">
+                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
+                                    style="height: 12rem" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                    Nasionalisme
+                                </p>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-custom-green fw-medium">
+                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                    Ikuti Pelatihan Berbasis Kompetensi
+                                </h6>
+                                <p class="text-secondary small">
+                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                    (12/8/2025).
+                                </p>
+                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                    <p class="mb-0">13 Agustus 2025</p>
+                                    <p class="mb-0 text-custom-green">Author</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative overflow-hidden rounded-top">
+                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
+                                    style="height: 12rem;" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                    Nasionalisme
+                                </p>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-custom-green fw-medium">
+                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                    Ikuti Pelatihan Berbasis Kompetensi
+                                </h6>
+                                <p class="text-secondary small">
+                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                    (12/8/2025).
+                                </p>
+                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                    <p class="mb-0">13 Agustus 2025</p>
+                                    <p class="mb-0 text-custom-green">Author</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative overflow-hidden rounded-top">
+                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
+                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
+                                    style="height: 12rem;" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                    Nasionalisme
+                                </p>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="text-custom-green fw-medium">
+                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                    Ikuti Pelatihan Berbasis Kompetensi
+                                </h6>
+                                <p class="text-secondary small">
+                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                    (12/8/2025).
+                                </p>
+                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                    <p class="mb-0">13 Agustus 2025</p>
+                                    <p class="mb-0 text-custom-green">Author</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
