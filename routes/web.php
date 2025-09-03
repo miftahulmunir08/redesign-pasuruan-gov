@@ -23,8 +23,8 @@ Route::prefix('digital')->group(function () {
 Route::prefix('postingan')->group(function () {
     // Route::get('/postingan', "LandingPostinganController@postingan");
     // Route::get('/postingan/{slug_kategori?}', "LandingPostinganController@postingan");
-    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'post_list']);
-    Route::get('/postingan/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', "LandingPostinganController@detail");
+    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'postList']);
+    Route::get('/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', [PostController::class, 'detail']);
 });
 
 // Nav profil

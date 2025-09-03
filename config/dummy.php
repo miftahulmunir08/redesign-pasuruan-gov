@@ -1080,4 +1080,113 @@ return [
             'external_url' => 'https://dpmptsp.pasuruankab.go.id/halaman/sektor-pekerjaan-umum',
         ],
     ],
+    'downloads' => [
+        (object) [
+            'title' => 'Lagu Indonesia Raya Kabupaten Pasuruan',
+            'extension' => 'MP3',
+            'url' => '/download/260'
+        ],
+        (object) [
+            'title' => 'Banner Hari Jadi Kabupaten Pasuruan untuk Instansi dan Lembaga Pemerintahan',
+            'extension' => 'ZIP',
+            'url' => '/download/259'
+        ],
+        (object) [
+            'title' => 'Banner 17 Agustus',
+            'extension' => 'zip',
+            'url' => '/download/258'
+        ],
+        (object) [
+            'title' => 'PERBUP RDTR PANDAAN',
+            'extension' => 'pdf',
+            'url' => '/download/257'
+        ],
+        (object) [
+            'title' => 'PERBUP RDTR GRATI',
+            'extension' => 'pdf',
+            'url' => '/download/256'
+        ],
+        (object) [
+            'title' => 'PERBUP RDTR GEMPOL',
+            'extension' => 'pdf',
+            'url' => '/download/255'
+        ],
+        (object) [
+            'title' => 'PERDA RTDR BEJI',
+            'extension' => 'pdf',
+            'url' => '/download/254'
+        ],
+        (object) [
+            'title' => 'PERDA RDTR PURWOSARI',
+            'extension' => 'pdf',
+            'url' => '/download/253'
+        ],
+        (object) [
+            'title' => 'Foto Wakil Bupati Pasuruan - H. M. Shobih Asrori',
+            'extension' => 'png',
+            'url' => '/download/249'
+        ],
+    ],
+    'transparansi' => [
+        (object)[
+            "title" => "Ringkasan APBD Tahun 2026",
+            "description" => "Ringkasan APBD",
+            "year" => "2026",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6IndKWWRuWXVySzVlNmNsUGZ6UTE2T1E9PSIsInZhbHVlIjoiZVZJenpVRU4wdkxsQ2xGeFd2czd2dz09IiwibWFjIjoiZWJmNWFkZGVmNzM1N2M2N2FjZjQ5N2JhODFlZGY1YWNkZjYyYmYyOTliYzZmOWRhZjMxMjU0NzI3MWU3N2FmNiIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan APBD Tahun 2025",
+            "description" => "Ringkasan APBD",
+            "year" => "2025",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6ImVlcFA4eGpLc0Qyang1Rm1LUEg3UXc9PSIsInZhbHVlIjoiUTFnUjNTRFZUUXdxYlRjdExoRTNuZz09IiwibWFjIjoiMzBlNDJhZjJiYWNjZWE1YTNhMjkzNjAxODAxNzk4NDRkYTU2NzNlZDJiMTNjOGViZDU4NzVkOTE0ODRkZDBhYyIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan Penjabaran APBD TA.2025",
+            "description" => "Informasi Peraturan Kepala Daerah tentang Penjabaran APBD",
+            "year" => "2025",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6InJuS0FlQ1pEWGIvVUdMZ0RmcnFrSFE9PSIsInZhbHVlIjoiSVNRcG02QU1lT0lPTk00LzM1VFBIQT09IiwibWFjIjoiODk3ZWM3MjM3NzI3NzcwZWYwZmRlM2MwY2QzZGI4MTg3ZWRjNWI2ODViMmQ3MGE1N2EwZGVjMmZmNjk4NTg4OCIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan P-RKPD Tahun 2025",
+            "description" => "Informasi Ringkasan Dokumen RKPD",
+            "year" => "2025",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6IjJVZWJ2bEFsVjZIMHo1Z1F5Zk5QSUE9PSIsInZhbHVlIjoidzlQTTBTL3R4Nlh1VVVOTS9BeHBZUT09IiwibWFjIjoiYTBiOWEzMDVkZmQzM2U2ZDg2MzBiOGMwMjJmNDRmOTJmMjg4NzkzNDdmMDk0NGUwODNkZmRkMDNjNzg3NmY2YSIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Informasi Laporan Realisasi Semester I TA 2025",
+            "description" => "Informasi Laporan Realisasi Anggaran PPKD",
+            "year" => "2025",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6Ik16cmQrV0hrTGhpeHR2R08yZjJtRUE9PSIsInZhbHVlIjoidms2aW9YeUZiWk1HUHlnbkU1cDFzZz09IiwibWFjIjoiN2Y1NDRlYjU3M2VmYThlNzNhYTY4ODQ2NWZjN2NmNjViZGZiYWY0ZTcwMjM2ZDIxNGVkZTk0NmYzNDUyMjUxOCIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan RKPD Tahun 2026",
+            "description" => "Informasi Ringkasan Dokumen RKPD",
+            "year" => "2025",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6IjJYUGFEK0puUlN3djE0ejFKa05Pd2c9PSIsInZhbHVlIjoiYUs1SkxjMUswUjFWQ3duanY1NHFVdz09IiwibWFjIjoiZDcwMjY1NjdmODZjNWE0ZDFlNTkzYzBkZWFmMzE0MWUyZTRiNTA3N2FiYzVkZDVlYjM0MjA0YmVlODJhZmZjOSIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan PERDA APBD Tahun 2024",
+            "description" => "Informasi Ringkasan APBD TA.2024",
+            "year" => "2024",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6IjBnaGNTa2FyVC9OckJ4TEZ0L01iYkE9PSIsInZhbHVlIjoiVFhYbmE4bVNKN1NUbmtiL3pZdXVsdz09IiwibWFjIjoiZjZkY2UwMjhkMjZmMTdhNWE2MDk2MDk5MTBiN2Q0ODFlZTFjY2MzZDA2MTUxY2UxOTQ0ZjNjMjI2NWE5NjIxZCIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "PERBUP Penjabaran APBD Tahun 2024",
+            "description" => "Informasi Ringkasan Penjabaran APBD TA.2024",
+            "year" => "2024",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6IkVNZlk4TDhGYjZYY05ZcVl4d1NYOXc9PSIsInZhbHVlIjoiSVQ4c1ZpcmRwL0tlbS9oeWxCSk90QT09IiwibWFjIjoiNDExZTUwNWM2OWFmZDcxYmQ1NDY1OWIxNWUwOWM1OTdjNmU1MTJiNzY4Y2VjNThkYTI3MzFlZDJhZmE4Y2NiNSIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan Penjabaran Perubahan APBD TA.2024",
+            "description" => "Informasi Ringkasan Penjabaran Perubahan APBD TA.2024",
+            "year" => "2024",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6Ik9udW0vOVUyUjBxeXc1VU10TWFodUE9PSIsInZhbHVlIjoicGF6YnZXWVVmRDJKeE9mV1A2aFgydz09IiwibWFjIjoiZDJmYjk5YTQ5MDE0ODlmOGRiZjI4ZWJlYTI0NmE3Y2ViOTg1ODI1ZWUxNTVkODMyMzc1ZDE2MTAzZDZkMWUxNCIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ],
+        (object)[
+            "title" => "Ringkasan Perubahan APBD TA.2024",
+            "description" => "Informasi Ringkasan Perubahan APBD",
+            "year" => "2024",
+            "url" => "https://www.pasuruankab.go.id/download-file/eyJpdiI6Ikh6SzYxYnNBSnZEaEJXMStxYkExUmc9PSIsInZhbHVlIjoiMmE2TGVlVlZMNnVqQjJDYTQ3SU81UT09IiwibWFjIjoiZjBiMTYxMTZhZGM2ZmVkYmZlYTkyMGI3NjhjM2Y2M2FhMDk4MWJhOWFiMjMxZTBmMjNkZGRjZTE5NzM2YmIzZSIsInRhZyI6IiJ9/transparansi/file_transparansi/transparansi"
+        ]
+    ],
 ];

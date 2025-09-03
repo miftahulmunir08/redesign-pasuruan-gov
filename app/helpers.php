@@ -25,6 +25,35 @@ if (!function_exists('generateSimpleBreadcrumbs')) {
     }
 }
 
+if (!function_exists('generateParentBreadcrumb')) {
+    function generateParentBreadcrumb(Request $request): array
+    {
+        $segments = $request->segments();
+        $breadcrumbs = [];
+        $titleSegment = null;
+        $path = '';
+
+        if (count($segments) >= 2) {
+            $titleSegment = $segments[count($segments) - 2];
+            $path = '/' . implode('/', array_slice($segments, 0, count($segments) - 1));
+        } elseif (count($segments) === 1) {
+            $titleSegment = $segments[0];
+            $path = '/' . $segments[0];
+        }
+
+        if ($titleSegment) {
+            $breadcrumbs[] = [
+                'text' => ucwords(str_replace(['-', '_'], ' ', $titleSegment)),
+                'url'  => $path
+            ];
+        }
+
+        array_unshift($breadcrumbs, ['text' => 'Home', 'url' => '/']);
+
+        return $breadcrumbs;
+    }
+}
+
 if (!function_exists('dateFormatToID')) {
     function dateFormatToID($date)
     {
