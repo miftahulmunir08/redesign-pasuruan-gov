@@ -1,16 +1,21 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SumberDayaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/kontak', [LandingController::class, 'kontak']);
+
+Route::prefix('berita')->group(function () {
+    Route::get('/', [BeritaController::class, 'index']);
+    Route::get('/{slug_berita}', [BeritaController::class, 'detail']);
+});
 
 Route::prefix('digital')->group(function () {
     Route::get('/', [LandingController::class, 'index_landing']);

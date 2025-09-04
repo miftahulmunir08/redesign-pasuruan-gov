@@ -294,7 +294,7 @@ class HomepageController extends Controller
             ],
             (object)[
                 'text' => 'UMUM/PERIJINAN',
-                'url' => '/layanan/informasi-dan-komunikasi',
+                'url' => '/layanan/umum-perijinan',
             ],
         ];
 
@@ -306,6 +306,6 @@ class HomepageController extends Controller
             'devSumberDaya' => $devSumberDaya,
         ];
 
-        return view('homepage/index', $data);
+        return view('homepage.index', $data);
     }
 }
