@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
     @stack('styles')
     <style>
         body {
@@ -44,29 +44,29 @@
             color: white;
         }
 
-            .card {
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-            }
+        .card {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
 
-            .card:hover {
-                transform: translateY(-4px);
-            }
+        .card:hover {
+            transform: translateY(-4px);
+        }
 
-            .img-hover-scale {
-                transition: transform 0.3s ease-in-out;
-            }
+        .img-hover-scale {
+            transition: transform 0.3s ease-in-out;
+        }
 
         .img-hover-scale:hover {
             transform: scale(1.05);
         }
 
-            .btn-video-effect {
-                position: relative;
-                overflow: hidden;
-                transition: color 0.3s ease-in-out;
-                z-index: 1;
-            }
+        .btn-video-effect {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease-in-out;
+            z-index: 1;
+        }
 
         .btn-video-effect .btn-background {
             position: absolute;
@@ -115,6 +115,155 @@
             position: relative;
         }
     </style>
+
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .img-hover-scale {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img-hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .gallery-modal-content-wrapper {
+            position: relative;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .gallery-modal-content {
+            max-width: 100%;
+            max-height: 80vh;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-modal-content {
+                margin-top: 30vh;
+                /* turun 30% dari tinggi layar */
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.5)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 15px 0;
+            height: 50px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .prev-btn,
+        .next-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        .next-btn {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev-btn {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .prev-btn,
+        .next-btn {
+            text-decoration: none;
+        }
+    </style>
+
+
+    <style>
+        .card-gallery .overlay-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* background transparan */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .card-gallery:hover .overlay-text {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -123,44 +272,34 @@
         <x-desktop-navigation />
     </header>
 
-        <section id="hero-section" class="swiper banner-swiper">
-            <div class="swiper-wrapper">
-                @foreach ($devBannerUtama as $banner)
-                    <div class="position-relative w-100 swiper-slide"
-                        style="height: 90vh; min-height: 400px; width: 100%;">
-                        <img src="{{ asset($banner->thumbnail) }}" alt="{{ $banner->nama_banner }}"
-                            class="w-100 object-fit-cover position-relative"
-                            style="height: 100%; max-height: 100%; transform: scale(1.02)" />
-                        <div class="position-absolute top-0 start-0 w-100 h-100"
-                            style="background: rgba(0, 0, 0, 0.3); pointer-events: none;"></div>
-                        <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
-                            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end"
-                                style="max-width: 91.6%;">
-                                <div class="mb-4 mb-md-0 mr-md-1">
-                                    <h1 class="display-4 fw-bold">{{ $banner->nama_banner }}</h1>
-                                    <h2 class="h5">
-                                        {{ $devVisi }}
-                                    </h2>
-                                </div>
-                                <button
-                                    class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
-                                    <span class="btn-background"></span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="me-2"
-                                        style="width: 20px; height: 20px; position: relative; z-index: 1;">
-                                        <path
-                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-                                        <path d="m10 15 5-3-5-3z" />
-                                    </svg>
-                                    <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
-                                </button>
-                            </div>
+    <section id="hero-section" class="swiper banner-swiper">
+        <div class="swiper-wrapper">
+            @foreach ($devBannerUtama as $banner)
+            <div class="position-relative w-100 swiper-slide" style="height: 90vh; min-height: 400px; width: 100%;">
+                <img src="{{ asset($banner->thumbnail) }}" alt="{{ $banner->nama_banner }}" class="w-100 object-fit-cover position-relative" style="height: 100%; max-height: 100%; transform: scale(1.02)" />
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.3); pointer-events: none;"></div>
+                <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
+                    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end" style="max-width: 91.6%;">
+                        <div class="mb-4 mb-md-0 mr-md-1">
+                            <h1 class="display-4 fw-bold">{{ $banner->nama_banner }}</h1>
+                            <h2 class="h5">
+                                {{ $devVisi }}
+                            </h2>
                         </div>
+                        <button class="btn btn-light d-flex flex-row align-items-center align-self-start btn-video-effect text-dark my-auto">
+                            <span class="btn-background"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" style="width: 20px; height: 20px; position: relative; z-index: 1;">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
+                            <span class="fw-semibold" style="position: relative; z-index: 1;">Video</span>
+                        </button>
                     </div>
-                @endforeach
+                </div>
             </div>
-        </section>
+            @endforeach
+        </div>
+    </section>
 
     <main class="container-fluid position-relative" style="max-width: 91.6%; padding-bottom: 4rem;">
         <div class="bg-white border-md-0 rounded shadow-sm p-3 position-relative z-2 search-bar-margin" style="">
@@ -176,26 +315,25 @@
             </div>
         </div>
 
-            <div class="mt-4">
-                <p class="h4 fw-medium mb-0">
-                    Sumber daya<span class="text-custom-green">.</span>
-                </p>
-                <div class="row g-4 mt-1">
-                    @foreach ($devSumberDaya as $sumberDaya)
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <a href="{{ $sumberDaya->url }}" class="text-decoration-none text-dark">
-                                <div class="card h-100 shadow-sm border-0 card-hover-scale">
-                                    <img src="{{ $sumberDaya->imageUrl }}" alt="{{ $sumberDaya->name }}"
-                                        class="card-img-top object-fit-cover" style="height: 8rem" />
-                                    <div class="card-body text-center bg-white">
-                                        <p class="card-text">{{ $sumberDaya->name }}</p>
-                                    </div>
-                                </div>
-                            </a>
+        <div class="mt-4">
+            <p class="h4 fw-medium mb-0">
+                Sumber daya<span class="text-custom-green">.</span>
+            </p>
+            <div class="row g-4 mt-1">
+                @foreach ($devSumberDaya as $sumberDaya)
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="{{ $sumberDaya->url }}" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm border-0 card-hover-scale">
+                            <img src="{{ $sumberDaya->imageUrl }}" alt="{{ $sumberDaya->name }}" class="card-img-top object-fit-cover" style="height: 8rem" />
+                            <div class="card-body text-center bg-white">
+                                <p class="card-text">{{ $sumberDaya->name }}</p>
+                            </div>
                         </div>
-                    @endforeach
+                    </a>
                 </div>
+                @endforeach
             </div>
+        </div>
 
         {{-- <div class="mt-5">
                 <div class="d-flex flex-row justify-content-between align-items-center">
@@ -225,221 +363,200 @@
                 </div>
             </div> --}}
 
-            <div class="mt-5">
-                <p class="h4 fw-medium">
-                    Layanan<span class="text-custom-green">.</span>
-                </p>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mt-2">
-                    @foreach ($devLayanan as $tipeLayanan)
-                        <div class="col">
-                            <div class="card h-100 rounded-3 layanan-card__hover">
-                                <a class="card-body d-flex flex-row align-items-center gap-3 text-decoration-none"
-                                    href={{ $tipeLayanan->url }}>
-                                    <span class="d-flex align-items-center justify-content-center flex-shrink-0"
-                                        style="width: 48px; height: 48px;">
-                                        @if ($tipeLayanan->text == 'Kependudukan')
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                                <circle cx="9" cy="7" r="4" />
-                                            </svg>
-                                        @elseif ($tipeLayanan->text == 'Perhubungan')
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M4 6 2 7" />
-                                                <path d="M10 6h4" />
-                                                <path d="m22 7-2-1" />
-                                                <rect width="16" height="16" x="4" y="3" rx="2" />
-                                                <path d="M4 11h16" />
-                                                <path d="M8 15h.01" />
-                                                <path d="M16 15h.01" />
-                                                <path d="M6 19v2" />
-                                                <path d="M18 21v-2" />
-                                            </svg>
-                                        @elseif ($tipeLayanan->text == 'Informasi & Komunikasi')
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <path d="M12 16v-4" />
-                                                <path d="M12 8h.01" />
-                                            </svg>
-                                        @elseif ($tipeLayanan->text == 'UMUM/PERIJINAN')
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-                                                <path d="M9 18h6" />
-                                                <path d="M10 22h4" />
-                                            </svg>
-                                        @endif
-                                    </span>
-                                    <p class="mb-0 fw-semibold text-dark">{{ $tipeLayanan->text }}</p>
-                                </a>
-                            </div>
-                        </div>
-                    @endforeach
+        <div class="mt-5">
+            <p class="h4 fw-medium">
+                Layanan<span class="text-custom-green">.</span>
+            </p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mt-2">
+                @foreach ($devLayanan as $tipeLayanan)
+                <div class="col">
+                    <div class="card h-100 rounded-3 layanan-card__hover">
+                        <a class="card-body d-flex flex-row align-items-center gap-3 text-decoration-none" href={{ $tipeLayanan->url }}>
+                            <span class="d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                                @if ($tipeLayanan->text == 'Kependudukan')
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                @elseif ($tipeLayanan->text == 'Perhubungan')
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 6 2 7" />
+                                    <path d="M10 6h4" />
+                                    <path d="m22 7-2-1" />
+                                    <rect width="16" height="16" x="4" y="3" rx="2" />
+                                    <path d="M4 11h16" />
+                                    <path d="M8 15h.01" />
+                                    <path d="M16 15h.01" />
+                                    <path d="M6 19v2" />
+                                    <path d="M18 21v-2" />
+                                </svg>
+                                @elseif ($tipeLayanan->text == 'Informasi & Komunikasi')
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                                @elseif ($tipeLayanan->text == 'UMUM/PERIJINAN')
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E43434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                                    <path d="M9 18h6" />
+                                    <path d="M10 22h4" />
+                                </svg>
+                                @endif
+                            </span>
+                            <p class="mb-0 fw-semibold text-dark">{{ $tipeLayanan->text }}</p>
+                        </a>
+                    </div>
                 </div>
+                @endforeach
+            </div>
 
         </div>
 
-            <div class="mt-5">
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-                    <div>
-                        <p class="h4 fw-medium">
-                            Berita Terbaru<span class="text-custom-green">.</span>
-                        </p>
-                        <p class="text-muted mb-0">
-                            Berita terbaru dari Kabupaten Pasuruan
-                        </p>
-                    </div>
-                    <button class="btn btn-custom-green align-self-start align-self-md-auto">
-                        Semua Berita
-                    </button>
+        <div class="mt-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                <div>
+                    <p class="h4 fw-medium">
+                        Berita Terbaru<span class="text-custom-green">.</span>
+                    </p>
+                    <p class="text-muted mb-0">
+                        Berita terbaru dari Kabupaten Pasuruan
+                    </p>
                 </div>
-                <div class="row g-4 mt-1">
-                    <div class="col-sm-6">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="position-relative overflow-hidden rounded-top">
-                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
-                                    style="height: 20rem" />
-                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                    Nasionalisme
-                                </p>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="text-custom-green fw-medium">
-                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                    Ikuti Pelatihan Berbasis Kompetensi
-                                </h6>
-                                <p class="text-secondary small">
-                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                    (12/8/2025).
-                                </p>
-                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                    <p class="mb-0">13 Agustus 2025</p>
-                                    <p class="mb-0 text-custom-green">Author</p>
-                                </div>
-                            </div>
+                <button class="btn btn-custom-green align-self-start align-self-md-auto">
+                    Semua Berita
+                </button>
+            </div>
+            <div class="row g-4 mt-1">
+                <div class="col-sm-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative overflow-hidden rounded-top">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top" style="height: 20rem" />
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                Nasionalisme
+                            </p>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="position-relative overflow-hidden rounded-top">
-                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
-                                    style="height: 20rem;" />
-                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                    Nasionalisme
-                                </p>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="text-custom-green fw-medium">
-                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                    Ikuti Pelatihan Berbasis Kompetensi
-                                </h6>
-                                <p class="text-secondary small">
-                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                    (12/8/2025).
-                                </p>
-                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                    <p class="mb-0">13 Agustus 2025</p>
-                                    <p class="mb-0 text-custom-green">Author</p>
-                                </div>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-custom-green fw-medium">
+                                Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                Ikuti Pelatihan Berbasis Kompetensi
+                            </h6>
+                            <p class="text-secondary small">
+                                Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                (12/8/2025).
+                            </p>
+                            <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                <p class="mb-0">13 Agustus 2025</p>
+                                <p class="mb-0 text-custom-green">Author</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row g-4 mt-1">
-                    <div class="col-sm-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="position-relative overflow-hidden rounded-top">
-                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
-                                    style="height: 12rem" />
-                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                    Nasionalisme
-                                </p>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="text-custom-green fw-medium">
-                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                    Ikuti Pelatihan Berbasis Kompetensi
-                                </h6>
-                                <p class="text-secondary small">
-                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                    (12/8/2025).
-                                </p>
-                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                    <p class="mb-0">13 Agustus 2025</p>
-                                    <p class="mb-0 text-custom-green">Author</p>
-                                </div>
+                <div class="col-sm-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative overflow-hidden rounded-top">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top" style="height: 20rem;" />
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                Nasionalisme
+                            </p>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-custom-green fw-medium">
+                                Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                Ikuti Pelatihan Berbasis Kompetensi
+                            </h6>
+                            <p class="text-secondary small">
+                                Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                (12/8/2025).
+                            </p>
+                            <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                <p class="mb-0">13 Agustus 2025</p>
+                                <p class="mb-0 text-custom-green">Author</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="position-relative overflow-hidden rounded-top">
-                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
-                                    style="height: 12rem;" />
-                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                    Nasionalisme
-                                </p>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="text-custom-green fw-medium">
-                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                    Ikuti Pelatihan Berbasis Kompetensi
-                                </h6>
-                                <p class="text-secondary small">
-                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                    (12/8/2025).
-                                </p>
-                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                    <p class="mb-0">13 Agustus 2025</p>
-                                    <p class="mb-0 text-custom-green">Author</p>
-                                </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-1">
+                <div class="col-sm-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative overflow-hidden rounded-top">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top" style="height: 12rem" />
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                Nasionalisme
+                            </p>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-custom-green fw-medium">
+                                Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                Ikuti Pelatihan Berbasis Kompetensi
+                            </h6>
+                            <p class="text-secondary small">
+                                Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                (12/8/2025).
+                            </p>
+                            <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                <p class="mb-0">13 Agustus 2025</p>
+                                <p class="mb-0 text-custom-green">Author</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="position-relative overflow-hidden rounded-top">
-                                <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita"
-                                    alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top"
-                                    style="height: 12rem;" />
-                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                    Nasionalisme
-                                </p>
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="text-custom-green fw-medium">
-                                    Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
-                                    Ikuti Pelatihan Berbasis Kompetensi
-                                </h6>
-                                <p class="text-secondary small">
-                                    Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
-                                    Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
-                                    (12/8/2025).
-                                </p>
-                                <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
-                                    <p class="mb-0">13 Agustus 2025</p>
-                                    <p class="mb-0 text-custom-green">Author</p>
-                                </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative overflow-hidden rounded-top">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top" style="height: 12rem;" />
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                Nasionalisme
+                            </p>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-custom-green fw-medium">
+                                Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                Ikuti Pelatihan Berbasis Kompetensi
+                            </h6>
+                            <p class="text-secondary small">
+                                Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                (12/8/2025).
+                            </p>
+                            <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                <p class="mb-0">13 Agustus 2025</p>
+                                <p class="mb-0 text-custom-green">Author</p>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative overflow-hidden rounded-top">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale rounded-top" style="height: 12rem;" />
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
+                                Nasionalisme
+                            </p>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="text-custom-green fw-medium">
+                                Tekan Pengangguran, Dinas Ketenagakerjaan Ajak Pencaker
+                                Ikuti Pelatihan Berbasis Kompetensi
+                            </h6>
+                            <p class="text-secondary small">
+                                Sebanyak 90 pencari kerja (pencari kerja) di Kabupaten
+                                Pasuruan mengikuti pelatihan berbasis kompetensi, Selasa
+                                (12/8/2025).
+                            </p>
+                            <div class="d-flex flex-row justify-content-between mt-auto small fw-medium">
+                                <p class="mb-0">13 Agustus 2025</p>
+                                <p class="mb-0 text-custom-green">Author</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -458,160 +575,147 @@
                     Semua Gallery
                 </button>
             </div>
-            <div class="row g-4 mt-2">
-                <div class="col-md-12">
-                    <div class="row g-4">
+            <div class="mt-5">
+                <div class="row gallery-container g-0 m-0">
 
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery" style="border-radius: 0px !important;">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
 
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover img-hover-scale" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
                                 </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6IjVUMGZlWlJkMVJrS1lhN3VJbGpnUnc9PSIsInZhbHVlIjoiUW9IclNHQTIzdEtLTmxEWUxTZnVWUT09IiwibWFjIjoiZGEwYjBmYzJkMjBiOTA5ZWFkN2QxYWQzZjYxYTM1YmZjMjIyMGM2ZTVlODk1NTkyNTc3MTYxYzA1OTQ1YmJlYyIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
-                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
-                                        Nasionalisme
-                                    </p>
-                                </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
 
-                <!-- <div class="col-md-4">
-                        <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
-                            style="min-height: 24rem;">
-                            Widget
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden h-100">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+
+                                <!-- Overlay text muncul ketika hover -->
+                                <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                    <p class="mb-0 card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                                </div>
+
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100 shadow-sm border-0 card-gallery">
+                            <div class="position-relative overflow-hidden">
+                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6IjVUMGZlWlJkMVJrS1lhN3VJbGpnUnc9PSIsInZhbHVlIjoiUW9IclNHQTIzdEtLTmxEWUxTZnVWUT09IiwibWFjIjoiZGEwYjBmYzJkMjBiOTA5ZWFkN2QxYWQzZjYxYTM1YmZjMjIyMGM2ZTVlODk1NTkyNTc3MTYxYzA1OTQ1YmJlYyIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="Penyerahan SK" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn" style="height: 12rem;" />
+                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Pemerintahan</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-text d-none">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN</p>
+                                <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center view-gallery-btn">Lihat Gambar</a>
+                            </div>
                         </div>
                     </div> -->
+                </div>
+            </div>
+
+            <div id="myGalleryModal" class="gallery-modal">
+                <div class="gallery-modal-content-wrapper">
+                    <span class="close-btn">&times;</span>
+                    <a class="prev-btn">&#10094;</a>
+                    <a class="next-btn">&#10095;</a>
+                    <img class="gallery-modal-content" id="modalImage">
+                    <div id="caption"></div>
+                </div>
             </div>
         </div>
-
 
         <div class="mt-5">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
@@ -627,19 +731,18 @@
                     Semua Video Gallery
                 </button>
             </div>
+
             <div class="row g-4 mt-2">
                 <div class="col-md-12">
-                    <div class="row g-4">
-
-
-                        <div class="col-sm-3">
+                    <div class="row g-0">
+                        <!-- Kiri: video besar -->
+                        <div class="col-md-8">
                             <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                                <div class="position-relative overflow-hidden h-100">
+                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover h-100" style="transition: transform 0.3s ease-in-out;" />
 
-                                    <!-- overlay hitam -->
                                     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
-                        d-flex justify-content-center align-items-center">
+                                    d-flex justify-content-center align-items-center">
                                         <button class="btn btn-danger rounded-circle">
                                             <i class="bi bi-play-fill fs-3"></i>
                                         </button>
@@ -649,24 +752,17 @@
                                         Nasionalisme
                                     </p>
                                 </div>
-
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Video
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                        <!-- Kanan: 2 video kecil -->
+                        <div class="col-md-4 d-flex flex-column">
+                            <div class="card shadow-sm border-0 flex-fill">
+                                <div class="position-relative overflow-hidden h-100">
+                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover h-100" />
 
-                                    <!-- overlay hitam -->
                                     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
-                        d-flex justify-content-center align-items-center">
+                                    d-flex justify-content-center align-items-center">
                                         <button class="btn btn-danger rounded-circle">
                                             <i class="bi bi-play-fill fs-3"></i>
                                         </button>
@@ -676,44 +772,29 @@
                                         Nasionalisme
                                     </p>
                                 </div>
-
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Video
-                                    </a>
-                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-3">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="position-relative overflow-hidden">
-                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="news image" class="card-img-top object-fit-cover" style="height: 12rem; transition: transform 0.3s ease-in-out;" />
+                            <div class="card shadow-sm border-0 flex-fill">
+                                <div class="position-relative overflow-hidden h-100">
+                                    <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InY2MElpdXFQUmJMTmZGZVBuMHdhYmc9PSIsInZhbHVlIjoiM2NNdlM1d0RZaVIwald1NnBSUUNhZz09IiwibWFjIjoiMDYyZmExMmJhOTZkM2E0N2VhNzE2MDc5N2UxNjMwM2RhMzE4OThlNzlkYzQzOTRjNWNlNjUyMjhlODI2NjZhOCIsInRhZyI6IiJ9/posts/gambar_posts/berita" alt="news image" class="card-img-top object-fit-cover h-100" />
+
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
+                                    d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-danger rounded-circle">
+                                            <i class="bi bi-play-fill fs-3"></i>
+                                        </button>
+                                    </div>
+
                                     <p class="badge bg-success position-absolute bottom-0 end-0 m-3">
                                         Nasionalisme
                                     </p>
                                 </div>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <p class="card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
-                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center">
-                                        Lihat Gambar
-                                    </a>
-                                </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-
-                <!-- <div class="col-md-4">
-                        <div class="bg-secondary-subtle h-100 rounded d-flex align-items-center justify-content-center"
-                            style="min-height: 24rem;">
-                            Widget
-                        </div>
-                    </div> -->
             </div>
+
         </div>
 
         <div class="mt-5" id="sumber-daya">
@@ -803,14 +884,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <x-navbottom />
 
-            <x-navbottom />
     </main>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -852,7 +937,97 @@
                 },
             }
         });
+
+
+        const $modal = $('#myGalleryModal');
+        const $modalImg = $('#modalImage');
+        const $captionText = $('#caption');
+        const galleryItems = [];
+        let currentIndex = 0;
+
+        // Loop tiap card (bukan tiap tombol/gambar)
+        $('.card-gallery').each(function(index) {
+            const $card = $(this);
+            const src = $card.find('img').attr('src');
+            const caption = $card.find('.card-text').text();
+
+            // simpan data galeri
+            galleryItems.push({
+                src,
+                caption
+            });
+
+            // pasang handler di gambar
+            $card.find('img').on('click', function(e) {
+                e.preventDefault();
+                currentIndex = index;
+                openModal();
+            });
+
+            // pasang handler di tombol
+            $card.find('.view-gallery-btn').on('click', function(e) {
+                e.preventDefault();
+                currentIndex = index;
+                openModal();
+            });
+        });
+
+        function updateModalContent() {
+            if (galleryItems[currentIndex]) {
+                $modalImg.attr('src', galleryItems[currentIndex].src);
+                $captionText.text(galleryItems[currentIndex].caption);
+            }
+        }
+
+        function openModal() {
+            updateModalContent();
+            $modal.fadeIn();
+        }
+
+        function closeModal() {
+            $modal.fadeOut();
+        }
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex >= galleryItems.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = galleryItems.length - 1;
+            updateModalContent();
+        }
+
+        // tombol di modal
+        $('.close-btn').on('click', function(e) {
+            e.stopPropagation();
+            closeModal();
+        });
+        $('.prev-btn').on('click', function(e) {
+            e.stopPropagation();
+            changeImage(-1);
+        });
+        $('.next-btn').on('click', function(e) {
+            e.stopPropagation();
+            changeImage(1);
+        });
+
+        // klik overlay
+        $modal.on('click', function(e) {
+            if ($(e.target).is($modal)) {
+                closeModal();
+            }
+        });
+
+        // keyboard nav
+        $(document).on('keydown', function(e) {
+            if ($modal.is(':visible')) {
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+                if (e.key === 'Escape') closeModal();
+            }
+        });
     </script>
+
+
+
     @stack('scripts')
 </body>
 
