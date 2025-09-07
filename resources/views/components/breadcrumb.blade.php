@@ -20,7 +20,7 @@
             @foreach ($items as $item)
                 @if ($loop->last)
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span style="color: #03D26F;">{{ $item['text'] }}</span>
+                        <a href="{{ $item['url'] }}" class="text-white text-decoration-none">{{ $item['text'] }}</a>
                     </li>
                 @else
                     <li class="breadcrumb-item">

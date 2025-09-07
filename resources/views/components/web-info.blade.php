@@ -24,3 +24,9 @@
         </span>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        console.log("Script from web info")
+    </script>
+@endpush

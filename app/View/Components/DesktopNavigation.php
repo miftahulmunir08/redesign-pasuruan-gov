@@ -65,9 +65,9 @@ class DesktopNavigation extends Component
                     ['text' => 'Kesehatan', 'url' => "$baseUrl/postingan/fasilitas/kesehatan", 'children' => []],
                     ['text' => 'Pendidikan', 'url' => "$baseUrl/postingan/fasilitas/pendidikan", 'children' => []],
                     ['text' => 'Pasar Daerah', 'url' => "$baseUrl/postingan/fasilitas/pasar-daerah", 'children' => []],
-                    ['text' => 'PDAM', 'url' => "$baseUrl/postingan/fasilitas/pdam", 'children' => []],
-                    ['text' => 'Perhubungan', 'url' => "$baseUrl/postingan/fasilitas/perhubungan", 'children' => []],
-                    ['text' => 'Perpustakaan', 'url' => "$baseUrl/postingan/fasilitas/perpustakaan", 'children' => []],
+                    // ['text' => 'PDAM', 'url' => "$baseUrl/postingan/fasilitas/pdam", 'children' => []],
+                    // ['text' => 'Perhubungan', 'url' => "$baseUrl/postingan/fasilitas/perhubungan", 'children' => []],
+                    // ['text' => 'Perpustakaan', 'url' => "$baseUrl/postingan/fasilitas/perpustakaan", 'children' => []],
                 ],
             ],
             [

@@ -1,4 +1,6 @@
-<?php if (! $__env->hasRenderedOnce('19c83774-1a46-45bd-a65d-f7ac9a9e5d0f')): $__env->markAsRenderedOnce('19c83774-1a46-45bd-a65d-f7ac9a9e5d0f'); ?>
+{{-- @push('styles')
+@endpush --}}
+@once
     <style>
         .navbar-nav .nav-link {
             transition: color 0.2s ease-in-out;
@@ -118,9 +120,9 @@
             }
         }
     </style>
-<?php endif; ?>
+@endonce
 
-<?php
+@php
     $level = $level ?? 1;
     $hasChildren = !empty($item['children']);
     $animationOrder = $animationOrder ?? 0;
@@ -136,49 +138,47 @@
     if ($level > 1 && $hasChildren) {
         $aClass .= ' is-submenu-header';
     }
-?>
+@endphp
 
-<li class="nav-item <?php echo e($level == 1 && $hasChildren ? 'dropdown' : ''); ?>"
-    style="--animation-order: <?php echo e($animationOrder); ?>;">
+<li class="nav-item {{ $level == 1 && $hasChildren ? 'dropdown' : '' }}"
+    style="--animation-order: {{ $animationOrder }};">
 
-    <a href="<?php echo e($item['url']); ?>" class="<?php echo e($aClass); ?>"
-        <?php if($level == 1 && $hasChildren): ?> role="button"
+    <a href="{{ $item['url'] }}" class="{{ $aClass }}"
+        @if ($level == 1 && $hasChildren) role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false" <?php endif; ?>>
-        <?php echo e($item['text']); ?>
-
-        <?php if($hasChildren): ?>
+            aria-expanded="false" @endif>
+        {{ $item['text'] }}
+        @if ($hasChildren)
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-chevron-down-icon lucide-chevron-down chevron-animated"
                 style="transition: transform 0.3s cubic-bezier(.4,2,.3,1);">
                 <path d="m6 9 6 6 6-6" />
             </svg>
-        <?php endif; ?>
+        @endif
     </a>
 
-    <?php if($level == 1 && $hasChildren): ?>
+    @if ($level == 1 && $hasChildren)
         <ul class="dropdown-menu">
-            <?php $__currentLoopData = $item['children']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                
-                <?php echo $__env->make('components._menu-item', [
+            @foreach ($item['children'] as $child)
+                {{-- PERUBAHAN: Kirim urutan iterasi sebagai properti 'animationOrder' --}}
+                @include('components.menu-item', [
                     'item' => $child,
                     'level' => $level + 1,
                     'animationOrder' => $loop->iteration,
-                ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                ])
+            @endforeach
         </ul>
-    <?php endif; ?>
+    @endif
 
-    <?php if($level > 1 && $hasChildren): ?>
-        <?php $__currentLoopData = $item['children']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $child): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            
-            <?php echo $__env->make('components._menu-item', [
+    @if ($level > 1 && $hasChildren)
+        @foreach ($item['children'] as $child)
+            {{-- PERUBAHAN: Kirim urutan iterasi sebagai properti 'animationOrder' --}}
+            @include('components.menu-item', [
                 'item' => $child,
                 'level' => $level + 1,
                 'animationOrder' => $loop->iteration,
-            ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    <?php endif; ?>
+            ])
+        @endforeach
+    @endif
 </li>
-<?php /**PATH C:\Users\User\Downloads\folder\pasuruan\pasuruan gov\resources\views/components/_menu-item.blade.php ENDPATH**/ ?>

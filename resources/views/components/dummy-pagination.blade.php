@@ -41,8 +41,8 @@
         </li>
 
         {{-- Pages --}}
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item" aria-current="page"><span class="page-link">2</span></li>
+        <li class="page-item active" aria-current="page"><span class="page-link" href="#">1</span></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item"><a class="page-link" href="#">4</a></li>
         <li class="page-item"><a class="page-link" href="#">5</a></li>

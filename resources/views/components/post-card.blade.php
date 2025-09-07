@@ -1,63 +1,66 @@
 @props(['post', 'categoryTitle', 'typeCategory', 'slugCategory'])
 
-@once
-    <style>
-        .post-card__image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+@push('styles')
+    @once
+        <style>
+            .post-card__image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
 
-        .post-card__badge {
-            background-color: #03D26F;
-        }
+            .post-card__badge {
+                /* background-color: #338D24; */
+                background-color: rgba(51, 141, 36, 0.8);
+            }
 
-        .post-card__title {
-            color: #0B7642;
-            text-align: justify;
-        }
+            .post-card__title {
+                color: rgba(51, 141, 36, 0.8);
+                text-align: start;
+            }
 
-        .post-card__summary {
-            font-size: smaller;
-            color: gray;
-            text-align: justify;
-        }
+            .post-card__summary {
+                font-size: smaller;
+                color: gray;
+                text-align: justify;
+            }
 
-        .post-card__meta {
-            font-size: smaller;
-        }
+            .post-card__meta {
+                font-size: smaller;
+            }
 
-        .post-card__author {
-            color: #0B7642;
-        }
+            .post-card__author {
+                color: rgba(51, 141, 36, 0.8);
+            }
 
-        .slick-slider {
-            min-height: 0;
-            min-width: 0;
-        }
+            .slick-slider {
+                min-height: 0;
+                min-width: 0;
+            }
 
-        .slick-slide {
-            height: auto;
-        }
+            .slick-slide {
+                height: auto;
+            }
 
-        .card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
+            .card {
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.175) !important;
-        }
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.175) !important;
+            }
 
-        .post-card__title {
-            transition: color 0.3s ease-in-out;
-        }
+            .post-card__title {
+                transition: color 0.3s ease-in-out;
+            }
 
-        .card:hover .post-card__title {
-            color: #03D26F;
-        }
-    </style>
-@endonce
+            .card:hover .post-card__title {
+                color: #338D24;
+            }
+        </style>
+    @endonce
+@endpush
 
 @php
     $placeholder = 'https://placehold.co/400x200/EFEFEF/333333?text=No+Image';
@@ -96,7 +99,7 @@
 
     {{-- Konten Teks --}}
     <div class="p-3 d-flex flex-column flex-grow-1">
-        <p class="post-card__title fw-semibold fs-6 mb-1">
+        <p class="post-card__title fs-6 mb-1" style="font-weight: 900">
             {{ $post->judul_posts }}
         </p>
 

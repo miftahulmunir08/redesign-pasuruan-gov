@@ -56,6 +56,10 @@
       url("{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}");
       /* path gambar */
 
+      /* background: #179661 url("{{ asset('storage/uploads/hero/202409_205-66d55924c94eb.jpg') }}");
+      background-blend-mode: multiply; */
+      /* atau overlay/soft-light sesuai efek yang diinginkan */
+
       background-size: cover;
       /* biar full */
       background-position: center;
@@ -419,6 +423,7 @@
           </div>
         </div>
       </div>
+
       <div class="panel-content">
         <h4><i class="bi bi-volume-up"></i> SUARA</h4>
         <div class="setting-item">
@@ -512,6 +517,7 @@
           </div>
         </div>
       </div>
+
       <div class="panel-footer p-3 border-top">
         <button class="btn btn-secondary w-100" id="resetAccessibility">
           Reset Pengaturan
@@ -520,6 +526,7 @@
           Tutup Pengaturan
         </button>
       </div>
+
     </div>
 
     <!-- <div id="accessibility-panel">
@@ -628,7 +635,7 @@
         <div class="container text-center">
           <!-- Tambah g-4 untuk jarak antar col -->
           <div class="row justify-content-center">
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/profile')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/digital/profile')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i class="las la-university  text-white" style="font-size: 30pt"></i> -->
                 <img src="{{ asset('storage/uploads/icon_app/company.png') }}" width="40px" />
@@ -658,7 +665,7 @@
                 Satu Data
               </h5>
             </div>
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/kontak')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/digital/kontak')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="
                     border-radius: 50px;
                     background-color: #02ab5a;
@@ -675,7 +682,7 @@
               </h5>
             </div>
 
-            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/layanan/aplikasi')}}`)">
+            <div class="col-4 col-lg-2 mt-4 pointer" onclick="goToPage(`{{url('/digital/aplikasi')}}`)">
               <div class="col-3 p-3 mx-auto bg-green-icon shadow" style="border-radius: 50px; width: 75px">
                 <!-- <i
                     class="las la-mobile-alt text-white"

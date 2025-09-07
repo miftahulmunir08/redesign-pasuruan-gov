@@ -1,24 +1,37 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SumberDayaController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/kontak', [LandingController::class, 'kontak']);
 
-Route::get('/layanan', [LandingController::class, 'index_landing']);
-Route::get('/layanan/profile', [LandingController::class, 'profile']);
-Route::get('/layanan/aplikasi', [LandingController::class, 'aplikasi']);
+Route::prefix('berita')->group(function () {
+    Route::get('/', [BeritaController::class, 'index']);
+    Route::get('/{slug_berita}', [BeritaController::class, 'detail']);
+});
+
+Route::prefix('digital')->group(function () {
+    Route::get('/', [LandingController::class, 'index_landing']);
+    Route::get('/profile', [LandingController::class, 'profile']);
+    Route::get('/aplikasi', [LandingController::class, 'aplikasi']);
+    Route::get('/kontak', [LandingController::class, 'kontak']);
+});
+
 
 Route::prefix('postingan')->group(function () {
     // Route::get('/postingan', "LandingPostinganController@postingan");
     // Route::get('/postingan/{slug_kategori?}', "LandingPostinganController@postingan");
-    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'post_list']);
-    Route::get('/postingan/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', "LandingPostinganController@detail");
+    Route::get('/{tipe_kategori?}/{slug_kategori?}', [PostController::class, 'postList']);
+    Route::get('/{tipe_kategori?}/{slug_kategori?}/{slug_posts?}', [PostController::class, 'detail']);
 });
 
 // Nav profil
@@ -38,6 +51,15 @@ Route::prefix('profil')->group(function () {
     Route::prefix('gambaran-umum')->group(function () {
         Route::get('/{slug_post}', [ProfilController::class, 'detailPost']);
     });
+
+    // Route::prefix('halaman')->group(function () {
+    //     Route::get('/peta-pasuruan', [ProfileController::class, 'peta_pasuruan']);
+    //     Route::get('/visi-misi', [ProfileController::class, 'visi_misi']);
+    // });
+});
+
+Route::prefix('layanan')->group(function () {
+    Route::get('/{slug_layanan}', [LayananController::class, 'index']);
 });
 
 Route::prefix('sumber-daya')->group(function () {
@@ -48,3 +70,6 @@ Route::prefix('sumber-daya')->group(function () {
 });
 
 Route::redirect('/sumber-daya', '/');
+
+Route::get('/gallery', [GalleryController::class, 'index']);
+Route::get('/video', [VideoController::class, 'index']);
