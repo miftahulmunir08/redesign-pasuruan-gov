@@ -41,10 +41,11 @@
     .card {
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        border-radius: 0px !important;
     }
 
     .card:hover {
-        transform: translateY(-4px);
+        /* transform: translateY(-4px); */
     }
 
     .img-hover-scale {
@@ -428,7 +429,7 @@
     <div class="swiper-wrapper">
         @foreach ($devBannerUtama as $banner)
         <div class="position-relative w-100 swiper-slide" style="height: 90vh; min-height: 400px; width: 100%;">
-            <img src="{{ asset($banner->thumbnail) }}" alt="{{ $banner->nama_banner }}" class="w-100 object-fit-cover position-relative" style="height: 100%; max-height: 100%; transform: scale(1.02)" />
+            <img src="{{ asset($banner->thumbnail) }}" alt="{{ $banner->nama_banner }}" class="w-100 object-fit-cover position-relative" style="height: 100%; max-height: 100%; transform: scale(1.02);border-radius: 0px !important;" />
             <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.3); pointer-events: none;"></div>
             <div class="position-absolute bottom-0 start-0 end-0 text-white mb-4 mb-md-5">
                 <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-md-end" style="max-width: 91.6%;">
@@ -738,109 +739,111 @@
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="card h-100 shadow-sm border-0 card-gallery" style="border-radius: 0px !important;">
                         <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
-
-                            <!-- Overlay text muncul ketika hover -->
-                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
-                                <p class="mb-0">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
-                            </div>
-
-                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 shadow-sm border-0 card-gallery">
-                        <div class="position-relative overflow-hidden h-100">
-                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;" />
+                            <img src="https://pasuruankab.go.id/download-file/eyJpdiI6Inc3VnNJODR2RjdYVTB3bG1HZXIrckE9PSIsInZhbHVlIjoiOWRkK2JEZ0lPVG4xUWxZSW5YaFJhZz09IiwibWFjIjoiYThhMmFlOGJjYjQ1NWNlZjI2ZDFhOTU0MTllZjI2MTRhYmM1M2Q2YWNlYzU5NDYxM2FiZDMyNDkyYTAyYWUxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
 
                             <!-- Overlay text muncul ketika hover -->
                             <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
                                 <p class="mb-0 card-text">Kunjungan Pemerintah Kabupaten Pasuruan ke Kota Makassar</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6Ik1uaUFEYjRqVHc0bDNWeFI2UE1HZFE9PSIsInZhbHVlIjoiT1QzM3UwK0dhMWIwenB0NU05K2xNUT09IiwibWFjIjoiZGRlMzMzNWJmNzEyNTZlOTFjN2U2MzgyMDhjMDQ5MGY2OWY3Y2RjNjI5ZDIyYzExOWUyZjNjNjEwMGViNzBiMSIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN TMT 1 Juni 2025</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6IkVLZzV3SUxZdzRhelA0VjE5NmlOSEE9PSIsInZhbHVlIjoiSVBKcm1QMnpacWgxR3BjOEtKdGp1UT09IiwibWFjIjoiNWY4NDFjYTE3Y2Y4NmQ3YThhYTRkN2Q2YTY2ODE2MTkwNTMwN2I3MmRmMGY0ZTljZjZlMTY3ZDg5YmFhYjk0ZCIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Penyerahan Simbolis Kartu Kepesertaan dan Klaim Jaminan Kematian (JKM) BPJS Ketenagakerjaan untuk Nelayan</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6IjVaTzI0dHlwN29yZURWbC94RTY4Q3c9PSIsInZhbHVlIjoibHNuanRLaXRHa1pzQTFkMnhqK3NSUT09IiwibWFjIjoiNzA4OTBiZTNlZGVhZDA3ZjY1NGU1NDlhZWRmOWRlYmFkZDE4OWI0YWQ5NmEzNmNjZmIzMDQwZWZhZjU4ODllYiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Serah Terima Jabatan Bupati Kabupaten Pasuruan</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6InNGajZIenVISzVnSmlndTd6aGp2VUE9PSIsInZhbHVlIjoiZnh5TSsrbEtZSFBDSktDNG1OQUhxZz09IiwibWFjIjoiMzZjNmJiMjgyNWMzZTU0OWUzYWYyOGFjNjUxNTg5YmM4ODEzOTc5YTVmN2I3MTk3M2ZlMjEwOTlmZGY1YzQxMSIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Serah Terima Jabatan Bupati Kabupaten Pasuruan</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6IkVsRXZORCs3VGZMRm44eXdqVE0xSFE9PSIsInZhbHVlIjoidmszNEVwSi9hTXpTZEt2U1ZPcEt2dz09IiwibWFjIjoiNzAyNmMxYjU0NWY0YTZiMDgyYzEzYWI4MGYxNDZlY2NjNmE5NTE4YmZjNzAyMTU4MzlkMDZhMTQ4ODFkMWYxMiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Konsultasi Peserta di cluster atau pembidangan Forum Lintas Perangkat Daerah Penyusunan Renja Tahun 2026
+
+                                </p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6IjY4eDNUR3cyNWlQWWlNMFlYT1FyMEE9PSIsInZhbHVlIjoiZWV6WEMrZk5NNnVtVWN6NXpDTWlvUT09IiwibWFjIjoiZDk0NjM4MDBlNzE5NGJlYWZkMWViMTUzMTY0NzI0MzE5NjM2Njg3YjcwZjFkMzAxOTMxN2YzOGJjNDFiMjZmMCIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Pengukuhan Tim Penggerak PKK Kabupaten Pasuruan Tahun 2025 - 2030</p>
+                            </div>
+
+                            <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-gallery">
+                        <div class="position-relative overflow-hidden h-100">
+                            <img src="https://www.pasuruankab.go.id/download-file/eyJpdiI6IkUrNHFhZzJCUkFhREZlcllHeUd4cEE9PSIsInZhbHVlIjoiUGt6ZnRXcmxBdXdqdjE4YjlhNllXUT09IiwibWFjIjoiMGQ1NzE0NDdjOGQ0ZDZmZjI3MDkyYzllNGNhMTA1MTJhOTdjMTU3MWVhZjEzNzE3NmRjM2ZjNzZlMGZhMGJjNiIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="SK Purna Tugas" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn h-100" style="height: 100%;border-radius: 0px !important;" />
+
+                            <!-- Overlay text muncul ketika hover -->
+                            <div class="overlay-text position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-white text-center p-3 view-gallery-btn">
+                                <p class="mb-0 card-text">Kunjungan Bupati Ke SD Negeri Jeladri 1</p>
                             </div>
 
                             <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Nasionalisme</p>
@@ -900,7 +903,7 @@
 
                                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
                         d-flex justify-content-center align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=IMckci9_9yc" data-lity class="btn btn-danger rounded-circle">
+                                    <a href="https://www.youtube.com/watch?v=eg9zjHG2UsU" data-lity class="btn btn-danger rounded-circle">
                                         <i class="bi bi-play-fill fs-3"></i>
                                     </a>
                                 </div>
@@ -920,7 +923,7 @@
 
                                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
                         d-flex justify-content-center align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=IMckci9_9yc" data-lity class="btn btn-danger rounded-circle">
+                                    <a href="https://www.youtube.com/watch?v=OPM49VOHuHk" data-lity class="btn btn-danger rounded-circle">
                                         <i class="bi bi-play-fill fs-3"></i>
                                     </a>
                                 </div>
@@ -937,7 +940,7 @@
 
                                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 
                         d-flex justify-content-center align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=IMckci9_9yc" data-lity class="btn btn-danger rounded-circle">
+                                    <a href="https://www.youtube.com/watch?v=M5vP8G0V-0E" data-lity class="btn btn-danger rounded-circle">
                                         <i class="bi bi-play-fill fs-3"></i>
                                     </a>
                                 </div>
@@ -1005,7 +1008,12 @@
                 <div class="col-md-9 border-start-md">
                     <div class="custom-tab-content" id="custom-tab-content">
                         <div class="custom-tab-pane active" id="v-pills-transparansi">
-                            <div class="d-flex flex-column h-100">
+                            <div class="row">
+                                @foreach ($devData as $transparansi)
+                                <x-transparansi-card :transparansi="$transparansi"/>
+                                @endforeach
+                            </div>
+                            <!-- <div class="d-flex flex-column h-100">
                                 <div class="flex-grow-1">
                                     <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
                                         APBD Tahun 2025</a>
@@ -1016,7 +1024,7 @@
                                     <a href="#" class="text-custom-green fw-semibold">Lihat
                                         Semua...</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="custom-tab-pane" id="v-pills-download">
                             <div class="d-flex flex-column h-100">

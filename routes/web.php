@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SumberDayaController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index']);
@@ -68,3 +70,6 @@ Route::prefix('sumber-daya')->group(function () {
 });
 
 Route::redirect('/sumber-daya', '/');
+
+Route::get('/gallery', [GalleryController::class, 'index']);
+Route::get('/video', [VideoController::class, 'index']);

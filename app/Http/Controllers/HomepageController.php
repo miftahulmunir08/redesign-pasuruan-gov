@@ -66,6 +66,8 @@ class HomepageController extends Controller
             ],
         ];
 
+
+
         $devAplikasi = [
             (object) [
                 "id_aplikasi" => 2,
@@ -298,8 +300,12 @@ class HomepageController extends Controller
             ],
         ];
 
+
+        $devData = collect(config('dummy.transparansi'));
+
         $data = [
             'devVisi' => $devVisi,
+            'devData' => $devData,
             'devBannerUtama' => $devBannerUtama,
             'devAplikasi' => $devAplikasi,
             'devLayanan' => $devLayanan,
