@@ -28,11 +28,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_PRODUCTION }}
           port: 21
           protocol: ftp
-          local-dir: ./                  # semua isi repo
-          server-dir: ./laravel/         # sesuaikan path Laravel di server
+          local-dir: ./
+          server-dir: ./laravel/
           dry-run: false
-          allow-delete: false            # jangan hapus file/folder lama → hindari error 550
-          continue-on-error: true        # skip file/folder yang hilang
+          allow-delete: false
+          exclude: |
+            **/storage/**
+            **/public/storage/**
 
       # 3️⃣ (Opsional) Clear Laravel cached views via URL
       # Pastikan ada route/artisan command di server yang bisa dipanggil
