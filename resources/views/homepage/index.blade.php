@@ -916,17 +916,17 @@
                     </div>
 
                     <!-- <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                                        <div class="card h-100 shadow-sm border-0 card-gallery">
-                                            <div class="position-relative overflow-hidden">
-                                                <img src="https://pasuruankab.go.id/download-file/eyJpdiI6IjVUMGZlWlJkMVJrS1lhN3VJbGpnUnc9PSIsInZhbHVlIjoiUW9IclNHQTIzdEtLTmxEWUxTZnVWUT09IiwibWFjIjoiZGEwYjBmYzJkMjBiOTA5ZWFkN2QxYWQzZjYxYTM1YmZjMjIyMGM2ZTVlODk1NTkyNTc3MTYxYzA1OTQ1YmJlYyIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="Penyerahan SK" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn" style="height: 12rem;" />
-                                                <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Pemerintahan</p>
+                                            <div class="card h-100 shadow-sm border-0 card-gallery">
+                                                <div class="position-relative overflow-hidden">
+                                                    <img src="https://pasuruankab.go.id/download-file/eyJpdiI6IjVUMGZlWlJkMVJrS1lhN3VJbGpnUnc9PSIsInZhbHVlIjoiUW9IclNHQTIzdEtLTmxEWUxTZnVWUT09IiwibWFjIjoiZGEwYjBmYzJkMjBiOTA5ZWFkN2QxYWQzZjYxYTM1YmZjMjIyMGM2ZTVlODk1NTkyNTc3MTYxYzA1OTQ1YmJlYyIsInRhZyI6IiJ9/galeri/gambar_galeri/0" alt="Penyerahan SK" class="card-img-top object-fit-cover img-hover-scale view-gallery-btn" style="height: 12rem;" />
+                                                    <p class="badge bg-success position-absolute bottom-0 end-0 m-3">Pemerintahan</p>
+                                                </div>
+                                                <div class="card-body d-flex flex-column justify-content-between">
+                                                    <p class="card-text d-none">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN</p>
+                                                    <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center view-gallery-btn">Lihat Gambar</a>
+                                                </div>
                                             </div>
-                                            <div class="card-body d-flex flex-column justify-content-between">
-                                                <p class="card-text d-none">Penyerahan Simbolis SK CPNS TA 2024 dan SK Purna Tugas ASN</p>
-                                                <a href="#" class="btn bg-success text-white d-block mx-auto mx-lg-0 text-center view-gallery-btn">Lihat Gambar</a>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                        </div> -->
                 </div>
             </div>
 
@@ -1096,17 +1096,17 @@
                                     @endforeach
                                 </div>
                                 <!-- <div class="d-flex flex-column h-100">
-                                                <div class="flex-grow-1">
-                                                    <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
-                                                        APBD Tahun 2025</a>
-                                                    <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
-                                                        APBD Tahun 2024</a>
-                                                </div>
-                                                <div class="text-end mt-4">
-                                                    <a href="#" class="text-custom-green fw-semibold">Lihat
-                                                        Semua...</a>
-                                                </div>
-                                            </div> -->
+                                                    <div class="flex-grow-1">
+                                                        <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                            APBD Tahun 2025</a>
+                                                        <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                                            APBD Tahun 2024</a>
+                                                    </div>
+                                                    <div class="text-end mt-4">
+                                                        <a href="#" class="text-custom-green fw-semibold">Lihat
+                                                            Semua...</a>
+                                                    </div>
+                                                </div> -->
                             </div>
                             <div class="custom-tab-pane" id="v-pills-download">
                                 <div class="d-flex flex-column h-100">
@@ -1129,6 +1129,132 @@
                             </div>
                             <div class="custom-tab-pane" id="v-pills-majalah">
                                 Majalah Content...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+
+        <div class="mt-5" id="sumber-daya">
+            <div>
+                <p class="h4 fw-medium">
+                    Sumber Daya<span class="text-custom-green">.</span>
+                </p>
+                <p class="text-muted">
+                    Kami menyediakan beberapa sumber daya yang memudahkan masyarakat
+                    dalam mengakses informasi terkait termasuk unduhan, agenda acara,
+                    majalah digital, dan informasi terbaru dari pemerintah kabupaten
+                    pasuruan
+                </p>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="custom-tab-nav" id="custom-tab-nav">
+                            <button class="custom-tab-button active" data-target="v-pills-transparansi">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                Transparansi
+                            </button>
+                            <button class="custom-tab-button" data-target="v-pills-download">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                Download
+                            </button>
+                            <button class="custom-tab-button" data-target="v-pills-agenda">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                Agenda
+                            </button>
+                            <button class="custom-tab-button" data-target="v-pills-majalah">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                Majalah
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 border-start-md">
+                        <div class="custom-tab-content" id="custom-tab-content">
+                            <div class="custom-tab-pane active" id="v-pills-transparansi">
+                                <div class="row">
+                                    @foreach ($devData->take(4) as $transparansi)
+                                        <x-transparansi-card-home :transparansi="$transparansi" />
+                                    @endforeach
+                                </div>
+                                <div class="text-end mt-4">
+                                    <a href="{{ url('sumber-daya/transparansi') }}"
+                                        class="text-custom-green fw-semibold">Lihat
+                                        Semua...</a>
+                                </div>
+                                <!-- <div class="d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                            APBD Tahun 2025</a>
+                                        <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Ringkasan
+                                            APBD Tahun 2024</a>
+                                    </div>
+                                    <div class="text-end mt-4">
+                                        <a href="#" class="text-custom-green fw-semibold">Lihat
+                                            Semua...</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="custom-tab-pane" id="v-pills-download">
+                            <div class="row">
+                                @foreach ($devDownload->take(4) as $download)
+                                    <x-download-card-home :title="$download->title" :extension="$download->extension" :url="$download->url" />
+                                @endforeach
+                            </div>
+                            <div class="text-end mt-4">
+                                <a href="{{ url('sumber-daya/download') }}" class="text-custom-green fw-semibold">Lihat
+                                    Semua...</a>
+                            </div>
+                        </div>
+                        <div class="custom-tab-pane" id="v-pills-agenda">
+                            <div class="row">
+                                @foreach ($devDataAgenda->take(3) as $agenda)
+                                    <x-agenda-card-home :agenda="$agenda" />
+                                @endforeach
+                            </div>
+
+                            <div class="text-end mt-4">
+                                <a href="{{ url('sumber-daya/agenda') }}" class="text-custom-green fw-semibold">Lihat
+                                    Semua...</a>
+                            </div>
+                        </div>
+
+                        <div class="custom-tab-pane" id="v-pills-majalah">
+                            <div class="row">
+                                @foreach ($devDataMajalah->take(3) as $majalah)
+                                    <x-majalah-card-home :majalah="$majalah" />
+                                @endforeach
+                            </div>
+
+                            <div class="text-end mt-4">
+                                <a href="{{ url('sumber-daya/majalah') }}" class="text-custom-green fw-semibold">Lihat
+                                    Semua...</a>
                             </div>
                         </div>
                     </div>

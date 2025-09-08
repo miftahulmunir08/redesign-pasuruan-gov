@@ -66,8 +66,6 @@ class HomepageController extends Controller
             ],
         ];
 
-
-
         $devAplikasi = [
             (object) [
                 "id_aplikasi" => 2,
@@ -302,6 +300,9 @@ class HomepageController extends Controller
 
 
         $devData = collect(config('dummy.transparansi'));
+        $devDataDownload = collect(config('dummy.downloads'));
+        $devDataAgenda = collect(config('dummy.agenda'));
+        $devDataMajalah = collect(config('dummy.majalah'));
 
         $data = [
             'devVisi' => $devVisi,
@@ -309,7 +310,10 @@ class HomepageController extends Controller
             'devBannerUtama' => $devBannerUtama,
             'devAplikasi' => $devAplikasi,
             'devLayanan' => $devLayanan,
+            'devDownload' => $devDataDownload,
             'devSumberDaya' => $devSumberDaya,
+            'devDataAgenda' => $devDataAgenda,
+            'devDataMajalah' => $devDataMajalah,
         ];
 
         return view('homepage.index', $data);
