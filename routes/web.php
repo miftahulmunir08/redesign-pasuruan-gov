@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/kontak', [LandingController::class, 'kontak']);
 
+Route::get('/galeri', [GalleryController::class, 'images']);
+Route::get('/video', [GalleryController::class, 'videos']);
+
 Route::prefix('berita')->group(function () {
     Route::get('/', [BeritaController::class, 'index']);
     Route::get('/{slug_berita}', [BeritaController::class, 'detail']);
