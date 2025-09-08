@@ -1009,9 +1009,13 @@
                     <div class="custom-tab-content" id="custom-tab-content">
                         <div class="custom-tab-pane active" id="v-pills-transparansi">
                             <div class="row">
-                                @foreach ($devData as $transparansi)
-                                <x-transparansi-card :transparansi="$transparansi"/>
+                                @foreach ($devData->take(4) as $transparansi)
+                                <x-transparansi-card-home :transparansi="$transparansi" />
                                 @endforeach
+                            </div>
+                            <div class="text-end mt-4">
+                                <a href="{{url('sumber-daya/transparansi')}}" class="text-custom-green fw-semibold">Lihat
+                                    Semua...</a>
                             </div>
                             <!-- <div class="d-flex flex-column h-100">
                                 <div class="flex-grow-1">
@@ -1026,25 +1030,41 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="custom-tab-pane" id="v-pills-download">
-                            <div class="d-flex flex-column h-100">
-                                <div class="flex-grow-1">
-                                    <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Formulir
-                                        Izin Mendirikan Bangunan</a>
-                                    <a href="#" class="d-block py-1 text-decoration-none text-dark hover-link">Dokumen
-                                        Standar Pelayanan Minimal</a>
-                                </div>
-                                <div class="text-end mt-4">
-                                    <a href="#" class="text-custom-green fw-semibold">Lihat
-                                        Semua...</a>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="custom-tab-pane" id="v-pills-download">
+                        <div class="row">
+                            @foreach ($devDownload->take(4) as $download)
+                            <x-download-card-home :title="$download->title" :extension="$download->extension" :url="$download->url" />
+                            @endforeach
                         </div>
-                        <div class="custom-tab-pane" id="v-pills-agenda">
-                            Agenda Content...
+                        <div class="text-end mt-4">
+                            <a href="{{url('sumber-daya/download')}}" class="text-custom-green fw-semibold">Lihat
+                                Semua...</a>
                         </div>
-                        <div class="custom-tab-pane" id="v-pills-majalah">
-                            Majalah Content...
+                    </div>
+                    <div class="custom-tab-pane" id="v-pills-agenda">
+                        <div class="row">
+                            @foreach ($devDataAgenda->take(3) as $agenda)
+                            <x-agenda-card-home :agenda="$agenda" />
+                            @endforeach
+                        </div>
+
+                        <div class="text-end mt-4">
+                            <a href="{{url('sumber-daya/agenda')}}" class="text-custom-green fw-semibold">Lihat
+                                Semua...</a>
+                        </div>
+                    </div>
+
+                    <div class="custom-tab-pane" id="v-pills-majalah">
+                        <div class="row">
+                            @foreach ($devDataMajalah->take(3) as $majalah)
+                            <x-majalah-card-home :majalah="$majalah" />
+                            @endforeach
+                        </div>
+
+                        <div class="text-end mt-4">
+                            <a href="{{url('sumber-daya/majalah')}}" class="text-custom-green fw-semibold">Lihat
+                                Semua...</a>
                         </div>
                     </div>
                 </div>
