@@ -26,7 +26,6 @@ Route::prefix('digital')->group(function () {
     Route::get('/kontak', [LandingController::class, 'kontak']);
 });
 
-
 Route::prefix('postingan')->group(function () {
     // Route::get('/postingan', "LandingPostinganController@postingan");
     // Route::get('/postingan/{slug_kategori?}', "LandingPostinganController@postingan");

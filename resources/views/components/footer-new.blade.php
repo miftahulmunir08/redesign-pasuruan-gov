@@ -118,7 +118,7 @@
                     <!-- Email -->
                     <div class="col-12 col-lg-3 p-3">
                         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="50" class="mb-3">
-                        <p>info@kabpasuruan.go.id</p>
+                        <p>ppid@pasuruankab.go.id</p>
                     </div>
 
                     <!-- Sosial Media -->

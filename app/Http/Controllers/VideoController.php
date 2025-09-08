@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        dd('helo');
+
+        $devTitle = 'Video Gallery';
+        $breadcrumbs = generateSimpleBreadcrumbs($request);
+        $devData = collect(config('dummy.majalah'));
+
+        $data = [
+            'devTitle' => $devTitle,
+            'breadcrumbs' => $breadcrumbs,
+            'devData' => $devData
+        ];
+
+        return view('video.index', $data);
     }
 }
